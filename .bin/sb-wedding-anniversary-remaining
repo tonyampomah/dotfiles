@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ANNIVERSARY=`date -d "Sep 04" +%j`
+TODAY=`date +%j`
+DAYS=$(($ANNIVERSARY - $TODAY))
+
+case $DAYS in
+  0) echo "It's today! Congratulations!";;
+  [0-9]*) echo "$DAYS d";;
+  -[0-9]*) echo "Oops, you missed it";;
+esac

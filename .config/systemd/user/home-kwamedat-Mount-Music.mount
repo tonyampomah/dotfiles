@@ -1,0 +1,13 @@
+[Unit]
+  Description=cifs mount script
+  # Requires=network-online.target
+  After=network-online.service
+
+[Mount]
+  What=//192.168.1.3/Music
+  Where=/home/kwamedat/Mount/Music
+  Options=_netdev,credentials=/home/kwamedat/Mount/.server_creds,iocharset=utf8,vers=2.0,file_mode=0777,dir_mode=0777
+  Type=cifs
+
+[Install]
+  WantedBy=multi-user.target

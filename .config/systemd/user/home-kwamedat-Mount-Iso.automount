@@ -1,0 +1,8 @@
+[Unit]
+  Description=Automount Iso
+
+[Automount]
+  Where=/home/kwamedat/Mount/Iso
+
+[Install]
+  WantedBy=multi-user.target

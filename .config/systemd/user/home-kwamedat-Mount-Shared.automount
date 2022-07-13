@@ -1,0 +1,8 @@
+[Unit]
+  Description=Automount Downloads
+
+[Automount]
+  Where=/home/kwamedat/Mount/Shared
+
+[Install]
+  WantedBy=multi-user.target

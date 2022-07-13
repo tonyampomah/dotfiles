@@ -1,0 +1,14 @@
+[Unit]
+  Description=cifs mount script
+  # Requires=network-online.target
+  After=network-online.service
+
+[Mount]
+  What=//192.168.1.3/Iso
+  Where=/home/kwamedat/Mount/Iso
+  Type=cifs
+  Options=_netdev,credentials=/home/kwamedat/Mount/.server_creds,rw,file_mode=0777,dir_mode=0777
+  DirectoryMode=0700
+
+[Install]
+  WantedBy=multi-user.target

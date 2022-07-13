@@ -1,0 +1,90 @@
+### tony@arksolustions.it #########################################
+IMAPAccount arksolutions
+Host imappro.zoho.com
+Port 993
+User tony@arksolutions.it
+PassCmd "pass 2Areas/emails/arksolutions.it/zoho.com"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile ~/.ca-bundle.crt
+
+IMAPStore arksolutions-remote
+Account arksolutions
+
+MaildirStore arksolutions-local
+Path ~/.mail/tony@arksolutions.it/
+Inbox ~/.mail/tony@arksolutions.it/Inbox
+Trash ~/.mail/tony@arksolutions.it/Trash
+SubFolders Verbatim
+
+Channel arksolutions
+Far :arksolutions-remote:
+Near :arksolutions-local:
+Patterns *
+Expunge None
+CopyArrivalDate yes
+Sync All
+Create Both
+SyncState *
+
+
+### tony.ampomah.jw@gmail.com #########################################
+IMAPAccount tony.ampomah.jw-gmail
+# Address to connect to
+Host imap.gmail.com
+User tony.ampomah.jw@gmail.com
+PassCmd "pass 2Areas/emails/spiritual/gmail.com"
+SSLType IMAPS
+CertificateFile ~/.ca-bundle.crt
+
+IMAPStore tony.ampomah.jw-gmail-remote
+Account tony.ampomah.jw-gmail
+
+MaildirStore tony.ampomah.jw-gmail-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/tony.ampomah.jw@gmail.com/
+Inbox ~/.mail/tony.ampomah.jw@gmail.com/Inbox
+
+Channel tony.ampomah.jw-gmail
+Far :tony.ampomah.jw-gmail-remote:
+Near :tony.ampomah.jw-gmail-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+
+### itechytony@gmail #########################################
+IMAPAccount itechytony-gmail
+# Address to connect to
+Host imap.gmail.com
+User itechytony@gmail.com
+PassCmd "pass 2Areas/emails/google.com"
+SSLType IMAPS
+CertificateFile ~/.ca-bundle.crt
+
+IMAPStore itechytony-gmail-remote
+Account itechytony-gmail
+
+MaildirStore itechytony-gmail-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/itechytony@gmail.com/
+Inbox ~/.mail/itechytony@gmail.com/Inbox
+
+Channel itechytony-gmail
+Far :itechytony-gmail-remote:
+Near :itechytony-gmail-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *

@@ -1,0 +1,20 @@
+[core]
+	excludesfile = ~/.gitignore_global
+[user]
+	name = Tony Ampomah
+	email = tony@arksolutions.it
+
+[includeIf "gitdir:~/RadiusRepo/"]
+    path = ~/RadiusRepo/.gitconfig
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[push]
+	default = current
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

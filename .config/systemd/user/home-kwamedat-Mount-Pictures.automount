@@ -1,0 +1,8 @@
+[Unit]
+  Description=Automount Pictures
+
+[Automount]
+  Where=/home/kwamedat/Mount/Pictures
+
+[Install]
+  WantedBy=multi-user.target

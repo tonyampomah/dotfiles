@@ -1,0 +1,10 @@
+[Unit]
+  Description=cifs mount script
+  Requires=network-online.target
+  After=network-online.service
+
+[Automount]
+  Where=/home/kwamedat/Mount/Music
+
+[Install]
+  WantedBy=multi-user.target

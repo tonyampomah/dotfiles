@@ -1,0 +1,12 @@
+#!/usr/bin/php
+<?php
+$d1 = new \DateTime("2020-09-04 00:00:00");
+$d2 = new \DateTime();
+$interval = $d1->diff($d2);
+$diffInSeconds = $interval->s; //45
+$diffInMinutes = $interval->i; //23
+$diffInHours   = $interval->h; //8
+$diffInDays    = $interval->d; //21
+$diffInMonths  = $interval->m; //4
+$diffInYears   = $interval->y; //1
+echo "💍 " . $diffInDays . "D-" . $diffInMonths . "M-" . $diffInYears . "Y ";

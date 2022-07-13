@@ -1,0 +1,108 @@
+## GENERAL
+alias h="cd ~/"
+alias o="open ."
+alias ckh="rm -rf ~/.ssh/known_hosts"
+
+## DOCUMENTS
+alias r1="cd ~/Repo/1Projects"
+alias r2="cd ~/Repo/2Areas"
+alias r3="cd ~/Repo/3Resources"
+alias r4="cd ~/Repo/4Archives"
+alias d1="cd ~/Documents/Personal/1Projects"
+alias d2="cd ~/Documents/Personal/2Areas"
+alias d3="cd ~/Documents/Personal/3Resources"
+alias d4="cd ~/Documents/Personal/4Archives"
+alias dd="cd ~/Downloads"
+alias dD="cd ~/Documents"
+
+## PHPUNIT
+alias t="bin/phpunit"
+alias tc="bin/phpunit --coverage-html='tests/coverage/html'"
+alias tf="bin/phpunit --filter"
+
+## COMPOSER
+alias cu="composer update"
+alias ci="composer install"
+alias cda="composer dump-autoload"
+
+## DOCKER
+alias ds="docker ps"
+alias dcu="docker-compose up -d"
+alias dcub="docker-compose up -d --build"
+alias dcs="docker-compose stop"
+alias dcd="docker-compose down"
+alias dcr="docker-compose restart"
+alias dcl="docker-compose logs"
+alias dex="docker exec -it"
+
+
+## LARAVEL
+alias lr-a="php artisan"
+alias lr-rl="php artisan route:list"
+alias lr-m="php artisan migrate"
+alias lr-dbs="php artisan db:seed"
+alias lr-mf="php artisan migrate:fresh"
+alias lr-mfs="php artisan migrate:fresh --seed"
+alias lr-pi="php artisan passport:install"
+alias lr-t="php artisan tinker"
+alias lr-d="php artisan dusk"
+alias lr-at="php artisan tinker"
+
+## Emacs
+alias emc="emacsclient -c"
+
+
+
+#list
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias ll='ls -la'
+alias l='ls'
+alias l.="ls -A | egrep '^\.'"
+
+#fix obvious typo's
+alias cd..='cd ..'
+alias pdw="pwd"
+alias udpate='sudo pacman -Syyu'
+alias upate='sudo pacman -Syyu'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#readable output
+alias df='df -h'
+
+#pacman unlock
+alias unlock="sudo rm /var/lib/pacman/db.lck"
+
+#free
+alias free="free -mt"
+
+#continue download
+alias wget="wget -c"
+
+#userlist
+alias userlist="cut -d: -f1 /etc/passwd"
+
+# Aliases for software managment
+# pacman or pm
+alias pacman='sudo pacman --color auto'
+alias update='sudo pacman -Syyu'
+
+#grub update
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+#add new fonts
+alias update-fc='sudo fc-cache -fv'
+
+#check vulnerabilities microcode
+alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
+
+#shutdown or reboot
+alias ssn="sudo shutdown now"
+alias sr="sudo reboot"
+
+#systeminfo
+alias probe="sudo -E hw-probe -all -upload"

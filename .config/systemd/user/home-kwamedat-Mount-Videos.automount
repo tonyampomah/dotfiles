@@ -1,0 +1,8 @@
+[Unit]
+  Description=Automount Videos
+
+[Automount]
+  Where=/home/kwamedat/Mount/Videos
+
+[Install]
+  WantedBy=multi-user.target
