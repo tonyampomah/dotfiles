@@ -21,3 +21,4 @@
 !/.config/sway
 !/.config/systemd
 !/.config/waybar
+!/.config/qtile

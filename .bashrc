@@ -41,7 +41,7 @@ export STUDIO_JDK=/usr/lib/jvm/java-14-openjdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 export MONITOR_COUNT=$(xrandr -q | grep ' connected' | wc -l)
-if [ "$DESKTOP_SESSION" == "xmonad" ] && [ "$MONITOR_COUNT" == 1 ] ; then
+if [ "$DESKTOP_SESSION" == "qtile" ] && [ "$MONITOR_COUNT" == 1 ] ; then
   ## GDK
   export GDK_SCALE=2
   export GDK_DPI_SCALE=0.5
