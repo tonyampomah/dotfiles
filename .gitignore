@@ -22,3 +22,4 @@
 !/.config/systemd
 !/.config/waybar
 !/.config/qtile
+/.xmonad/build-x86_64-linux/
