@@ -185,12 +185,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_f),       sendMessage $ XMonad.Layout.MultiToggle.Toggle NBFULL)
   , ((modMask, xK_q),       kill)
   , ((modMask, xK_g),       sendMessage $ ToggleGaps)
-  , ((modMask, xK_e),       spawn $ "emacsclient -c -a ''")
-  , ((modMask, xK_Return),  spawn $ "alacritty")
-  , ((modMask, xK_space),   spawn $ "~/.config/rofi/launcher.sh")
-  , ((modMask, xK_p),       spawn $ "rofi-pass")
-  , ((modMask, xK_b),       spawn $ "rofi-surfraw")
-  , ((modMask, xK_Escape),     spawn $ "xkill")
 
 
   -- MODKEY + SHIFT KEYS
