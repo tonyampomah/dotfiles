@@ -163,8 +163,8 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["", "", "", "", "", "", "", "", "", "",]
-#group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
+group_labels = ["", "", "", "", "", "", "", "", "", "",]
+#group_labels = ["Web", "Code", "Chat", "Database", "Request", "Video", "Vm", "Files", "Mail", "Music",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
@@ -511,12 +511,14 @@ def assign_app_group(client):
     ]
     d[group_names[2]] = [
         "TelegramDesktop",
-        "telegramDesktop",
+        "telegram-desktop",
         "discord",
         "Slack",
+        "slack",
         "whatsdesk",
         "Signal",
         "Skype",
+        "skype",
         "Microsoft Teams - Preview",
     ]
     d[group_names[3]] = [
