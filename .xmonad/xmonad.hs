@@ -78,7 +78,6 @@ myDefaults = def {
         , layoutHook          = myLayoutHook
         , startupHook         = myStartupHook
         , manageHook          = manageSpawn <+> myManageHook <+> manageHook myBaseConfig
-        , handleEventHook     = fullscreenEventHook <+> docksEventHook <+> minimizeEventHook
         }
 
 encodeCChar = map fromIntegral . B.unpack
