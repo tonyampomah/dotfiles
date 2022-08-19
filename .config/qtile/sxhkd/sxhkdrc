@@ -154,11 +154,11 @@ F12
 
 #Raises volume
 XF86AudioRaiseVolume
-    amixer set Master 10%+
+    amixer set Master 5%+
 
 #Lowers volume
 XF86AudioLowerVolume
-    amixer set Master 10%-
+    amixer set Master 5%-
 
 #Mute
 XF86AudioMute
@@ -191,11 +191,11 @@ XF86AudioStop
 
 #Brightness up
 XF86MonBrightnessUp
-    xbacklight -inc 10
+    xbacklight -inc 5
 
 #Brightness down
 XF86MonBrightnessDown
-    xbacklight -dec 10
+    xbacklight -dec 5
 
 #########################
 #        POLYBAR        #
