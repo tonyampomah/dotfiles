@@ -520,6 +520,8 @@ def assign_app_group(client):
         "Skype",
         "skype",
         "Microsoft Teams - Preview",
+        "zoom",
+        "Jitsi Meet",
     ]
     d[group_names[3]] = [
         "DBeaver",
@@ -531,10 +533,11 @@ def assign_app_group(client):
         "Postman",
     ]
     d[group_names[5]] = [
-        "zoom",
-        "Jitsi Meet",
-        "obs",
-        "mpv"
+        "mpv",
+        "Vlc",
+        "vlc",
+        "Mpv",
+        "mpv",
     ]
     d[group_names[6]] = [
         "VirtualBox Manager",
@@ -559,10 +562,6 @@ def assign_app_group(client):
         "org.gnome.nautilus",
         "pcmanfm",
         "pcmanfm-qt",
-        "Vlc",
-        "vlc",
-        "Mpv",
-        "mpv"
     ]
     d[group_names[8]] = [
         "Evolution",
@@ -575,6 +574,7 @@ def assign_app_group(client):
         "thunderbird"
     ]
     d[group_names[9]] = [
+        "obs",
         "Inkscape",
         "Nomacs",
         "Ristretto",
