@@ -10,39 +10,39 @@
 super + F1
 	google-chrome-stable -no-default-browser-check
 
-# Atom
+# Emacs
 super + F2
 	emacs
 
-#Inkscape
+# Chat
 super + F3
     Teams
 
-#Gimp
+# Database Client
 super + F4
-    gimp
+    dbeaver
 
-#Meld
+# Rest Client
 super + F5
-    meld
+    insomnia
 
-#Vlc
+# Vlc
 super + F6
     vlc --video-on-top
 
-#Virtualbox
+# Virtualbox
 super + F7
     virtualbox
 
-#Thunar
+# File Manager
 super + F8
-    thunar
+    nautilus
 
-#Evolution
+# Email Client
 super + F9
     evolution
 
-#Spotify
+# Music / DJ
 super + F10
     spotify
 
@@ -58,41 +58,9 @@ super + F12
 # SUPER + ... KEYS
 #################################################################
 
-#Atom
+# Emacs
 super + e
     emacsclient -c -a ''
-
-#Browser
-super + w
-    vivaldi-stable
-
-# #Conky-toggle
-# super + c
-#     conky-toggle
-
-# #killall conky
-# super + ctrl + c
-#     killall conky
-
-#Htop
-#super + h
-#    urxvt 'htop task manager' -e htop
-
-#archlinux-logout
-super + x
-    archlinux-logout
-
-#Rofi theme selector
-super + r
-    rofi-theme-selector
-
-#Urxvt
-super + t
-    urxvt
-
-#Pavucontrol
-# super + v
-#     pavucontrol
 
 #Pragha
 super + m
@@ -106,11 +74,6 @@ super + Return
 super + Escape
     xkill
 
-#Keyboard dependent
-#alacritty
-super + KP_Enter
-	alacritty
-
 #################################################################
 # SUPER + SHIFT KEYS
 #################################################################
@@ -119,116 +82,37 @@ super + KP_Enter
 super + shift + Return
 	nautilus
 
-#Keyboard dependent
-#File-Manager
-#super + shift + KP_Enter
-#	thunar
-
-#dmenu
-super + shift + d
-	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
-
 #reload sxhkd:
 super + shift + s
 	pkill -USR1 -x sxhkd
 
-#Keyboard dependent
-#super + shift + KP_Enter
-#	thunar
 super + shift + e
 	~/.config/rofi/power-menu.sh
 	
-
-
 #################################################################
 # CONTROL + ALT KEYS
 #################################################################
-#Catfish
+# Catfish
 ctrl + alt + c
      catfish
 
-#Pamac-manager
+# Pamac-manager
 ctrl + alt + p
     pamac-manager
 
-#Spotify
+# Spotify
 ctrl + alt + s
    spotify
 
-#Vivaldi
+# Vivaldi
 ctrl + alt + v
     vivaldi-stable
-
-
 
 #################################################################
 # ALT + ... KEYS
 #################################################################
 
-#Wallpaper trash
-alt + t
-    variety -t
 
-#Wallpaper next
-alt + n
-    variety -n
-
-#Wallpaper previous
-alt + p
-    variety -p
-
-#Wallpaper favorite
-alt + f
-    variety -f
-
-#Wallpaper previous
-alt + Left
-    variety -p
-
-#Wallpaper next
-alt + Right
-    variety -n
-
-#Wallpaper toggle-pause
-alt + Up
-    variety --toggle-pause
-
-#Wallpaper resume
-alt + Down
-    variety --resume
-
-#Xfce4-appfinder
-alt + F2
-    xfce4-appfinder --collapsed
-
-#Xfce4-appfinder
-alt + F3
-    xfce4-appfinder
-
-
-#################################################################
-#VARIETY KEYS WITH PYWAL
-#################################################################
-
-#Wallpaper trash
-alt + shift + t
-    variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper next
-alt + shift + n
-    variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper previous
-alt + shift + p
-    variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper favorite
-alt + shift + f
-    variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper update
-alt + shift + u
-    wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
 
 #################################################################
 # CONTROL + SHIFT KEYS
@@ -418,65 +302,98 @@ super + b
 #################################################################
 # SUPER + ALT KEYS
 #################################################################
-
-# FLIP LAYOUT FOR BSP
-
-#super + alt + {h,j,k,l}
-#    qtile-cmd -o layout -f {flip_left,flip_down,flip_up,flip_right}
-
-
-##################################
-## The RESIZE KEYS ARE RESERVED ##
-##  ~/.config/qtile/config.py   ##
-##      Lines 191 - 235         ##
-##################################
-## RESIZE UP, DOWN, LEFT, RIGHT ##
-#super + control + l
-#super + control + Right
-#super + control + h
-#super + control + Left
-#super + control + k
-#super + control + Up
-#super + control + j
-#super + control + Down
-##################################
-
-
+# Launch Emacs Agenda
 super + alt + a 
-  emacsclient -c -a '' --eval '(itechytony/day-view)'
+    emacsclient -c -a '' --eval '(kd/day-view)'
+
+# Launch Emacs
 super + alt + e 
-  emacs
+    emacs
+
+# Launch Xfce4
 super + alt + m 
-  xfce4-settings-manager
+    xfce4-settings-manager
+
+# Slack
 super + alt + s 
-  slack
+    slack
+
+# Teams
 super + alt + t 
-  teams
+    teams
+
+# Launch Package Manager
 super + alt + p 
-  pamac-manager
+    pamac-manager
+
+# Launch Volume Control
 super + alt + v 
-  pavucontrol
+    pavucontrol
+
+# Firefox
 super + alt + f 
-  firefox
+    firefox
+
+# Google Chrome
 super + alt + g 
-  google-chrome-stable -no-default-browser-check
+    google-chrome-stable -no-default-browser-check
+
+# Launch Brave Browser
 super + alt + b 
-  brave
+    brave
+
+# Launch QuteBrowser
 super + alt + q 
-  qutebrowser
+    qutebrowser
+
+# Launch WhatsApp
 super + alt + w 
-  whatsapp-for-linux
+    whatsapp-for-linux
+
+# Launch Dbeaver
 super + alt + d 
-  dbeaver
+    dbeaver
+
+# Launch Zoom
 super + alt + z 
-  zoom
+    zoom
+
+# Launch Insomnia
 super + alt + i 
-  insomnia
+    insomnia
+
+# Launch Calculator
 super + alt + c 
-  rofi -show calc
+    rofi -show calc
+
+# Toggle Picom
 super + alt + o 
-  picom-toggle
-super + alt + j 
-  variety -n && wal -i (cat HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-super + alt + k 
-  variety -p && wal -i (cat HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+    picom-toggle
+
+#################################################################
+#VARIETY KEYS
+#################################################################
+# Wallpaper next
+super + alt + j
+    variety -n
+
+# Wallpaper previous
+super + alt + k
+    variety -p
+
+# Wallpaper previous
+super + alt + Left
+    variety -p
+
+# Wallpaper next
+super + alt + Right
+    variety -n
+
+# Wallpaper toggle-pause
+super + alt + Up
+    variety --toggle-pause
+
+# Wallpaper resume
+super + alt + Down
+    variety --resume
+
