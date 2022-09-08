@@ -3,7 +3,7 @@ IMAPAccount arksolutions
 Host imappro.zoho.com
 Port 993
 User tony@arksolutions.it
-PassCmd "pass 2Areas/emails/arksolutions.it/zoho.com"
+PassCmd "pass 2Areas/emails/tony@arksolutions.it"
 SSLType IMAPS
 SSLVersions TLSv1.2
 CertificateFile ~/.ca-bundle.crt
@@ -33,7 +33,7 @@ IMAPAccount tony.ampomah.jw-gmail
 # Address to connect to
 Host imap.gmail.com
 User tony.ampomah.jw@gmail.com
-PassCmd "pass 2Areas/emails/spiritual/gmail.com"
+PassCmd "pass 2Areas/emails/tony.ampomah.jw@gmail.com"
 SSLType IMAPS
 CertificateFile ~/.ca-bundle.crt
 
@@ -64,7 +64,7 @@ IMAPAccount itechytony-gmail
 # Address to connect to
 Host imap.gmail.com
 User itechytony@gmail.com
-PassCmd "pass 2Areas/emails/google.com"
+PassCmd "pass 2Areas/itechytony@gmail.com"
 SSLType IMAPS
 CertificateFile ~/.ca-bundle.crt
 
