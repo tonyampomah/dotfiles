@@ -383,6 +383,7 @@ exec waybar -s ~/.config/waybar/sytle.css
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/emacs --daemon
 exec nextcloud
+exec dropbox
 exec xrdb -load ~/.Xresources
 exec gammastep-indicator
 exec variety
