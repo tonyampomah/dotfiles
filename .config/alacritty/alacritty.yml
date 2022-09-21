@@ -3,21 +3,21 @@ env:
   TERM: xterm-256color
 font:
   normal:
-    family: Cascadia Code
-    style: Light
+    family: JetBrains Mono
+    style: Regular
 
   # The bold font face
   bold:
-    family: Cascadia Code
-    style: Book
+    family: JetBrains Mono
+    style: Bold
 
   # The italic font face
   italic:
-    family: Cascadia Code
+    family: JetBrains Mono
     style: Italic
 
   # Point size of the font
-  size: 14.0
+  size: 16.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
