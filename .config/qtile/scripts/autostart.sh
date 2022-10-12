@@ -16,6 +16,7 @@ run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 run variety &
 run nm-applet &
 run pamac-tray &
+run nextcloud &
 run xfce4-power-manager &
 numlockx on &
 blueberry-tray &

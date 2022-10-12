@@ -62,3 +62,5 @@ fi
 
 
 source ~/.bin/key-bindings.zsh
+
+export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
