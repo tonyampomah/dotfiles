@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="arrow"
+ZSH_THEME="agnoster"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -64,3 +64,5 @@ fi
 source ~/.bin/key-bindings.zsh
 
 export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
+
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
