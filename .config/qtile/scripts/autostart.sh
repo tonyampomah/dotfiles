@@ -27,4 +27,3 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 #starting user applications at boot time
 run volumeicon &
 run caffeine -a &
-run dropbox &
