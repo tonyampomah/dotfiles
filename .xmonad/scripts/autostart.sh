@@ -27,7 +27,11 @@ setxkbmap -option ctrl:nocaps &
 # make short-pressed Ctrl behave like Escape:
 xcape -e 'Control_L=Escape' &
 
+
 (sleep 2; run $HOME/.config/polybar/launch.sh) &
+
+run sxhkd -c ~/.config/sxhkd/sxhkdrc &
+
 ################ Start Utility Apps At Boot Time ##########
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run dunst
@@ -40,5 +44,4 @@ run nm-applet
 run /usr/bin/emacs --daemon
 run solaar -w hide
 run nextcloud
-run dropbox
 run redshift
