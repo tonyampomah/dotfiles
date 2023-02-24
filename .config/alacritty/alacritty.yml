@@ -17,20 +17,20 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 14.0
+  size: 16.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0
-    y: 0
+    y: 25
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
     x: 0
-    y: 0
+    y: 20
 
 draw_bold_text_with_bright_colors: true
 
@@ -140,18 +140,18 @@ key_bindings:
   - { key: LBracket, mods: Command,       chars: "\x02;"                       }  # select last (previously used) pane
   - { key: F,        mods: Command,       chars: "\x02/"                       }  # search (upwards) (see tmux.conf)
 
-mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
+# mouse:
+#   double_click: { threshold: 300 }
+#   triple_click: { threshold: 300 }
 
-  # If this is `true`, the cursor is temporarily hidden when typing.
-  hide_when_typing: true
+#   # If this is `true`, the cursor is temporarily hidden when typing.
+#   hide_when_typing: true
 
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+# selection:
+#   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-  # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: false
+#   # When set to `true`, selected text will be copied to the primary clipboard.
+#   save_to_clipboard: false
 #
 # All available `mods` and `action` values are documented in the key binding
 # section.
