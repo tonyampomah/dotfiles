@@ -3,17 +3,17 @@ env:
   TERM: xterm-256color
 font:
   normal:
-    family: Dank Mono
+    family: SF Mono
     style: Regular
 
   # The bold font face
   bold:
-    family: Dank Mono
+    family: SF Mono
     style: Bold
 
   # The italic font face
   italic:
-    family: Dank Mono
+    family: SF Mono
     style: Italic
 
   # Point size of the font
