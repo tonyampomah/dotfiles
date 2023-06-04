@@ -135,22 +135,22 @@ c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}', 'am': 'h
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = '"SauceCodePro Nerd Font"'
+c.fonts.default_family = '"SF Mono"'
 
 # Default font size to use. Whenever "default_size" is used in a font
 # setting, it's replaced with the size listed here. Valid values are
 # either a float value with a "pt" suffix, or an integer value with a
 # "px" suffix.
 # Type: String
-c.fonts.default_size = '12pt'
+c.fonts.default_size = '16pt'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = '12pt "Cascadia Code Light"'
+c.fonts.completion.entry = '16pt "SF Mono"'
 
 # Font used for the debugging console.
 # Type: Font
-c.fonts.debug_console = '12pt "Cascadia Code Light"'
+c.fonts.debug_console = '16pt "SF Mono"'
 
 # Font used for prompts.
 # Type: Font
@@ -158,11 +158,11 @@ c.fonts.prompts = 'default_size sans-serif'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = '12pt "Cascadia Code Light"'
+c.fonts.statusbar = '16pt "SF Mono"'
 
 
 # Setting dark mode
-config.set('colors.webpage.darkmode.enabled', True)
+# config.set('colors.webpage.darkmode.enabled', True)
 
 # Bindings for normal mode
 config.bind('M', 'hint links spawn mpv {hint-url}')
