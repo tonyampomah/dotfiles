@@ -16,7 +16,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker aws kubectl laravel ansible wp-cli vagrant terraform)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -64,5 +64,8 @@ fi
 source ~/.bin/key-bindings.zsh
 
 export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
