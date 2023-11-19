@@ -20,7 +20,6 @@ plugins=(git docker aws kubectl laravel ansible wp-cli vagrant terraform)
 
 source $ZSH/oh-my-zsh.sh
 
-
 # COMPOSER LINUX
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
@@ -60,12 +59,8 @@ if [ -e $HOME/.aliases ];
   then source $HOME/.aliases
 fi
 
-
 source ~/.bin/key-bindings.zsh
 
-export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/opt/homebrew/sbin:$PATH
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
-alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
-export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH=/opt/homebrew/bin:$PATH
