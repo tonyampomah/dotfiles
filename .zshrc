@@ -1,21 +1,12 @@
 # Prevent ZSH completion warnings
 ZSH_DISABLE_COMPFIX=true
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load --- if set to "random", it will
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git docker aws kubectl laravel ansible wp-cli vagrant terraform)
 
 source $ZSH/oh-my-zsh.sh
@@ -46,9 +37,8 @@ export npm_config_prefix=~/.node_modules
 export _JAVA_AWT_WM_NONREPARENTING=1
 export STUDIO_JDK=/usr/lib/jvm/java-14-openjdk
 
-
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
+if [ -d "$HOME/.config/bin" ] ;
+  then PATH="$HOME/.config/bin:$PATH"
 fi
 
 if [ -d "$HOME/.local/bin" ] ;
@@ -59,7 +49,7 @@ if [ -e $HOME/.config/aliases ];
   then source $HOME/.config/aliases
 fi
 
-source ~/.bin/key-bindings.zsh
+source ~/.config/bin/key-bindings.zsh
 
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
