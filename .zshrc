@@ -55,8 +55,8 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ -e $HOME/.aliases ];
-  then source $HOME/.aliases
+if [ -e $HOME/.config/aliases ];
+  then source $HOME/.config/aliases
 fi
 
 source ~/.bin/key-bindings.zsh
