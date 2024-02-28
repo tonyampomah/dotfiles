@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/gitignore_global
 [user]
 	name = Tony Ampomah
 	email = tony@arksolutions.it
