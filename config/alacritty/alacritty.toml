@@ -42,7 +42,7 @@ TERM = "xterm-256color"
 size = 16.0
 
 [font.bold]
-family = "JetBrains Mono"
+family = "Operator Mono"
 style = "Light"
 
 [font.glyph_offset]
