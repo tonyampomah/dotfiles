@@ -106,3 +106,6 @@ alias sr="sudo reboot"
 
 #systeminfo
 alias probe="sudo -E hw-probe -all -upload"
+
+#myip
+alias myip='curl ifconfig.co/'
