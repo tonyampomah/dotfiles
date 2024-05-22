@@ -1,4 +1,4 @@
-### tony@arksolustions.it #########################################
+### tony@arksolutions.it #########################################
 IMAPAccount arksolutions
 Host imap.gmail.com
 User tony@arksolutions.it
@@ -23,6 +23,30 @@ Patterns *
 Create Both
 SyncState *
 
+### tony.tayo@theampomahs.com #########################################
+IMAPAccount theampomahs
+Host imap.gmail.com
+User tony.tayo@theampomahs.com
+PassCmd "pass 2Areas/emails/tony.tayo@theampomahs.com"
+SSLType IMAPS
+AuthMechs LOGIN
+CertificateFile ~/.config/.ca-bundle.crt
+
+IMAPStore theampomahs-remote
+Account theampomahs
+
+MaildirStore theampomahs-local
+SubFolders Verbatim
+Path ~/.mail/tony.tayo@theampomahs.com/
+Inbox ~/.mail/tony.tayo@theampomahs.com/Inbox
+Trash ~/.mail/tony.tayo@theampomahs.com/Trash
+
+Channel theampomahs
+Far :theampomahs-remote:
+Near :theampomahs-local:
+Patterns *
+Create Both
+SyncState *
 
 ### tony.ampomah.jw@gmail.com #########################################
 IMAPAccount tony.ampomah.jw-gmail
