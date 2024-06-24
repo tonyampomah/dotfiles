@@ -42,24 +42,24 @@ TERM = "xterm-256color"
 size = 16.0
 
 [font.bold]
-family = "Operator Mono"
+family = "SF Mono"
 style = "Light"
 
 [font.glyph_offset]
 x = 0
-y = 15
+y = 0
 
 [font.italic]
-family = "Dank Mono"
+family = "SF Mono"
 style = "Italic"
 
 [font.normal]
-family = "Dank Mono"
+family = "SF Mono"
 style = "Regular"
 
 [font.offset]
 x = 0
-y = 20
+y = 0
 
 [[keyboard.bindings]]
 action = "Paste"
