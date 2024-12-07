@@ -39,27 +39,27 @@ unfocused_hollow = true
 TERM = "xterm-256color"
 
 [font]
-size = 16.0
+size = 15.0
 
 [font.bold]
-family = "SF Mono"
+family = "Cascadia Code"
 style = "Light"
 
 [font.glyph_offset]
 x = 0
-y = 0
+y = 10
 
 [font.italic]
-family = "SF Mono"
+family = "Cascadia Code"
 style = "Italic"
 
 [font.normal]
-family = "SF Mono"
+family = "Cascadia Code"
 style = "Regular"
 
 [font.offset]
 x = 0
-y = 0
+y = 20
 
 [[keyboard.bindings]]
 action = "Paste"
