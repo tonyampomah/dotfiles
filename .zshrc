@@ -45,11 +45,11 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ -e $HOME/.config/aliases ];
-  then source $HOME/.config/aliases
+if [ -e $HOME/.aliases ];
+  then source $HOME/.aliases
 fi
 
-source ~/.config/bin/key-bindings.zsh
+source ~/.bin/key-bindings.zsh
 
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
