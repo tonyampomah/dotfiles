@@ -1,11 +1,12 @@
 [core]
-	excludesfile = ~/.config/gitignore_global
+	excludesfile = ~/.gitignore_global
 [user]
 	name = Tony Ampomah
 	email = tony@arksolutions.it
 
 [includeIf "gitdir:~/RadiusRepo/"]
     path = ~/RadiusRepo/.gitconfig
+
 [alias]
 	co = checkout
 	br = branch

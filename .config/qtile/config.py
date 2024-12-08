@@ -30,9 +30,9 @@ import re
 import socket
 import subprocess
 from typing import List  # noqa: F401
-from libqtile import layout, bar, widget, hook
+from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from libqtile.widget import Spacer
 #import arcobattery
 
@@ -41,6 +41,9 @@ mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
+myTerm = "alacritty"      # My terminal of choice
+myBrowser = "brave"       # My browser of choice
+myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
 
 
 @lazy.function
@@ -56,8 +59,12 @@ def window_to_next_group(qtile):
         qtile.currentWindow.togroup(qtile.groups[i + 1].name)
 
 keys = [
+    Key([mod], "Return", lazy.spawn(myTerm), desc="Terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn("nautilus"), desc='File Browser'),
+    Key([mod], "space", lazy.spawn("rofi -no-lazy-grab -show drun -modi drun"), desc="Launcher"),
+    Key([mod], "p", lazy.spawn("rofi-pass"), desc="Password manager"),
 
-# Most of our keybindings are in sxhkd file - except these
+    # Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
 
 # SUPER + FUNCTION KEYS
 
@@ -69,11 +76,12 @@ keys = [
 
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
+    Key([mod, "shift"], "e", lazy.spawn("~/.config/rofi/power-menu.sh")),
 
 
 # QTILE LAYOUT KEYS
     Key([mod], "n", lazy.layout.normalize()),
-    Key([mod], "space", lazy.next_layout()),
+    # Key([mod], "space", lazy.next_layout()),
 
 # CHANGE FOCUS
     Key([mod], "Up", lazy.layout.up()),
@@ -184,10 +192,10 @@ keys.extend([
 groups = []
 
 # FOR QWERTY KEYBOARDS
-#group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 
 # FOR AZERTY KEYBOARDS
-group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
+#group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 group_labels = ["", "", "", "", "", "", "", "", "", "",]
@@ -532,9 +540,19 @@ dgroups_app_rules = []
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
 
-
-
 main = None
+
+# hides the top bar when the archlinux-logout widget is opened
+@hook.subscribe.client_new
+def new_client(window):
+    if window.name == "ArchLinux Logout":
+        qtile.hide_show_bar()
+
+# shows the top bar when the archlinux-logout widget is closed
+@hook.subscribe.client_killed
+def logout_killed(window):
+    if window.name == "ArchLinux Logout":
+        qtile.hide_show_bar()
 
 @hook.subscribe.startup_once
 def start_once():
@@ -560,7 +578,7 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules, 
+    *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk

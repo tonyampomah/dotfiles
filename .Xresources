@@ -38,8 +38,3 @@ Xcursor.theme: Bibata-Modern-Classic
 ! white
 *.color7:       #555555
 *.color15:      #e0e3e7
-
-! Polybar Configuration
-polybar.height: 30
-polybar.dpi: 100
-polybar.tray-maxsize: 20

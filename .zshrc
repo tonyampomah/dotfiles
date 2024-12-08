@@ -37,8 +37,8 @@ export npm_config_prefix=~/.node_modules
 export _JAVA_AWT_WM_NONREPARENTING=1
 export STUDIO_JDK=/usr/lib/jvm/java-14-openjdk
 
-if [ -d "$HOME/.config/bin" ] ;
-  then PATH="$HOME/.config/bin:$PATH"
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
 fi
 
 if [ -d "$HOME/.local/bin" ] ;

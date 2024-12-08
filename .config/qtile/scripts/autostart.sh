@@ -6,7 +6,7 @@ function run {
   fi
 }
 
-feh --bg-scale /home/kwamedat/Nextcloud/Photos/Wallpapers/general/0001.jpg &
+feh --bg-scale /home/tonyampomah/Nextcloud/Photos/Wallpapers/general/0001.jpg &
 ############## Keyboard Tweaks ##################
 # Load my custom keyboard binding
 # xmodmap ~/.config/.Xmodmap &
@@ -26,22 +26,18 @@ xset r rate 300 80 &
 setxkbmap -option ctrl:nocaps &
 # make short-pressed Ctrl behave like Escape:
 xcape -e 'Control_L=Escape' &
-
-
-(sleep 2; run $HOME/.config/polybar/launch.sh) &
-
-run sxhkd -c ~/.config/sxhkd/sxhkdrc &
+picom --config $HOME/.config/qtile/scripts/picom.conf &
+# run sxhkd -c ~/.config/sxhkd/sxhkdrc &
 
 ################ Start Utility Apps At Boot Time ##########
-run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-run dunst
-run picom --experimental-backends
-# run xbindkeys -f ~/.xbindkeysrc
-run variety
-run caffeine -a
-run nm-applet
+run variety &
+run nm-applet &
+#run pamac-tray &
+run xfce4-power-manager &
+numlockx on &
+blueberry-tray &
+picom --config $HOME/.config/qtile/scripts/picom.conf &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+run nextcloud &
 ################ Start Apps At Boot Time ###################
-run /usr/bin/emacs --daemon
-run solaar -w hide
-run nextcloud
-run redshift
