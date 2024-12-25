@@ -7,14 +7,14 @@
 {
     "label" : "logout",
     "action" : "killall -9 Hyprland",
-    "text" : "Log Out",
+    "text" : "Exit",
     "keybind" : "e"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend",
     "text" : "Suspend",
-    "keybind" : "u"
+    "keybind" : "s"
 }
 {
     "label" : "reboot",
@@ -26,5 +26,5 @@
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "Power Off",
-    "keybind" : "s"
+    "keybind" : "p"
 }
