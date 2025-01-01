@@ -162,7 +162,7 @@ c.fonts.statusbar = '16pt "SF Mono"'
 
 
 # Setting dark mode
-# config.set('colors.webpage.darkmode.enabled', True)
+config.set('colors.webpage.darkmode.enabled', True)
 
 # Bindings for normal mode
 config.bind('M', 'hint links spawn mpv {hint-url}')
