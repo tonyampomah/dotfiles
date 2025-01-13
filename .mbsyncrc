@@ -5,16 +5,16 @@ User tony@arksolutions.it
 PassCmd "pass 2Areas/emails/tony@arksolutions.it"
 SSLType IMAPS
 AuthMechs LOGIN
-CertificateFile ~/.config/.ca-bundle.crt
+CertificateFile ~/.ca-bundle.crt
 
 IMAPStore arksolutions-remote
 Account arksolutions
 
 MaildirStore arksolutions-local
 SubFolders Verbatim
-Path ~/.mail/tony@arksolutions.it/
-Inbox ~/.mail/tony@arksolutions.it/Inbox
-Trash ~/.mail/tony@arksolutions.it/Trash
+Path ~/Maildir/tony@arksolutions.it/
+Inbox ~/Maildir/tony@arksolutions.it/Inbox
+Trash ~/Maildir/tony@arksolutions.it/Trash
 
 Channel arksolutions
 Far :arksolutions-remote:
@@ -30,16 +30,16 @@ User tony.tayo@theampomahs.com
 PassCmd "pass 2Areas/emails/tony.tayo@theampomahs.com"
 SSLType IMAPS
 AuthMechs LOGIN
-CertificateFile ~/.config/.ca-bundle.crt
+CertificateFile ~/.ca-bundle.crt
 
 IMAPStore theampomahs-remote
 Account theampomahs
 
 MaildirStore theampomahs-local
 SubFolders Verbatim
-Path ~/.mail/tony.tayo@theampomahs.com/
-Inbox ~/.mail/tony.tayo@theampomahs.com/Inbox
-Trash ~/.mail/tony.tayo@theampomahs.com/Trash
+Path ~/Maildir/tony.tayo@theampomahs.com/
+Inbox ~/Maildir/tony.tayo@theampomahs.com/Inbox
+Trash ~/Maildir/tony.tayo@theampomahs.com/Trash
 
 Channel theampomahs
 Far :theampomahs-remote:
