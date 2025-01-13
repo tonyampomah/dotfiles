@@ -3,7 +3,7 @@ IMAPAccount arksolutions
 Host imappro.zoho.com
 User tony@arksolutions.it
 PassCmd "pass 2Areas/emails/tony@arksolutions.it"
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs LOGIN
 CertificateFile ~/.ca-bundle.crt
 
@@ -28,7 +28,7 @@ IMAPAccount theampomahs
 Host imappro.zoho.com
 User tony.tayo@theampomahs.com
 PassCmd "pass 2Areas/emails/tony.tayo@theampomahs.com"
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs LOGIN
 CertificateFile ~/.ca-bundle.crt
 
@@ -44,6 +44,62 @@ Trash ~/Maildir/tony.tayo@theampomahs.com/Trash
 Channel theampomahs
 Far :theampomahs-remote:
 Near :theampomahs-local:
+Patterns *
+Create Both
+SyncState *
+
+### tony.ampomah.jw@gmail.com #########################################
+IMAPAccount tony.ampomah.jw-gmail
+Host imap.gmail.com
+User tony.ampomah.jw@gmail.com
+PassCmd "pass 2Areas/emails/tony.ampomah.jw@gmail.com"
+TLSType IMAPS
+AuthMechs LOGIN
+CertificateFile ~/.ca-bundle.crt
+
+IMAPStore tony.ampomah.jw-gmail-remote
+Account tony.ampomah.jw-gmail
+
+MaildirStore tony.ampomah.jw-gmail-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/Maildir/tony.ampomah.jw@gmail.com/
+Inbox ~/Maildir/tony.ampomah.jw@gmail.com/Inbox
+
+Channel tony.ampomah.jw-gmail
+Far :tony.ampomah.jw-gmail-remote:
+Near :tony.ampomah.jw-gmail-local:
+Patterns *
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+
+### itechytony@gmail #########################################
+IMAPAccount itechytony-gmail
+# Address to connect to
+Host imap.gmail.com
+User itechytony@gmail.com
+PassCmd "pass 2Areas/emails/itechytony@gmail.com"
+TLSType IMAPS
+AuthMechs LOGIN
+CertificateFile ~/.ca-bundle.crt
+
+IMAPStore itechytony-gmail-remote
+Account itechytony-gmail
+
+MaildirStore itechytony-gmail-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/Maildir/itechytony@gmail.com/
+Inbox ~/Maildir/itechytony@gmail.com/Inbox
+
+Channel itechytony-gmail
+Far :itechytony-gmail-remote:
+Near :itechytony-gmail-local:
 Patterns *
 Create Both
 SyncState *
