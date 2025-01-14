@@ -12,9 +12,9 @@ Account arksolutions
 
 MaildirStore arksolutions-local
 SubFolders Verbatim
-Path ~/Maildir/tony@arksolutions.it/
-Inbox ~/Maildir/tony@arksolutions.it/Inbox
-Trash ~/Maildir/tony@arksolutions.it/Trash
+Path ~/Mail/tony@arksolutions.it/
+Inbox ~/Mail/tony@arksolutions.it/Inbox
+Trash ~/Mail/tony@arksolutions.it/Trash
 
 Channel arksolutions
 Far :arksolutions-remote:
@@ -37,9 +37,9 @@ Account theampomahs
 
 MaildirStore theampomahs-local
 SubFolders Verbatim
-Path ~/Maildir/tony.tayo@theampomahs.com/
-Inbox ~/Maildir/tony.tayo@theampomahs.com/Inbox
-Trash ~/Maildir/tony.tayo@theampomahs.com/Trash
+Path ~/Mail/tony.tayo@theampomahs.com/
+Inbox ~/Mail/tony.tayo@theampomahs.com/Inbox
+Trash ~/Mail/tony.tayo@theampomahs.com/Trash
 
 Channel theampomahs
 Far :theampomahs-remote:
@@ -63,8 +63,8 @@ Account tony.ampomah.jw-gmail
 MaildirStore tony.ampomah.jw-gmail-local
 SubFolders Verbatim
 # The trailing "/" is important
-Path ~/Maildir/tony.ampomah.jw@gmail.com/
-Inbox ~/Maildir/tony.ampomah.jw@gmail.com/Inbox
+Path ~/Mail/tony.ampomah.jw@gmail.com/
+Inbox ~/Mail/tony.ampomah.jw@gmail.com/Inbox
 
 Channel tony.ampomah.jw-gmail
 Far :tony.ampomah.jw-gmail-remote:
@@ -94,8 +94,8 @@ Account itechytony-gmail
 MaildirStore itechytony-gmail-local
 SubFolders Verbatim
 # The trailing "/" is important
-Path ~/Maildir/itechytony@gmail.com/
-Inbox ~/Maildir/itechytony@gmail.com/Inbox
+Path ~/Mail/itechytony@gmail.com/
+Inbox ~/Mail/itechytony@gmail.com/Inbox
 
 Channel itechytony-gmail
 Far :itechytony-gmail-remote:
