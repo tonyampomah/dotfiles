@@ -22,11 +22,8 @@ xinput --set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Accel Speed" 1 &
 
 # Increase keyboard key repeat
 xset r rate 300 80 &
-## make CapsLock behave like Ctrl:
-setxkbmap -option ctrl:nocaps &
-## make super key behave like macos
-setxkbmap -option altwin:swap_lalt_lwin &
-setxkbmap -option altwin:swap_ralt_rwin &
+## keyboard tweaks
+setxkbmap -option ctrl:nocaps,altwin:swap_lalt_lwin,altwin:swap_ralt_rwin &
 # make short-pressed Ctrl behave like Escape:
 xcape -e 'Control_L=Escape' &
 
@@ -37,12 +34,13 @@ xcape -e 'Control_L=Escape' &
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run dunst
 run picom --experimental-backends
-# run xbindkeys -f ~/.xbindkeysrc
 run variety
-run caffeine -a
 run nm-applet
 ################ Start Apps At Boot Time ###################
-run /usr/bin/emacs --daemon
-run solaar -w hide
+# run /usr/bin/emacs --daemon
+# run solaar -w hide
 run nextcloud
+run slack
+run emacs
+run brave
 run redshift

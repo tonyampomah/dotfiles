@@ -198,7 +198,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. shiftMask, xK_w),          namedScratchpadAction myScratchPads "webcam")
   , ((modMask .|. shiftMask, xK_Return ),    spawn $ "nautilus")
   -- , ((modMask .|. shiftMask, xK_p ),         spawn $ "maim -s | xclip -selection clipboard -t image/png")
-  , ((modMask .|. shiftMask, xK_e ),         spawn $ "~/.bin/rofi-power-menu")
+  , ((modMask .|. shiftMask, xK_e ),         spawn $ "~/.bin/rofi-launcher-power-menu")
  
 
   -- FUNCTION KEYS
