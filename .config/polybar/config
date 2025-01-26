@@ -12,7 +12,7 @@ inactive = #073642
 
 [bar/main]
 monitor = ${env:MONITOR:}
-dpi = ${xrdb:polybar.dpi}
+; dpi = ${xrdb:xft.dpi}
 width = 100%
 height = ${xrdb:polybar.height}
 background = ${colors.background}
