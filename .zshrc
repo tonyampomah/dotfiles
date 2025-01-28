@@ -55,3 +55,5 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+
+neofetch
