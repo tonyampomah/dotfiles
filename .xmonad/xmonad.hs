@@ -187,6 +187,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_Return),  spawn $ "alacritty")
   , ((modMask, xK_space),   spawn $ "~/.bin/rofi-launcher")
   , ((modMask, xK_p),       spawn $ "~/.bin/rofi-launcher-pass")
+  , ((modMask, xK_b),       spawn $ "~/.bin/rofi-launcher-bookmark")
   , ((modMask, xK_g),       sendMessage $ ToggleGaps)
 
 
