@@ -40,7 +40,4 @@ run nm-applet
 # run /usr/bin/emacs --daemon
 # run solaar -w hide
 run nextcloud
-run slack
-run emacs
-run brave
 run redshift
