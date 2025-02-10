@@ -312,9 +312,6 @@ mods = "Command"
 action = "PasteSelection"
 mouse = "Middle"
 
-[terminal.shell]
-program = "/bin/zsh"
-
 [window.dimensions]
 columns = 140
 lines = 30

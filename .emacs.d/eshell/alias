@@ -1,0 +1,54 @@
+# General
+alias c clear $*
+alias clear clear-scrollback $*
+alias e exit $*
+alias l ls -lh $*
+alias ll 'ls -l $*'
+alias myip 'curl ifconfig.co/'
+alias o 'open .'
+
+# Documents
+alias r1 'cd ~/Repo/1Projects'
+alias r2 'cd ~/Repo/2Areas'
+alias r3 'cd ~/Repo/3Resources'
+alias r4 'cd ~/Repo/4Archives'
+alias rw1 'cd ~/RadiusRepo/1Projects'
+alias rw2 'cd ~/RadiusRepo/2Areas'
+alias rw3 'cd ~/RadiusRepo/3Resources'
+alias rw4 'cd ~/RadiusRepo/4Archives'
+alias d1 'cd ~/Documents/Personal/1Projects'
+alias d2 'cd ~/Documents/Personal/2Areas'
+alias d3 'cd ~/Documents/Personal/3Resources'
+alias d4 'cd ~/Documents/Personal/4Archives'
+alias dd 'cd ~/Downloads'
+alias dD 'cd ~/Documents'
+
+# PHP Test
+alias t vendor/bin/phpunit $*
+alias ts vendor/bin/phpunit --order-by=defects --stop-on-defect $*
+alias tc vendor/bin/phpunit --coverage-html='tests/coverage/html' $*
+alias tf vendor/bin/phpunit --filter $*
+
+# Composer
+alias ci composer install $*
+alias cu composer update $*
+alias cda composer dump-autoload $*
+
+# Laravel
+alias la php artisan $*
+alias lds php artisan db:seed $*
+alias lm php artisan migrate $*
+alias lmf php artisan migrate:fresh $*
+alias lmfs php artisan migrate:fresh --seed $*
+alias lrl php artisan route:list $*
+alias lt php artisan tinker $*
+
+# Docker
+alias ds 'docker ps'
+alias dcu 'docker-compose up -d'
+alias dcub 'docker-compose up -d --build'
+alias dcs 'docker-compose stop'
+alias dcd 'docker-compose down'
+alias dcr 'docker-compose restart'
+alias dcl 'docker-compose logs'
+alias dex 'docker exec -it'

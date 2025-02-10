@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: public static function
+# key: psf
+# --
+public static function $1($2)$3
+{
+  $0
+}

@@ -1,0 +1,19 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: php setter and getter
+# key: sg
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+
+private $${1:id};
+
+public function set${1:$(upcase-initials yas-text)}($$1): ${3:className}
+{
+    $this->$1 = $$1;
+
+    return $this;
+}
+
+public function get${1:$(upcase-initials yas-text)}(): ${2:type}
+{
+    return $this->$1;
+}

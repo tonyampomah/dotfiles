@@ -1,0 +1,16 @@
+.*
+!.gitignore
+!eshell/alias
+!lisp
+!emacs.org
+!README.md
+!Makefile
+!init.el
+!manual
+!resources
+!snippets
+/straight
+/eln-cache/
+/lsp-cache/
+/var/
+/elpa/

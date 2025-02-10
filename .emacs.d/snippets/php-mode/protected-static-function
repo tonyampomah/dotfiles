@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: protected static function
+# key: prosf
+# --
+protected static function $1($2)$3
+{
+  $0
+}
