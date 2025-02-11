@@ -16,9 +16,6 @@
 (use-package ztree
   :defer t)
 
-(use-package nix-mode
-  :defer t)
-
 (kd/leader-key-def
   "d"  '(:ignore t :which-key "docker")
   "di" 'docker-images

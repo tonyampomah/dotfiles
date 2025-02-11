@@ -88,7 +88,7 @@
   users.users.tonyampomah = {
     isNormalUser = true;
     description = "Tony Ampomah";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       #  thunderbird
       nextcloud-client
@@ -104,7 +104,7 @@
       brave
       kitty
       alacritty
-      stow
+      google-chrome
     ];
   };
 
@@ -151,9 +151,17 @@
      rofi-pass-wayland
      rofi-calc
      surfraw
-     alacritty
      dunst
      libnotify
+     stow
+     emacsPackages.mu4e
+     whitesur-icon-theme
+     whitesur-cursors
+     ansible
+     php
+     zip
+     unzip
+     neofetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -185,4 +193,13 @@
 
   xdg.portal.enable =  true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  # Enabling docker
+  virtualisation.docker.enable = true;
+
+  # use docker without Root access (Rootless docker)
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 }

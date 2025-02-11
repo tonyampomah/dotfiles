@@ -106,6 +106,7 @@
 (require 'init-finance)
 (require 'init-org-mode)
 (require 'init-diagrams)
+(require 'init-nix)
 
 ;; Applications
 (kd/leader-key-def
