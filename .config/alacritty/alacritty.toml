@@ -317,29 +317,32 @@ columns = 140
 lines = 30
 # XTerm's default colors
 
+# iTerm2 Material Design - Palenight theme for Alacritty
+# Source  https//github.com/JonathanSpeek/palenight-iterm2
+
 # Default colors
 [colors.primary]
-background = '#000000'
-foreground = '#ffffff'
+background = '#292d3e'
+foreground = '#d0d0d0'
 
 # Normal colors
 [colors.normal]
-black   = '#000000'
-red     = '#cd0000'
-green   = '#00cd00'
-yellow  = '#cdcd00'
-blue    = '#0000ee'
-magenta = '#cd00cd'
-cyan    = '#00cdcd'
-white   = '#e5e5e5'
+black   = '#292d3e'
+red     = '#f07178'
+green   = '#c3e88d'
+yellow  = '#ffcb6b'
+blue    = '#82aaff'
+magenta = '#c792ea'
+cyan    = '#89ddff'
+white   = '#d0d0d0'
 
 # Bright colors
 [colors.bright]
-black   = '#7f7f7f'
-red     = '#ff0000'
-green   = '#00ff00'
-yellow  = '#ffff00'
-blue    = '#5c5cff'
-magenta = '#ff00ff'
-cyan    = '#00ffff'
+black   = '#434758'
+red     = '#ff8b92'
+green   = '#ddffa7'
+yellow  = '#ffe585'
+blue    = '#9cc4ff'
+magenta = '#e1acff'
+cyan    = '#a3f7ff'
 white   = '#ffffff'
