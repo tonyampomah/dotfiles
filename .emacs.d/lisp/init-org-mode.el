@@ -653,6 +653,7 @@
   "e" 'org-export-dispatch
   "n" 'org-narrow-to-element
   "w" 'widen
+  "q" 'org-set-tags-command
   "r" 'org-refile)
 
 (kd/my-local-leader-def 'normal org-agenda-mode-map
