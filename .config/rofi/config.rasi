@@ -1,5 +1,5 @@
 configuration {
-    font: "Cantarell 14";
+    font: "Cantarell 16";
     show-icons: true;
     icon-theme: "Papirus";
     display-drun: "";
