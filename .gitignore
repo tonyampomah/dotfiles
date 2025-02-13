@@ -5,3 +5,4 @@
 /.local/share/*
 !/.local/share/applications
 /.xmonad/build-x86_64-linux/
+/nohup.out
