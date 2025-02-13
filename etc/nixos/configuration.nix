@@ -171,6 +171,15 @@
     nwg-look
     cmus
     ncmpcpp
+    whatsie
+  ];
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    # noto-fonts-emoji
+    # fira-code
+    jetbrains-mono
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
