@@ -6,6 +6,6 @@ configuration {
     drun-display-format: "{name}";
     disable-history: false;
     sidebar-mode: false;
-    dpi: 200;
+    dpi: 120;
 }
 @theme "theme"

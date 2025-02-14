@@ -174,6 +174,7 @@
     whatsie
     yarn-berry
     lsof
+    brightnessctl
   ];
 
   fonts.packages = with pkgs; [
