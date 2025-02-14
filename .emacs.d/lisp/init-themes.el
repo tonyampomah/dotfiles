@@ -8,7 +8,7 @@
 (straight-use-package 'doom-themes)
 
 ;; (load-theme 'modus-vivendi-deuteranopia t)
-(load-theme 'doom-palenight t)
+(load-theme 'doom-tomorrow-night t)
 
 
 (provide 'init-themes)
