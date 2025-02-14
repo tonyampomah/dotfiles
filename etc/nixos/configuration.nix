@@ -172,6 +172,8 @@
     cmus
     ncmpcpp
     whatsie
+    yarn-berry
+    lsof
   ];
 
   fonts.packages = with pkgs; [
@@ -214,12 +216,6 @@
 
   # Enabling docker
   virtualisation.docker.enable = true;
-
-  # use docker without Root access (Rootless docker)
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
 
   virtualisation.waydroid.enable = true;
 }
