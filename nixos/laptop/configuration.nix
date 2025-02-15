@@ -103,87 +103,90 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    nextcloud-client
-    emacs
-    android-file-transfer
-    calibre
-    audacity
-    zoom-us
-    slack
-    vscode
-    texliveFull
-    manrope
-    brave
-    kitty
     alacritty
-    google-chrome
-    dbeaver-bin
-    vim
-    wget
-    git
-    mpv
-    mpd
-    cascadia-code
-    mu
-    pandoc
+    android-file-transfer
+    ansible
     aspell
-    ledger
-    ripgrep
-    isync
-    languagetool
-    cmake
-    gnumake
-    rofi-wayland
-    rofi-emoji-wayland
-    htop
-    cmatrix
-    zsh
-    oh-my-zsh
+    aspellDicts.en
+    aspellDicts.en-computers
+    aspellDicts.en-science
+    audacity
     awscli2
+    brave
+    brightnessctl
+    calibre
+    cascadia-code
+    cmake
+    cmatrix
+    cmus
+    dbeaver-bin
+    dunst
+    emacs
+    emacsPackages.mu4e
+    gcc
+    git
+    gnumake
+    gnupg
+    google-chrome
+    grim
+    htop
     hyprland
     hyprlock
-    swww
     hyprpaper
-    wlogout
-    waybar
-    grim
-    pass
-    gnupg
-    rofi-pass-wayland
-    rofi-calc
-    surfraw
-    dunst
+    isync
+    killall
+    kitty
+    languagetool
+    ledger
+    libgcc
     libnotify
+    libtool
+    libvterm
+    lsof
+    manrope
+    mpc
+    mpd
+    mpv
+    mu
+    ncmpcpp
+    neofetch
+    nextcloud-client
+    nwg-look
+    oh-my-zsh
+    palenight-theme
+    pandoc
+    pass
+    php
+    python3
+    ranger
+    ripgrep
+    rofi-calc
+    rofi-emoji-wayland
+    rofi-pass-wayland
+    rofi-wayland
+    slack
+    slurp
     stow
-    emacsPackages.mu4e
-    whitesur-icon-theme
+    surfraw
+    swaynotificationcenter
+    swww
+    texliveFull
+    unzip
+    vim
+    vscode
+    waybar
+    waypaper
+    wget
+    whatsie
     whitesur-cursors
     whitesur-gtk-theme
-    palenight-theme
-    ansible
-    php
-    zip
-    unzip
-    neofetch
-    waypaper
-    swaynotificationcenter
-    killall
-    nwg-look
-    cmus
-    ncmpcpp
-    whatsie
+    whitesur-icon-theme
+    wl-clipboard
+    wlogout
     yarn-berry
-    lsof
-    brightnessctl
-    aspellDicts.en
-    aspellDicts.en-science
-    aspellDicts.en-computers
-    python3
-    libgcc
-    gcc
-    libvterm
-    libtool
-    ranger
+    zip
+    zoom-us
+    zsh
   ];
 
   fonts.packages = with pkgs; [
