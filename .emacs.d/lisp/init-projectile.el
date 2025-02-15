@@ -13,9 +13,7 @@
 					 "~/RadiusRepo/3Resources"
 					 "~/RadiusRepo/2Areas"
 					 "~/RadiusRepo/1Projects"
-					 "~/Repo/3Resources"
-					 "~/Repo/2Areas"
-					 "~/Repo/1Projects"
+					 "~/Repo"
 					 "~/"
 					 ))
   (setq projectile-completion-system 'ivy)
