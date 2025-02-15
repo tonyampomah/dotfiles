@@ -175,6 +175,8 @@
     yarn-berry
     lsof
     brightnessctl
+    aspellDicts.en
+    python3
   ];
 
   fonts.packages = with pkgs; [
