@@ -183,6 +183,7 @@
     gcc
     libvterm
     libtool
+    ranger
   ];
 
   fonts.packages = with pkgs; [
