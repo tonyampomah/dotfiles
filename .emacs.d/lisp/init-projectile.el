@@ -16,6 +16,7 @@
 					 "~/Repo/3Resources"
 					 "~/Repo/2Areas"
 					 "~/Repo/1Projects"
+					 "~/"
 					 ))
   (setq projectile-completion-system 'ivy)
   (setq projectile-switch-project-action #'projectile-dired)

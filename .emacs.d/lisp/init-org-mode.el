@@ -633,13 +633,13 @@
       ;;; <leader> n --- notes
   "nf" '(lambda() (interactive) (org-roam-node-find))
   "ng" '(lambda() (interactive) (org-roam-graph))
-  "ni" '(lambda() (interactive) (find-file "~/org/inbox.org"))
+  "ni" '(lambda() (interactive) (find-file "~/org/personal-inbox.org"))
   "nl" '(lambda() (interactive) (org-roam-buffer-toggle))
   "nc" '(lambda() (interactive) (org-roam-capture))
   "nn" '(lambda() (interactive) (org-capture))
   "nt" '(lambda() (interactive) (org-roam-dailies-capture-today))
-  "np" '(lambda() (interactive) (find-file "~/org/todo.org"))
-  "nh" '(lambda() (interactive) (find-file "~/org/habits.org"))
+  "np" '(lambda() (interactive) (find-file "~/org/personal-todo.org"))
+  "nr" '(lambda() (interactive) (find-file "~/org/personal-routine.org"))
   "na" 'org-agenda
   "nd" 'kd/week-view)
 
