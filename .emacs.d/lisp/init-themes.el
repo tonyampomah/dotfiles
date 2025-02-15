@@ -6,9 +6,10 @@
 ;; (straight-use-package 'color-theme-sanityinc-tomorrow)
 (straight-use-package 'modus-themes)
 (straight-use-package 'doom-themes)
+(straight-use-package 'base16-theme)
 
 ;; (load-theme 'modus-vivendi-deuteranopia t)
-(load-theme 'doom-tomorrow-night t)
+(load-theme 'base16-eris t)
 
 
 (provide 'init-themes)
