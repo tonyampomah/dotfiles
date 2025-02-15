@@ -176,7 +176,13 @@
     lsof
     brightnessctl
     aspellDicts.en
+    aspellDicts.en-science
+    aspellDicts.en-computers
     python3
+    libgcc
+    gcc
+    libvterm
+    libtool
   ];
 
   fonts.packages = with pkgs; [
@@ -186,6 +192,8 @@
     # fira-code
     jetbrains-mono
   ];
+
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
