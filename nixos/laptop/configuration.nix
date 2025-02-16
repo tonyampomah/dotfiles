@@ -187,6 +187,7 @@
     zip
     zoom-us
     zsh
+    nodePackages.prettier
   ];
 
   fonts.packages = with pkgs; [
