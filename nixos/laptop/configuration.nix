@@ -215,6 +215,7 @@
     zip
     zoom-us
     zsh
+    fzf
     nodePackages.prettier
   ];
 
