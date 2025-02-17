@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+   [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -83,6 +83,34 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  users.defaultUserShell=pkgs.zsh;
+
+  programs.zsh.enable = true;
+
+  users.users.tonyampomah.shell = pkgs.zsh; 
+
+  # enable zsh and oh my zsh
+  programs = {
+    zsh = {
+      # enable = true;
+      autosuggestions.enable = true;
+      zsh-autoenv.enable = true;
+      syntaxHighlighting.enable = true;
+      ohMyZsh = {
+        enable = true;
+        theme = "robbyrussell";
+        plugins = [
+          "git"
+          "npm"
+          "history"
+          "node"
+          "rust"
+          "deno"
+        ];
+      };
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tonyampomah = {
@@ -197,8 +225,6 @@
     # fira-code
     jetbrains-mono
   ];
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
