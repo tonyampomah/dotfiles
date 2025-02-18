@@ -1,11 +1,8 @@
 configuration {
-    font: "Cantarell 16";
-    show-icons: true;
-    icon-theme: "Papirus";
     display-drun: "";
     drun-display-format: "{name}";
     disable-history: false;
     sidebar-mode: false;
-    dpi: 120;
+    dpi: 150;
 }
-@theme "theme"
+@theme "config/launcher"

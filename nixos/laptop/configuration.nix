@@ -15,6 +15,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # lxqt.lxqt-policykit
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -218,6 +221,7 @@
     nodePackages.prettier
     vscode
     libvterm-neovim
+    wirelesstools
   ];
 
   fonts.packages = with pkgs; [
