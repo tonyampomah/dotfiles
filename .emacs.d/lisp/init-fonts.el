@@ -9,8 +9,8 @@
 (defvar kd/variable-pitch-font "Cantarell"
   "The font used for `variable-pitch' face.")
 
-(set-face-attribute 'default nil :font kd/fixed-pitch-font :height 150)
-(set-face-attribute 'fixed-pitch nil :font kd/fixed-pitch-font :height 150)
+(set-face-attribute 'default nil :font kd/fixed-pitch-font :height 100)
+(set-face-attribute 'fixed-pitch nil :font kd/fixed-pitch-font :height 100)
 (set-face-attribute 'variable-pitch nil :font kd/variable-pitch-font)
 
 ;; Set the font face based on platform

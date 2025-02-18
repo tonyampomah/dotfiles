@@ -50,6 +50,7 @@
   ],
 
   "modules-right": [
+    "tray",
     "custom/media",         // media info
 
     "custom/left6",
@@ -358,6 +359,10 @@
     "max-length": 35
   },
 
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+  },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰝟 {volume}%",
