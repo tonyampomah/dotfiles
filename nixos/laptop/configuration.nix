@@ -223,8 +223,6 @@
   fonts.packages = with pkgs; [
     noto-fonts
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    # noto-fonts-emoji
-    # fira-code
     jetbrains-mono
   ];
 

@@ -7,9 +7,10 @@
 (straight-use-package 'modus-themes)
 (straight-use-package 'doom-themes)
 (straight-use-package 'base16-theme)
+(straight-use-package 'catppuccin-theme)
 
 ;; (load-theme 'modus-vivendi-deuteranopia t)
-(load-theme 'base16-eris t)
+(load-theme 'catppuccin t)
 
 
 (provide 'init-themes)
