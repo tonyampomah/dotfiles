@@ -7,7 +7,10 @@
 (use-package web-mode
   :defer t
   :mode (
+	 ("\\.js\\'" .  web-mode)
 	 ("\\.jsx\\'" .  web-mode)
+	 ("\\.ts\\'" .  web-mode)
+	 ("\\.tsx\\'" .  web-mode)
 	 ("\\.vue\\'" . web-mode)
 	 ("\\.hbs\\'" . web-mode)
 	 ("\\.html\\'" . web-mode))

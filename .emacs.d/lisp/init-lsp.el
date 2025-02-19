@@ -6,10 +6,9 @@
   :ensure t
   :hook ((lsp-mode . lsp-diagnostics-mode)
          (lsp-mode . lsp-enable-which-key-integration)
-         ((tsx-ts-mode
-           typescript-ts-mode
-           php-mode
-           js-ts-mode) . lsp-deferred))
+         ((
+           web-mode
+           php-mode) . lsp-deferred))
   :custom
   (lsp-keymap-prefix "C-c l")           ; Prefix for LSP actions
   (lsp-completion-provider :none)       ; Using Corfu as the provider
@@ -130,11 +129,7 @@
   (dolist (tw-major-mode
            '(css-mode
              css-ts-mode
-             typescript-mode
-             typescript-ts-mode
-             tsx-ts-mode
-             js2-mode
-             js-ts-mode
+             web-mode
              clojure-mode))
     (add-to-list 'lsp-tailwindcss-major-modes tw-major-mode)))
 
