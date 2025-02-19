@@ -107,5 +107,8 @@
 
 (straight-use-package 'ob-tmux)
 
+
+(global-set-key (kbd "M-S-<return>") 'projectile-run-vterm)
+
 (provide 'init-terminal)
 ;;; init-terminal.el ends here

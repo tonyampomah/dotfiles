@@ -58,7 +58,6 @@
            (require 'fish-completion nil t))
   (global-fish-completion-mode))
 
-(global-set-key (kbd "§") #'eshell-toggle)
 (global-set-key (kbd "M-<return>") 'projectile-run-eshell)
 
 (provide 'init-eshell)
