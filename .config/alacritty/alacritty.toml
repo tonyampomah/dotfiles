@@ -324,3 +324,7 @@ mouse = "Middle"
 columns = 140
 lines = 30
 
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-l"]
+

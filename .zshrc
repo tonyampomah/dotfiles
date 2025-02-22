@@ -7,9 +7,9 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-plugins=(git docker aws kubectl laravel ansible wp-cli vagrant terraform)
+plugins=(git history docker aws kubectl laravel ansible wp-cli vagrant terraform)
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # COMPOSER LINUX
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
