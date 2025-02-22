@@ -364,7 +364,7 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory "~/Notes")
+  (org-roam-directory "~/org/Notes")
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
 	 ("C-c n g" . org-roam-graph)
