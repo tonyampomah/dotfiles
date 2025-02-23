@@ -36,3 +36,5 @@ staging.cms.newearswickmobility.co.uk https://staging.cms.newearswickmobility.co
 staging.newearswickmobility.co.uk https://staging.newearswickmobility.co.uk/
 switch.theampomahs.local http://192.168.1.2/cgi-bin/dispatcher.cgi?cmd=0
 unraid.theampomahs.com https://unraid.theampomahs.com
+storybook.arksolutions.localhost http://localhost:9009
+storybook.arksolutions.it https://storybook.arksolutions.it
