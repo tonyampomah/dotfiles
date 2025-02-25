@@ -11,15 +11,10 @@
 			 "~/org/calendar/ecal.org"
 			 "~/org/calendar/jcal.org"
 			 "~/org/calendar/pcal.org"
-			 "~/org/personal-inbox.org"
-			 "~/org/personal-todo.org"
-			 "~/org/personal-routine.org"
-			 "~/org-work/work-todo.org"
-			 "~/org-work/work-inbox.org"
-			 "~/org-work/work-routine.org"
+			 "~/org/inbox.org"
+			 "~/org/todo.org"
+			 "~/org/routine.org"
 			 ))
-
-
 
 (defun kd/pretty-org-agenda ()
   (variable-pitch-mode 1)
@@ -251,7 +246,7 @@
 
 (setq org-capture-templates
       '(
-	("i" "Personal Inbox" entry (file "~/org/personal-inbox.org")
+	("i" "Personal Inbox" entry (file "~/org/inbox.org")
 	 "* TODO %?\n %i\n")
 	("w" "Work Inbox" entry (file "~/org-work/work-inbox.org")
 	 "* TODO %?\n %i\n")
@@ -633,13 +628,13 @@
       ;;; <leader> n --- notes
   "nf" '(lambda() (interactive) (org-roam-node-find))
   "ng" '(lambda() (interactive) (org-roam-graph))
-  "ni" '(lambda() (interactive) (find-file "~/org/personal-inbox.org"))
+  "ni" '(lambda() (interactive) (find-file "~/org/inbox.org"))
   "nl" '(lambda() (interactive) (org-roam-buffer-toggle))
   "nc" '(lambda() (interactive) (org-roam-capture))
   "nn" '(lambda() (interactive) (org-capture))
   "nt" '(lambda() (interactive) (org-roam-dailies-capture-today))
-  "np" '(lambda() (interactive) (find-file "~/org/personal-todo.org"))
-  "nr" '(lambda() (interactive) (find-file "~/org/personal-routine.org"))
+  "np" '(lambda() (interactive) (find-file "~/org/todo.org"))
+  "nr" '(lambda() (interactive) (find-file "~/org/routine.org"))
   "na" 'org-agenda
   "nd" 'kd/week-view)
 
