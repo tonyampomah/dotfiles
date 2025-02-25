@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-plugins=(git history docker aws kubectl laravel ansible wp-cli vagrant terraform)
+plugins=(git history node docker aws laravel ansible wp-cli vagrant npm yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,3 +55,5 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+
+source <(fzf --zsh)
