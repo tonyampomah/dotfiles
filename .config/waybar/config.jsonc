@@ -8,7 +8,6 @@
   // === Positions ===
 
   "modules-left": [
-    "custom/ws",            // window icon
     "custom/left1",
 
     "hyprland/workspaces",  // workspaces
@@ -21,7 +20,6 @@
   "modules-center": [
     "custom/paddc",
     "custom/left2",
-    "custom/cpuinfo",       // temperature
 
     "custom/left3",
     "memory",               // memory
@@ -43,8 +41,8 @@
     "clock#date",           // date
     "custom/right4",
 
-    "custom/wifi",          // wi-fi
-    "bluetooth",            // bluetooth
+    // "custom/wifi",          // wi-fi
+    // "bluetooth",            // bluetooth
     "custom/update",        // system update
     "custom/right5"
   ],
