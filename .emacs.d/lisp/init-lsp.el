@@ -59,6 +59,7 @@
   :init
   (setq lsp-use-plists t)
   (setq lsp-auto-guess-root t)
+  (setq lsp-apply-edits-after-file-operations nil) ; Please don't modify tsconfig file on save
 
   (setq lsp-use-plists t)
   ;; Initiate https://github.com/blahgeek/emacs-lsp-booster for performance
