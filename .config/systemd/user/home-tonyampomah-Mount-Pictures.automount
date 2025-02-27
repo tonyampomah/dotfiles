@@ -2,7 +2,7 @@
   Description=Automount Pictures
 
 [Automount]
-  Where=/home/kwamedat/Mount/Pictures
+  Where=/home/tonyampomah/Mount/Pictures
 
 [Install]
   WantedBy=multi-user.target

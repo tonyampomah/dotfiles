@@ -2,7 +2,7 @@
   Description=Automount Iso
 
 [Automount]
-  Where=/home/kwamedat/Mount/Iso
+  Where=/home/tonyampomah/Mount/Iso
 
 [Install]
   WantedBy=multi-user.target

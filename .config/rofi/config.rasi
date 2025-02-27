@@ -3,6 +3,6 @@ configuration {
     drun-display-format: "{name}";
     disable-history: false;
     sidebar-mode: false;
-    dpi: 150;
+    dpi: 200;
 }
 @theme "config/launcher"

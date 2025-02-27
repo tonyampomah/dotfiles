@@ -5,9 +5,9 @@
 
 [Mount]
   What=//192.168.1.3/Iso
-  Where=/home/kwamedat/Mount/Iso
+  Where=/home/tonyampomah/Mount/Iso
   Type=cifs
-  Options=_netdev,credentials=/home/kwamedat/Mount/.server_creds,rw,file_mode=0777,dir_mode=0777
+  Options=_netdev,credentials=/home/tonyampomah/Mount/.server_creds,rw,file_mode=0777,dir_mode=0777
   DirectoryMode=0700
 
 [Install]

@@ -1,4 +1,4 @@
-* kwamedat/dotfiles
+* tonyampomah/dotfiles
 Stores all my =dotfiles= configuration
 
 - .Xresources

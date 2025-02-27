@@ -2,7 +2,7 @@
   Description=Automount Videos
 
 [Automount]
-  Where=/home/kwamedat/Mount/Videos
+  Where=/home/tonyampomah/Mount/Videos
 
 [Install]
   WantedBy=multi-user.target

@@ -2,7 +2,7 @@
   Description=Automount Downloads
 
 [Automount]
-  Where=/home/kwamedat/Mount/Shared
+  Where=/home/tonyampomah/Mount/Shared
 
 [Install]
   WantedBy=multi-user.target
