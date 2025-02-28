@@ -19,6 +19,14 @@
 ;; Configure the function to use for sending mail
 (setq message-send-mail-function 'smtpmail-send-it)
 
+(setq mu4e-bookmarks
+  '((:name "Unread messages" :query "flag:unread AND maildir:/Inbox" :key ?u)
+    (:name "Today's messages" :query "date:today..now" :key ?t)
+    (:name "The Boss" :query "from:tayo" :key ?w)
+    (:name "Last 7 days" :query "date:7d..now" :hide-unread t :key ?w)
+    (:name "Messages with images" :query "mime:image/*" :key ?p)))
+
+
 (setq mu4e-contexts
       (list
        (make-mu4e-context
@@ -33,9 +41,15 @@
                 (smtpmail-smtp-server  . "smtppro.zoho.com")
                 (smtpmail-smtp-service . 465)
                 (smtpmail-stream-type  . ssl)
+		(mu4e-maildir-shortcuts . ( ("/tony@arksolutions.it/INBOX"    . ?i)
+					    ("/tony@arksolutions.it/Sent"     . ?s)
+					    ("/tony@arksolutions.it/Trash"    . ?t)
+					    ("/tony@arksolutions.it/Archives" . ?a)
+					    ("/tony@arksolutions.it/Drafts"   . ?d)
+					    ))
                 (mu4e-drafts-folder  . "/tony@arksolutions.it/Drafts")
                 (mu4e-sent-folder  . "/tony@arksolutions.it/Sent Mail")
-                (mu4e-refile-folder  . "/tony@arksolutions.it/All Mail")
+                (mu4e-refile-folder  . "/tony@arksolutions.it/Archive")
                 (mu4e-trash-folder  . "/tony@arksolutions.it/Trash")))
 
        (make-mu4e-context
@@ -50,9 +64,15 @@
                 (smtpmail-smtp-server  . "smtp.zoho.com")
                 (smtpmail-smtp-service . 465)
                 (smtpmail-stream-type  . ssl)
+		(mu4e-maildir-shortcuts . ( ("/tony.tayo@theampomahs.com/INBOX"    . ?i)
+					    ("/tony.tayo@theampomahs.com/Sent"     . ?s)
+					    ("/tony.tayo@theampomahs.com/Trash"    . ?t)
+					    ("/tony.tayo@theampomahs.com/Archives" . ?a)
+					    ("/tony.tayo@theampomahs.com/Drafts"   . ?d)
+					    ))
                 (mu4e-drafts-folder  . "/tony.tayo@theampomahs.com/Drafts")
                 (mu4e-sent-folder  . "/tony.tayo@theampomahs.com/Sent")
-                (mu4e-refile-folder  . "/tony.tayo@theampomahs.com/All Mail")
+                (mu4e-refile-folder  . "/tony.tayo@theampomahs.com/Archive")
                 (mu4e-trash-folder  . "/tony.tayo@theampomahs.com/Trash")))
 
        (make-mu4e-context
@@ -67,6 +87,12 @@
                 (smtpmail-smtp-server  . "smtp.gmail.com")
                 (smtpmail-smtp-service . 465)
                 (smtpmail-stream-type  . ssl)
+		(mu4e-maildir-shortcuts . ( ("/itechytony@gmail.com/Inbox"    . ?i)
+					    ("/itechytony@gmail.com/[Gmail]/Sent Mail"     . ?s)
+					    ("/itechytony@gmail.com/[Gmail]/Trash"    . ?t)
+					    ("/itechytony@gmail.com/[Gmail]/All Mail" . ?a)
+					    ("/itechytony@gmail.com/[Gmail]/Drafts"   . ?d)
+					    ))
                 (mu4e-drafts-folder  . "/itechytony@gmail.com/[Gmail]/Drafts")
                 (mu4e-sent-folder  . "/itechytony@gmail.com/[Gmail]/Sent Mail")
                 (mu4e-refile-folder  . "/itechytony@gmail.com/[Gmail]/All Mail")
@@ -84,6 +110,12 @@
                 (smtpmail-smtp-server  . "smtp.gmail.com")
                 (smtpmail-smtp-service . 465)
                 (smtpmail-stream-type  . ssl)
+		(mu4e-maildir-shortcuts . ( ("/tony.ampomah.jw@gmail.com/Inbox"    . ?i)
+					    ("/tony.ampomah.jw@gmail.com/[Gmail]/Sent Mail"     . ?s)
+					    ("/tony.ampomah.jw@gmail.com/[Gmail]/Trash"    . ?t)
+					    ("/tony.ampomah.jw@gmail.com/[Gmail]/All Mail" . ?a)
+					    ("/tony.ampomah.jw@gmail.com/[Gmail]/Drafts"   . ?d)
+					    ))
                 (mu4e-drafts-folder  . "/tony.ampomah.jw@gmail.com/[Gmail]/Drafts")
                 (mu4e-sent-folder  . "/tony.ampomah.jw@gmail.com/[Gmail]/Sent Mail")
                 (mu4e-refile-folder  . "/tony.ampomah.jw@gmail.com/[Gmail]/All Mail")
@@ -91,13 +123,6 @@
 
 
        ))
-
-(setq mu4e-maildir-shortcuts
-      '(("/tony@arksolutions.it/Inbox"             . ?i)
-        ("/tony@arksolutions.it/Sent Mail" . ?s)
-        ("/tony@arksolutions.it/Trash"     . ?t)
-        ("/tony@arksolutions.it/Drafts"    . ?d)
-        ("/tony@arksolutions.it/All Mail"  . ?a)))
 
 (setq org-mime-export-options '(:section-numbers nil
 						 :with-author nil
