@@ -10,7 +10,7 @@
 	ledger-use-iso-dates nil
 	ledger-add-transaction-prompt-for-text nil
 	ledger-mode-should-check-version nil
-	ledger-post-amount-alignment-column 60)
+	ledger-post-amount-alignment-column 56)
   
   :mode ("\\.\\(ledger\\|ldg\\|dat\\)\\'" . ledger-mode)
   :custom
