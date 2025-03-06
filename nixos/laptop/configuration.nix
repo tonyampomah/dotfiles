@@ -161,7 +161,8 @@
     cmatrix
     cmus
     dbeaver-bin
-    emacs
+    # emacs
+    emacsPackages.emacs
     emacsPackages.mu4e
     gcc
     git
@@ -235,6 +236,9 @@
     vscode
     libvterm-neovim
     wirelesstools
+    pavucontrol
+    rhythmbox
+    devenv
   ];
 
   fonts.packages = with pkgs; [
