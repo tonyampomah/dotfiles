@@ -22,6 +22,7 @@
 (global-set-key (kbd "<escape>")      'keyboard-escape-quit)
 (global-set-key (kbd "s-w") (kbd "C-x 0"))
 (global-set-key (kbd "s-P") 'projectile-switch-project)
+(global-set-key (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-q") 'save-buffers-kill-emacs)
 (global-set-key (kbd "s-k") 'kill-buffer)
 (global-set-key (kbd "s-x") 'kill-region)
