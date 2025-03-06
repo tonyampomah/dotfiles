@@ -231,6 +231,7 @@
     zsh
     fzf
     nodePackages.prettier
+    nodejs
     vscode
     libvterm-neovim
     wirelesstools
