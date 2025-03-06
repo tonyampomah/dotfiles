@@ -97,6 +97,7 @@
 (require 'init-typescript)
 (require 'init-dotenv)
 (require 'init-css)
+(require 'init-robot)
 (require 'init-haskell)
 (require 'init-restclient)
 (require 'init-csv)
