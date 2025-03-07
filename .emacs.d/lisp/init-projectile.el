@@ -10,11 +10,12 @@
 					 "~/Documents/Joint/1Projects"
 					 "~/Documents/Personal/2Areas"
 					 "~/Documents/Personal/1Projects"
+					 "~/Documents/2Areas"
+					 "~/Documents/1Projects"
 					 "~/RadiusRepo/3Resources"
 					 "~/RadiusRepo/2Areas"
 					 "~/RadiusRepo/1Projects"
 					 "~/Repo"
-					 "~/"
 					 ))
   (setq projectile-completion-system 'ivy)
   (setq projectile-switch-project-action #'projectile-dired)
