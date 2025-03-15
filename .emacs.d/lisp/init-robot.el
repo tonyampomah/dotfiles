@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (use-package robot-mode
-  :defer t)
-
-(setq lsp-keymap-prefix "C-c l")  ;; Or any other preferred keybinding
+  :ensure t)
 
 (defun lsp-robot-framework-server-command ()
   "Return the command to start the Robot Framework Language Server."
@@ -61,9 +59,22 @@
     (let ((default-directory project-root))  ;; Set working directory
       (compile (format "robot tests")))))
 
+(defun robot-format-on-save ()
+  "Format Robot Framework file using robotidy before saving."
+  (when (eq major-mode 'robot-mode)
+    (shell-command (format "robotidy %s" (shell-quote-argument (buffer-file-name))))
+    (revert-buffer t t t)))  ;; Reload buffer to reflect changes
+
+;; (add-hook 'before-save-hook 'robot-format-on-save)
+
+;; (global-set-key (kbd "C-c t") 'robot-format-manually)  ;; Bind to C-c t
+
+
+
 (kd/my-local-leader-def'normal robot-mode-map
 			       "tt" 'run-robot-test-in-project
 			       "tf" 'run-robot-file-in-project
+			       "f" 'lsp-format-buffer
 			       "tp" 'run-robot-project)
 
 (provide 'init-robot)

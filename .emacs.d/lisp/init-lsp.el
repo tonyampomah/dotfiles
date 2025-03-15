@@ -8,6 +8,7 @@
          (lsp-mode . lsp-enable-which-key-integration)
          ((
            web-mode
+	   robot-mode
            php-mode) . lsp-deferred))
   :custom
   (lsp-keymap-prefix "C-c l")           ; Prefix for LSP actions
@@ -134,6 +135,10 @@
              clojure-mode))
     (add-to-list 'lsp-tailwindcss-major-modes tw-major-mode)))
 
+(use-package lsp-treemacs
+  :ensure t
+  :commands lsp-treemacs-errors-list)
+
 (kd/leader-key-def
   "l"  '(:ignore t :which-key "lsp")
   "ld" 'xref-find-definitions
@@ -142,6 +147,7 @@
   "lp" 'lsp-ui-find-prev-reference
   "ls" 'counsel-imenu
   "le" 'lsp-ui-flycheck-list
+  "lf" 'lsp-format-buffer
   "lS" 'lsp-ui-sideline-mode
   "lX" 'lsp-execute-code-action)
 
