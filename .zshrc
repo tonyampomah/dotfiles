@@ -59,3 +59,8 @@ export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 source <(fzf --zsh)
 
 export TERM=xterm-256color
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
