@@ -69,12 +69,31 @@
 
 ;; (global-set-key (kbd "C-c t") 'robot-format-manually)  ;; Bind to C-c t
 
+(defun open-robot-report ()
+  "Open the latest Robot Framework report and log in the default web browser."
+  (interactive)
+  (let* ((report-dir (locate-dominating-file default-directory "report.html"))
+         (log-file (when report-dir (expand-file-name "log.html" report-dir)))
+         (report-file (when report-dir (expand-file-name "report.html" report-dir))))
+    (if (and log-file (file-exists-p log-file))
+        (progn
+          (browse-url log-file)
+          (message "Opening log.html in browser..."))
+      (message "log.html not found!"))
+    (if (and report-file (file-exists-p report-file))
+        (progn
+          (browse-url report-file)
+          (message "Opening report.html in browser..."))
+      (message "report.html not found!"))))
+
+(global-set-key (kbd "C-c o") 'open-robot-report)
 
 
 (kd/my-local-leader-def'normal robot-mode-map
 			       "tt" 'run-robot-test-in-project
 			       "tf" 'run-robot-file-in-project
 			       "f" 'lsp-format-buffer
+			       "o" 'open-robot-report
 			       "tp" 'run-robot-project)
 
 (provide 'init-robot)
