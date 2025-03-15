@@ -155,15 +155,19 @@
     awscli2
     brave
     brightnessctl
+    browserpass
     calibre
     cascadia-code
+    catppuccin-cursors
+    catppuccin-gtk
     cmake
     cmatrix
     cmus
     dbeaver-bin
-    # emacs
+    devenv
     emacsPackages.emacs
     emacsPackages.mu4e
+    fzf
     gcc
     git
     gnumake
@@ -183,8 +187,10 @@
     libnotify
     libtool
     libvterm
+    libvterm-neovim
     lsof
     manrope
+    mixxx
     mpc
     mpd
     mpv
@@ -192,14 +198,19 @@
     ncmpcpp
     neofetch
     nextcloud-client
+    nodePackages.prettier
+    networkmanagerapplet
+    nodejs
     nwg-look
     oh-my-zsh
     palenight-theme
     pandoc
     pass
+    pavucontrol
     php
     python3
     ranger
+    rhythmbox
     ripgrep
     rofi-calc
     rofi-emoji-wayland
@@ -215,30 +226,21 @@
     unzip
     vim
     vscode
+    vscode
     waybar
     waypaper
     wget
-    whatsie
+    whatsapp-for-linux
     whitesur-cursors
     whitesur-gtk-theme
     whitesur-icon-theme
-    catppuccin-gtk
-    catppuccin-cursors
+    wirelesstools
     wl-clipboard
     wlogout
     yarn-berry
     zip
     zoom-us
     zsh
-    fzf
-    nodePackages.prettier
-    nodejs
-    vscode
-    libvterm-neovim
-    wirelesstools
-    pavucontrol
-    rhythmbox
-    devenv
   ];
 
   fonts.packages = with pkgs; [
@@ -283,4 +285,20 @@
   virtualisation.waydroid.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # networking.extraHosts =
+  #   ''
+  #   192.168.1.5 cms.arksolutions.it
+  #   192.168.1.5 staging.cms.arksolutions.it
+  #   192.168.1.5 storybook.arksolutions.it
+  # '';
+
+
+  # services.emacs.package = pkgs.emacs-unstable;
+
+  # nixpkgs.overlays = [
+  #   (import (builtins.fetchTarball {
+  #     url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+  #   }))
+  # ];
 }
