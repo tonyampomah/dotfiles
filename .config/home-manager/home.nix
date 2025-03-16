@@ -10,6 +10,8 @@
     pkgs.appimage-run
     pkgs.nodejs_22
     pkgs.nodePackages.prettier
+    pkgs.emacsPackages.vterm
+    pkgs.libvterm
 
     (pkgs.nerdfonts.override { fonts = [
                                  "FantasqueSansMono"
@@ -34,6 +36,7 @@
     package = pkgs.emacs-pgtk;
     extraPackages = epkgs: [
       epkgs.mu4e
+      epkgs.vterm
     ];
   };
 

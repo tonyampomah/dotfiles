@@ -25,7 +25,6 @@
   :defer t
   :commands vterm-mode
   :config
-  (setq vterm-shell "/bin/zsh")
   (setq vterm-max-scrollback 5000)
   (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
   (setq vterm-kill-buffer-on-exit t))
