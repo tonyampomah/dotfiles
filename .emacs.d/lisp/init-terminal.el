@@ -109,5 +109,23 @@
 
 (global-set-key (kbd "M-S-<return>") 'projectile-run-vterm)
 
+(require 'ansi-color)
+(defun my-colorize-compilation-buffer ()
+  (when (eq major-mode 'compilation-mode)
+    (ansi-color-apply-on-region (point-min) (point-max))))
+
+(add-hook 'compilation-filter-hook 'my-colorize-compilation-buffer)
+
+(defun my-remove-osc8-sequences ()
+  "Remove OSC 8 (hyperlink) sequences from the compilation buffer."
+  (let ((inhibit-read-only t))
+    (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward "\033\\]8;[^;]*;\\([^[:cntrl:]]+\\)\033\\\\\\([^[:cntrl:]]*\\)\033\\]8;;\033\\\\" nil t)
+        (replace-match "\\2 (\\1)")))))
+
+(add-hook 'compilation-filter-hook 'my-remove-osc8-sequences)
+
+
 (provide 'init-terminal)
 ;;; init-terminal.el ends here
