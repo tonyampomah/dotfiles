@@ -395,7 +395,7 @@ tooltip label {
 
 /* workspace numbers, window title, and media title */
 * {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* left and right arrows */
@@ -412,23 +412,23 @@ tooltip label {
 #custom-right3,
 #custom-right4,
 #custom-right5 {
-  font-size: 14.68px;
+  font-size: 14px;
 }
 
 /* left and right inverse */
 #custom-leftin1,
 #custom-leftin2,
 #custom-rightin1 {
-  font-size: 15.5px;
+  font-size: 14px;
 }
 
 /* distro icon */
 #custom-distro {
-  font-size: 14.6px;
+  font-size: 14px;
 }
 
 /* distro arrows override */
 #custom-left5,
 #custom-right2 {
-  font-size: 15.68px;
+  font-size: 14px;
 }
