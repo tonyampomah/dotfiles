@@ -91,7 +91,7 @@
 
 (kd/my-local-leader-def'normal robot-mode-map
 			       "tt" 'run-robot-test-in-project
-			       "tf" 'run-robot-file-in-project
+			       "tc" 'run-robot-file-in-project
 			       "f" 'lsp-format-buffer
 			       "o" 'open-robot-report
 			       "tp" 'run-robot-project)
