@@ -499,7 +499,7 @@
                       (org-agenda-day-face-function (lambda (date) 'org-agenda-date))
                       (org-agenda-format-date "%A %-e %B %Y")
                       (org-agenda-overriding-header "\nToday's agenda\n")))
-          (agenda "" ((org-agenda-start-on-weekday nil)
+          (agenda "" ((org-agenda-start-on-weekday 1)
                       (org-agenda-start-day "+1d")
                       (org-agenda-span 3)
                       (org-deadline-warning-days 0)
@@ -507,7 +507,7 @@
                       (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                       (org-agenda-overriding-header "\nNext three days\n")))
           (agenda "" ((org-agenda-time-grid nil)
-                      (org-agenda-start-on-weekday nil)
+                      (org-agenda-start-on-weekday 1)
                       ;; We don't want to replicate the previous section's
                       ;; three days, so we start counting from the day after.
                       (org-agenda-start-day "+4d")

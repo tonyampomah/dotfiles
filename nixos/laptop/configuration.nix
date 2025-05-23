@@ -117,6 +117,7 @@
     aspellDicts.en-science
     audacity
     awscli2
+    blueman
     brave
     brightnessctl
     browserpass
@@ -124,6 +125,7 @@
     cascadia-code
     catppuccin-cursors
     catppuccin-gtk
+    zathura
     cmake
     cmatrix
     cmus
@@ -131,6 +133,7 @@
     devenv
     fzf
     gcc
+    gimp
     git
     gnumake
     gnupg
@@ -183,6 +186,7 @@
     surfraw
     swaynotificationcenter
     swww
+    teamviewer
     texliveFull
     unzip
     vim
@@ -219,4 +223,10 @@
   virtualisation.waydroid.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # Set the cursor globally for Wayland (Hyprland)
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Modern-Ice";  # or whatever your installed theme is
+    XCURSOR_SIZE = "24";  # adjust as needed
+  };
 }

@@ -1,0 +1,1 @@
+rofi -show combi -combi-modi "drun,run,window,bookmark:~/.config/rofi/bin/bookmark" -modi combi
