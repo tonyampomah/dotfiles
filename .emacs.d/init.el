@@ -19,6 +19,7 @@
 (setq tramp-default-method "ssh")
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-mode))
 (setq auth-sources '("~/.authinfo.gpg"))
+(setq initial-major-mode 'org-mode)
 
 ;; Native Compilation
 (setq comp-async-report-warnings-errors nil)
