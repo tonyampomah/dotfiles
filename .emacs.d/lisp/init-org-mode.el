@@ -16,11 +16,11 @@
 			 "~/org/routine.org"
 			 ))
 
-(defun kd/pretty-org-agenda ()
-  (variable-pitch-mode 1)
-  )
+;; (defun kd/pretty-org-agenda ()
+;;   (variable-pitch-mode 1)
+;;   )
 
-(add-hook 'org-agenda-mode-hook 'kd/pretty-org-agenda)
+;; (add-hook 'org-agenda-mode-hook 'kd/pretty-org-agenda)
 ;; Turn on indentation and auto-fill mode for Org files
 (defun kd/org-mode-setup ()
   (org-indent-mode)
@@ -246,9 +246,7 @@
 
 (setq org-capture-templates
       '(
-	("i" "Personal Inbox" entry (file "~/org/inbox.org")
-	 "* TODO %?\n %i\n")
-	("w" "Work Inbox" entry (file "~/org/work-inbox.org")
+	("i" "Inbox" entry (file "~/org/inbox.org")
 	 "* TODO %?\n %i\n")
 	("j" "jw")
 	("jb" "Bible Reading" entry (file+headline "~/org/todo.org" "1Projects")
