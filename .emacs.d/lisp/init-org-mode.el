@@ -7,13 +7,8 @@
 ;; (setq org-directory "~/org")
 
 (setq org-agenda-files '(
-			 "~/org/calendar/scal.org"
-			 "~/org/calendar/ecal.org"
-			 "~/org/calendar/jcal.org"
-			 "~/org/calendar/pcal.org"
-			 "~/org/inbox.org"
-			 "~/org/todo.org"
-			 "~/org/routine.org"
+			 "~/org"
+			 "~/org-work"
 			 ))
 
 ;; (defun kd/pretty-org-agenda ()
