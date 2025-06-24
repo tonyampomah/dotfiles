@@ -279,6 +279,8 @@
 	("w" "work")
 	("wi" "Inbox" entry (file "~/org-work/work-inbox.org")
 	 "* TODO %?\n %i\n")
+	("wo" "On boarding" entry (file+headline "~/org-work/work-todo.org" "1Projects")
+	 (file "~/org-work/templates/onboarding.org"))
 	("we" "Epic Ticket" entry (file+headline "~/org-work/work-inbox.org" "Tickets")
 	 (file "~/org-work/templates/epic.org"))
 	("ws" "Story Ticket" entry (file+headline "~/org-work/work-inbox.org" "Tickets")
