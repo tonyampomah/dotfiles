@@ -16,7 +16,6 @@ tags
 tags.lock
 tags.temp
 notes.org
-todo.org
 tests/coverage
 _ide_helper.php
 .dir-locals.el
