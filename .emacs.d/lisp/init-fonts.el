@@ -6,7 +6,7 @@
 (defvar kd/fixed-pitch-font "Cascadia Code"
   "The font used for `default' and `fixed-pitch' faces.")
 
-(defvar kd/variable-pitch-font "Cantarell"
+(defvar kd/variable-pitch-font "Noto Sans"
   "The font used for `variable-pitch' face.")
 
 
