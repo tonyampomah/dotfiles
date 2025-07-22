@@ -1,9 +1,14 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
-if [[ "$(hyprctl monitors)" =~ "\sDP-[0-9]+" ]]; then
-  if [[ $1 == "open" ]]; then
-    hyprctl keyword monitor "eDP-1, 1920x1200@60, 3840x0, 1.2"
-  else
-    hyprctl keyword monitor "eDP-1,disable"
-  fi
+INTERNAL_DISPLAY="eDP-1"
+EXTERNAL_DISPLAY="eDP-1"  # Adjust to match your external monitor
+
+if [ "$1" = "close" ]; then
+  # Lid is closed: disable internal display
+  hyprctl dispatch dpms off $INTERNAL_DISPLAY
+  hyprctl keyword monitor $INTERNAL_DISPLAY,disable
+elif [ "$1" = "open" ]; then
+  # Lid is opened: re-enable internal display
+  hyprctl keyword monitor $INTERNAL_DISPLAY,preferred,auto,1
+  hyprctl dispatch dpms on $INTERNAL_DISPLAY
 fi
