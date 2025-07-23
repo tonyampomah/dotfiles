@@ -1,12 +1,29 @@
-#!/usr/bin/php
-<?php
-$d1 = new \DateTime("2020-09-04 00:00:00");
-$d2 = new \DateTime();
-$interval = $d1->diff($d2);
-$diffInSeconds = $interval->s; //45
-$diffInMinutes = $interval->i; //23
-$diffInHours   = $interval->h; //8
-$diffInDays    = $interval->d; //21
-$diffInMonths  = $interval->m; //4
-$diffInYears   = $interval->y; //1
-echo "💍 " . $diffInDays . "D-" . $diffInMonths . "M-" . $diffInYears . "Y ";
+#!/bin/bash
+
+# Start date
+start_date="2020-09-04 00:00:00"
+
+# Current date
+end_date=$(date +"%Y-%m-%d %H:%M:%S")
+
+# Convert both dates to seconds since epoch
+start_sec=$(date -d "$start_date" +%s)
+end_sec=$(date -d "$end_date" +%s)
+
+# Get total difference in seconds
+total_sec=$((end_sec - start_sec))
+
+# Breakdown using GNU date and date math
+years=$((total_sec / (365*24*3600)))
+remaining=$((total_sec % (365*24*3600)))
+months=$((remaining / (30*24*3600)))
+remaining=$((remaining % (30*24*3600)))
+days=$((remaining / (24*3600)))
+remaining=$((remaining % (24*3600)))
+hours=$((remaining / 3600))
+remaining=$((remaining % 3600))
+minutes=$((remaining / 60))
+seconds=$((remaining % 60))
+
+# Output
+echo "💍 ${days}D-${months}M-${years}Y"

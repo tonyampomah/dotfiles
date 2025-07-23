@@ -239,8 +239,8 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "~/.config/ml4w/settings/networkmanager.sh",
-    "on-click-right": "~/.bin/nm-applet.sh toggle",
+    "on-click": "~/.bin/wifi-menu.sh",
+    "on-click-right": "~/.bin/wifi-menu.sh",
   },
 
   // Battery
@@ -299,7 +299,8 @@
     "format-disabled": "",
     "format-off": "",
     "interval": 30,
-    "on-click": "blueman-manager",
+    "on-click": "~/.bin/bluetooth-menu.sh",
+    "on-click-right": "blueman-manager",
     "format-no-controller": ""
   },
 

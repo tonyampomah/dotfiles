@@ -1,3 +1,0 @@
-#!/bin/sh
-TODAY=$(date '+%a, %b %d %H:%M')
-echo "${TODAY} ";
