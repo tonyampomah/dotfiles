@@ -11,6 +11,7 @@
 {
     // General Settings
     "layer": "top",
+    "reload_style_on_change": true,
     "margin-top": 0,
     "margin-bottom": 0,
     "margin-left": 0,
@@ -37,6 +38,7 @@
 
     // Modules Right    
     "modules-right": [
+	"custom/anniversary",
         "custom/updates",
         "pulseaudio",
         "bluetooth",

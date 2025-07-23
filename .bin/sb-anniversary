@@ -26,4 +26,4 @@ minutes=$((remaining / 60))
 seconds=$((remaining % 60))
 
 # Output
-echo "💍 ${days}D-${months}M-${years}Y"
+echo "💍 ${years}y/${months}m/${days}d"

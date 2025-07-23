@@ -20,7 +20,9 @@
       "default": ""
     },
     "persistent-workspaces": {
-      "*": 5
+      "1": [],
+      "2": [],
+      "3": []
     }
   },
 
@@ -85,6 +87,15 @@
     "hide-empty-text": true,
     "on-click": "~/.config/ml4w/settings/installupdates.sh",
     "on-click-right": "~/.config/ml4w/settings/software.sh"
+  },
+
+  // Anniversary countdown
+  "custom/anniversary": {
+    "exec": "~/.bin/sb-anniversary",
+    "interval": 60,
+    "return-type": "string",
+    "format": "{}",
+    "tooltip": false
   },
 
   // Keybindings
