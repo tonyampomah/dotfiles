@@ -38,7 +38,7 @@
 
     // Modules Right    
     "modules-right": [
-	"custom/anniversary",
+	"custom/anniversary-remaining",
         "custom/updates",
         "pulseaudio",
         "bluetooth",
