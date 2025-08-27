@@ -636,7 +636,8 @@
   "np" '(lambda() (interactive) (find-file "~/org/todo.org"))
   "nr" '(lambda() (interactive) (find-file "~/org/routine.org"))
   "na" 'org-agenda
-  "nd" 'kd/week-view)
+  "nd" 'kd/day-view
+  "nw" 'kd/week-view)
 
 (kd/my-local-leader-def 'normal org-mode-map
   "c" 'org-ctrl-c-ctrl-c
