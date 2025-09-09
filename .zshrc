@@ -30,8 +30,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
 
 # NODE
-PATH="$HOME/.node_modules/bin:$PATH"
-export npm_config_prefix=~/.node_modules
+# PATH="$HOME/.node_modules/bin:$PATH"
+# export npm_config_prefix=~/.node_modules
 
 # ANDROID STUDIO
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -64,3 +64,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+eval "$(fnm env --use-on-cd --shell zsh)"
