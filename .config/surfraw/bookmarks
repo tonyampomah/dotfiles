@@ -12,9 +12,11 @@ arksolutions.it-passbolt https://passbolt.arksolutions.it
 arksolutions.it-sprint https://arksolutions-it.atlassian.net/jira/software/projects/CP/boards/7
 arksolutions.it-zoho-invoice https://invoice.zoho.com/app/855710467#/home/dashboard
 arksolutions.localhost http://arksolutions.localhost/
+arksolutions.test http://arksolutions.test/
 bbcradio https://www.bbc.co.uk/sounds/play/live:bbc_radio_fourfm
 cms.arksolutions.it https://cms.arksolutions.it/admin/auth/login
 cms.arksolutions.localhost http://cms.arksolutions.localhost/
+cms.arksolutions.test http://cms.arksolutions.test/
 cms.newearswickmobility.co.uk https://cms.newearswickmobility.co.uk/admin/auth/login
 cms.newearswickmobility.localhost http://cms.newearswickmobility.localhost/admin/auth/login
 daily-text https://wol.jw.org/en/wol/h/r1/lp-e
