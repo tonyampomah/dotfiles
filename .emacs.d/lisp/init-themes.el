@@ -6,11 +6,13 @@
 ;; (straight-use-package 'color-theme-sanityinc-tomorrow)
 (straight-use-package 'modus-themes)
 (straight-use-package 'doom-themes)
-(straight-use-package 'base16-theme)
+;; (straight-use-package 'base16-theme)
 (straight-use-package 'catppuccin-theme)
 
 ;; (load-theme 'modus-vivendi-deuteranopia t)
 (load-theme 'catppuccin t)
+(setq catppuccin-flavor 'latte) ;; or 'latte, 'macchiato, or 'mocha
+(catppuccin-reload)
 
 
 (provide 'init-themes)

@@ -3,14 +3,6 @@
 ;;; Code:
 (setq-default fill-column 80)
 
-;; Task Management & Agenda Views
-;; (setq org-directory "~/org")
-
-(setq org-agenda-files '(
-			 "~/org"
-			 "~/org-work"
-			 ))
-
 ;; (defun kd/pretty-org-agenda ()
 ;;   (variable-pitch-mode 1)
 ;;   )
@@ -36,7 +28,7 @@
 	org-agenda-archives-mode t
 	org-src-fontify-natively t
 	org-agenda-start-with-log-mode t
-	org-log-done 'time
+	;; org-log-done 'time
 	org-log-into-drawer t
 	org-src-tab-acts-natively t
 	org-edit-src-content-indentation 2
@@ -82,6 +74,7 @@
 
 (use-package org-contrib :after org)
 
+
 (use-package org-pomodoro
   :defer t
   :after org
@@ -108,13 +101,6 @@
   :after org
   :init (add-to-list 'org-export-backends 'twbs))
 
-;; (use-package org-jira
-;;   :defer t
-;;   :hook (org-mode . org-jira-mode)
-;;   :after org
-;;   :config
-;;   (setq jiralib-url ""))
-
 (use-package ob-php
   :after org
   :defer t)
@@ -124,18 +110,10 @@
   :defer t
   :init (add-to-list 'org-export-backends 'pandoc))
 
-;; (use-package ox-jira
-;;   :after org
-;;   :defer t
-;;   :init (add-to-list 'org-export-backends 'jira))
-
 (use-package ox-slack
   :after org
   :defer t
   :init (add-to-list 'org-export-backends 'slack))
-
-(straight-use-package
- '(ox-tailwind :type git :host github :repo "vascoferreira25/ox-tailwind"))
 
 (use-package ox-slimhtml
   :after org
@@ -154,10 +132,6 @@
   :defer t)
 
 (use-package ob-async
-  :after org
-  :defer t)
-
-(use-package ob-mermaid
   :after org
   :defer t)
 
@@ -214,30 +188,6 @@
 	(org-agenda-files :maxlevel . 3))
       org-refile-use-outline-path 'file
       org-outline-path-complete-in-steps nil)
-
-(setq org-todo-keywords
-      '((sequence
-	 "TODO(t)"  ; A task that needs doing & is ready to do
-	 "PROJ(p)"  ; A project, which usually contains other tasks
-	 "STRT(s)"  ; A task that is in progress
-	 "WAIT(w)"  ; Something external is holding up this task
-	 "HOLD(h)"  ; This task is paused/on hold because of me
-	 "|"
-	 "DONE(d)"  ; Task successfully completed
-	 "KILL(k)") ; Task was cancelled, aborted or is no longer applicable
-	(sequence
-	 "[ ](T)"   ; A task that needs doing
-	 "[-](S)"   ; Task is in progress
-	 "[?](W)"   ; Task is being held up or paused
-	 "|"
-	 "[X](D)")) ; Task was completed
-      org-todo-keyword-faces
-      '(("[-]"  . org-todo-active)
-	("STRT" . (:foreground "orange" :weight bold))
-	("[?]"  . (:foreground "red" :weight bold))
-	("WAIT" . (:foreground "red" :weight bold))
-	("HOLD" . (:foreground "red" :weight bold))
-	("PROJ" . org-todo-project)))
 
 (setq org-capture-templates
       '(
@@ -349,11 +299,6 @@
 (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
 (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
 
-;; Organisation (org and PARA)
-;; A project is “any outcome that will
-;; take more than one action step to complete.” As a result of
-;; implementing Tiago Forte’s “PARA” system, I can ensure that I
-;; always have an up to date project list.
 (use-package org-roam
   :ensure t
   :init
@@ -371,102 +316,6 @@
 
 (use-package ox-reveal)
 
-;; Projects
-(defun go-to-projects ()
-  (interactive)
-  (find-file "~/org/todo.org")
-  (widen)
-  (beginning-of-buffer)
-  (re-search-forward "* Projects")
-  (beginning-of-line))
-
-(defun project-overview ()
-  (interactive)
-  (go-to-projects)
-  (org-narrow-to-subtree)
-  (org-sort-entries t ?p)
-  (org-columns))
-
-(defun project-deadline-overview ()
-  (interactive)
-  (go-to-projects)
-  (org-narrow-to-subtree)
-  (org-sort-entries t ?d)
-  (org-columns))
-
-(defun my-org-agenda-list-stuck-projects ()
-  (interactive)
-  (go-to-projects)
-  (org-agenda nil "#" 'subtree))
-
-;; Areas
-(defun go-to-areas ()
-  (interactive)
-  (find-file "~/org/todo.org")
-  (widen)
-  (beginning-of-buffer)
-  (re-search-forward "* Areas")
-  (beginning-of-line))
-
-(defun areas-overview ()
-  (interactive)
-  (go-to-areas)
-  (org-narrow-to-subtree)
-  (org-columns))
-
-;; Reviews
-(defun my-new-daily-review ()
-  (interactive)
-  (let ((org-capture-templates '(("d" "Review: Daily Review" entry (file+olp+datetree "/tmp/reviews.org")
-				  (file "~/org/reviews/daily-review-template.org")))))
-    (progn
-      (org-capture nil "d")
-      (org-capture-finalize t)
-      (org-speed-move-safe 'outline-up-heading)
-      (org-narrow-to-subtree)
-      (fetch-calendar)
-      (org-clock-in))))
-
-(defun my-new-weekly-review ()
-  (interactive)
-  (let ((org-capture-templates '(("w" "Review: Weekly Review" entry (file+olp+datetree "/tmp/reviews.org")
-				  (file "~/org/reviews/weekly-review-template.org")))))
-    (progn
-      (org-capture nil "w")
-      (org-capture-finalize t)
-      (org-speed-move-safe 'outline-up-heading)
-      (org-narrow-to-subtree)
-      (fetch-calendar)
-      (org-clock-in))))
-
-(defun my-new-monthly-review ()
-  (interactive)
-  (let ((org-capture-templates '(("m" "Review: Monthly Review" entry (file+olp+datetree "/tmp/reviews.org")
-				  (file "~/org/reviews/monthly-review-template.org")))))
-    (progn
-      (org-capture nil "m")
-      (org-capture-finalize t)
-      (org-speed-move-safe 'outline-up-heading)
-      (org-narrow-to-subtree)
-      (fetch-calendar)
-      (org-clock-in))))
-
-(bind-keys :prefix-map review-map
-	   :prefix "C-c r"
-	   ("d" . my-new-daily-review)
-	   ("w" . my-new-weekly-review)
-	   ("m" . my-new-monthly-review))
-
-(defun kd/day-view ()
-  (interactive)
-  (progn (org-agenda nil "a")
-	 (org-agenda-day-view)))
-
-(defun kd/week-view ()
-  (interactive)
-  (progn (org-agenda nil "a")
-	 (org-agenda-week-view)))
-
 (with-eval-after-load 'ox-latex
   (add-to-list 'org-latex-classes
                '("org-plain-latex"
@@ -480,169 +329,128 @@
 		 ("\\paragraph{%s}" . "\\paragraph*{%s}")
 		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
+
+(use-package org-gtd)
+
+;; Files
+(setq org-directory "~/Nextcloud/gtd")
+
+(setq org-agenda-files '(
+			 "~/gtd"
+			 "~/org-work"
+			 ))
+
+(setq org-edna-use-inheritance t)
+(org-edna-mode t)
+
+(setq org-gtd-organize-hooks nil)
+;; (setq org-agenda-files (list "inbox.org" "agenda.org"
+;;                              "notes.org" "projects.org"))
+
+;; Capture
+(setq org-capture-templates
+      `(("i" "Inbox" entry  (file "inbox.org")
+        ,(concat "* TODO %?\n"
+                 "/Entered on/ %U"))
+        ("m" "Meeting" entry  (file+headline "agenda.org" "Future")
+        ,(concat "* %? :meeting:\n"
+                 "<%<%Y-%m-%d %a %H:00>>"))
+        ("n" "Note" entry  (file "notes.org")
+        ,(concat "* Note (%a)\n"
+                 "/Entered on/ %U\n" "\n" "%?"))
+        ("@" "Inbox [mu4e]" entry (file "inbox.org")
+        ,(concat "* TODO Reply to \"%a\" %?\n"
+                 "/Entered on/ %U"))))
+
+(defun org-capture-inbox ()
+     (interactive)
+     (call-interactively 'org-store-link)
+     (org-capture nil "i"))
+
+(defun org-capture-mail ()
+  (interactive)
+  (call-interactively 'org-store-link)
+  (org-capture nil "@"))
+
+;; Use full window for org-capture
+(add-hook 'org-capture-mode-hook 'delete-other-windows)
+
+;; Key bindings
+(define-key global-map            (kbd "C-c a") 'org-agenda)
+(define-key global-map            (kbd "C-c c") 'org-capture)
+(define-key global-map            (kbd "C-c i") 'org-capture-inbox)
+
+;; Only if you use mu4e
+;; (require 'mu4e)
+;; (define-key mu4e-headers-mode-map (kbd "C-c i") 'org-capture-mail)
+;; (define-key mu4e-view-mode-map    (kbd "C-c i") 'org-capture-mail)
+
+;; Refile
+(setq org-refile-use-outline-path 'file)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-refile-targets
+      '(("projects.org" :regexp . "\\(?:\\(?:Note\\|Task\\)s\\)")))
+
+;; TODO
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)")))
+(defun log-todo-next-creation-date (&rest ignore)
+  "Log NEXT creation time in the property drawer under the key 'ACTIVATED'"
+  (when (and (string= (org-get-todo-state) "NEXT")
+             (not (org-entry-get nil "ACTIVATED")))
+    (org-entry-put nil "ACTIVATED" (format-time-string "[%Y-%m-%d]"))))
+(add-hook 'org-after-todo-state-change-hook #'log-todo-next-creation-date)
+
+;; Agenda
 (setq org-agenda-custom-commands
-      `(("A" "Daily agenda and top priority tasks"
-         ((tags-todo "*"
-                     ((org-agenda-skip-function '(org-agenda-skip-if nil '(timestamp)))
-                      (org-agenda-skip-function
-                       `(org-agenda-skip-entry-if
-                         'notregexp ,(format "\\[#%s\\]" (char-to-string org-priority-highest))))
-                      (org-agenda-block-separator nil)
-                      (org-agenda-overriding-header "Important tasks without a date\n")))
-          (agenda "" ((org-agenda-span 1)
-                      (org-deadline-warning-days 0)
-                      (org-agenda-block-separator nil)
-                      (org-scheduled-past-days 0)
-                      ;; We don't need the `org-agenda-date-today'
-                      ;; highlight because that only has a practical
-                      ;; utility in multi-day views.
-                      (org-agenda-day-face-function (lambda (date) 'org-agenda-date))
-                      (org-agenda-format-date "%A %-e %B %Y")
-                      (org-agenda-overriding-header "\nToday's agenda\n")))
-          (agenda "" ((org-agenda-start-on-weekday 1)
-                      (org-agenda-start-day "+1d")
-                      (org-agenda-span 3)
-                      (org-deadline-warning-days 0)
-                      (org-agenda-block-separator nil)
-                      (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                      (org-agenda-overriding-header "\nNext three days\n")))
-          (agenda "" ((org-agenda-time-grid nil)
-                      (org-agenda-start-on-weekday 1)
-                      ;; We don't want to replicate the previous section's
-                      ;; three days, so we start counting from the day after.
-                      (org-agenda-start-day "+4d")
-                      (org-agenda-span 14)
-                      (org-agenda-show-all-dates nil)
-                      (org-deadline-warning-days 0)
-                      (org-agenda-block-separator nil)
-                      (org-agenda-entry-types '(:deadline))
-                      (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                      (org-agenda-overriding-header "\nUpcoming deadlines (+14d)\n")))))
-        ("P" "Plain text daily agenda and top priorities"
-         ((tags-todo "*"
-                     ((org-agenda-skip-function '(org-agenda-skip-if nil '(timestamp)))
-                      (org-agenda-skip-function
-                       `(org-agenda-skip-entry-if
-                         'notregexp ,(format "\\[#%s\\]" (char-to-string org-priority-highest))))
-                      (org-agenda-block-separator nil)
-                      (org-agenda-overriding-header "Important tasks without a date\n")))
-          (agenda "" ((org-agenda-span 1)
-                      (org-deadline-warning-days 0)
-                      (org-agenda-block-separator nil)
-                      (org-scheduled-past-days 0)
-                      ;; We don't need the `org-agenda-date-today'
-                      ;; highlight because that only has a practical
-                      ;; utility in multi-day views.
-                      (org-agenda-day-face-function (lambda (date) 'org-agenda-date))
-                      (org-agenda-format-date "%A %-e %B %Y")
-                      (org-agenda-overriding-header "\nToday's agenda\n")))
-          (agenda "" ((org-agenda-start-on-weekday nil)
-                      (org-agenda-start-day "+1d")
-                      (org-agenda-span 3)
-                      (org-deadline-warning-days 0)
-                      (org-agenda-block-separator nil)
-                      (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                      (org-agenda-overriding-header "\nNext three days\n")))
-          (agenda "" ((org-agenda-time-grid nil)
-                      (org-agenda-start-on-weekday nil)
-                      ;; We don't want to replicate the previous section's
-                      ;; three days, so we start counting from the day after.
-                      (org-agenda-start-day "+4d")
-                      (org-agenda-span 14)
-                      (org-agenda-show-all-dates nil)
-                      (org-deadline-warning-days 0)
-                      (org-agenda-block-separator nil)
-                      (org-agenda-entry-types '(:deadline))
-                      (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                      (org-agenda-overriding-header "\nUpcoming deadlines (+14d)\n"))))
-         ((org-agenda-with-colors nil)
-          (org-agenda-prefix-format "%t %s")
-          (org-agenda-current-time-string ,(car (last org-agenda-time-grid)))
-          (org-agenda-fontify-priorities nil)
-          (org-agenda-remove-tags t))
-         ("agenda.txt"))))
+      '(("g" "Get Things Done (GTD)"
+         ((agenda ""
+                  ((org-agenda-skip-function
+                    '(org-agenda-skip-entry-if 'deadline))
+                   (org-deadline-warning-days 0)))
+          (todo "NEXT"
+                ((org-agenda-skip-function
+                  '(org-agenda-skip-entry-if 'deadline))
+                 (org-agenda-prefix-format "  %i %-12:c [%e] ")
+                 (org-agenda-overriding-header "\nTasks\n")))
+          (agenda nil
+                  ((org-agenda-entry-types '(:deadline))
+                   (org-agenda-format-date "")
+                   (org-deadline-warning-days 7)
+                   (org-agenda-skip-function
+                    '(org-agenda-skip-entry-if 'notregexp "\\* NEXT"))
+                   (org-agenda-overriding-header "\nDeadlines")))
+          (tags-todo "inbox"
+                     ((org-agenda-prefix-format "  %?-12t% s")
+                      (org-agenda-overriding-header "\nInbox\n")))
+          (tags "CLOSED>=\"<today>\""
+                ((org-agenda-overriding-header "\nCompleted today\n")))
+	  ))))
 
-;; And this is what I actually use.  The `defvar' is stored in my
-;; kwamedat-org.el file.  In the video I explain why I use this style.
+;; (setq org-agenda-files 
+;;       (mapcar 'file-truename 
+;; 	      (file-expand-wildcards "~/gtd/*.org")))
 
-(defvar kwamedat-org-custom-daily-agenda
-  ;; NOTE 2021-12-08: Specifying a match like the following does not
-  ;; work.
-  ;;
-  ;; tags-todo "+PRIORITY=\"A\""
-  ;;
-  ;; So we match everything and then skip entries with
-  ;; `org-agenda-skip-function'.
-  `((tags-todo "*"
-               ((org-agenda-skip-function '(org-agenda-skip-if nil '(timestamp)))
-                (org-agenda-skip-function
-                 `(org-agenda-skip-entry-if
-                   'notregexp ,(format "\\[#%s\\]" (char-to-string org-priority-highest))))
-                (org-agenda-block-separator nil)
-                (org-agenda-overriding-header "Important tasks without a date\n")))
-    (agenda "" ((org-agenda-span 1)
-                (org-deadline-warning-days 0)
-                (org-agenda-block-separator nil)
-                (org-scheduled-past-days 0)
-                ;; We don't need the `org-agenda-date-today'
-                ;; highlight because that only has a practical
-                ;; utility in multi-day views.
-                (org-agenda-day-face-function (lambda (date) 'org-agenda-date))
-                (org-agenda-format-date "%A %-e %B %Y")
-                (org-agenda-overriding-header "\nToday's agenda\n")))
-    (agenda "" ((org-agenda-start-on-weekday nil)
-                (org-agenda-start-day "+1d")
-                (org-agenda-span 3)
-                (org-deadline-warning-days 0)
-                (org-agenda-block-separator nil)
-                (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                (org-agenda-overriding-header "\nNext three days\n")))
-    (agenda "" ((org-agenda-time-grid nil)
-                (org-agenda-start-on-weekday nil)
-                ;; We don't want to replicate the previous section's
-                ;; three days, so we start counting from the day after.
-                (org-agenda-start-day "+4d")
-                (org-agenda-span 14)
-                (org-agenda-show-all-dates nil)
-                (org-deadline-warning-days 0)
-                (org-agenda-block-separator nil)
-                (org-agenda-entry-types '(:deadline))
-                (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                (org-agenda-overriding-header "\nUpcoming deadlines (+14d)\n"))))
-  "Custom agenda for use in `org-agenda-custom-commands'.")
-
-(setq org-agenda-custom-commands
-      `(("A" "Daily agenda and top priority tasks"
-         ,kwamedat-org-custom-daily-agenda)
-        ("P" "Plain text daily agenda and top priorities"
-         ,kwamedat-org-custom-daily-agenda
-         ((org-agenda-with-colors nil)
-          (org-agenda-prefix-format "%t %s")
-          (org-agenda-current-time-string ,(car (last org-agenda-time-grid)))
-          (org-agenda-fontify-priorities nil)
-          (org-agenda-remove-tags t))
-         ("agenda.txt"))))
 
 ;; Bindings
 (kd/leader-key-def
       ;;; <leader> n --- notes
   "nf" '(lambda() (interactive) (org-roam-node-find))
   "ng" '(lambda() (interactive) (org-roam-graph))
-  "ni" '(lambda() (interactive) (find-file "~/org/inbox.org"))
-  "nl" '(lambda() (interactive) (org-roam-buffer-toggle))
-  "nc" '(lambda() (interactive) (org-roam-capture))
+  "ni" '(lambda() (interactive) (find-file "~/gtd/inbox.org"))
   "nn" '(lambda() (interactive) (org-capture))
   "nt" '(lambda() (interactive) (org-roam-dailies-capture-today))
-  "np" '(lambda() (interactive) (find-file "~/org/todo.org"))
-  "nr" '(lambda() (interactive) (find-file "~/org/routine.org"))
-  "na" 'org-agenda
-  "nd" 'kd/day-view
+  "np" 'org-gtd-process-inbox
+  "ne" 'org-gtd-engage
+  "na" 'org-gtd-engage
+  "nd" 'org-gtd-engage
   "nw" 'kd/week-view)
 
 (kd/my-local-leader-def 'normal org-mode-map
   "c" 'org-ctrl-c-ctrl-c
   "o" 'org-open-at-point
   "t" 'org-todo
+  "o" 'org-gtd-organize
   "s" 'org-schedule
   "d" 'org-deadline
   "a" 'org-agenda
@@ -658,6 +466,7 @@
   "vw" 'org-agenda-week-view
   "vm" 'org-agenda-month-view
   "vy" 'org-agenda-year-view)
+
 
 
 (provide 'init-org-mode)
