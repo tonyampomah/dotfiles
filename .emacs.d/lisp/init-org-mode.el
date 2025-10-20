@@ -333,11 +333,10 @@
 (use-package org-gtd)
 
 ;; Files
-(setq org-directory "~/Nextcloud/gtd")
+(setq org-directory "~/gtd")
 
 (setq org-agenda-files '(
 			 "~/gtd"
-			 "~/org-work"
 			 ))
 
 (setq org-edna-use-inheritance t)
