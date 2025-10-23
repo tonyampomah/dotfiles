@@ -6,7 +6,7 @@ function run {
   fi
 }
 
-feh --bg-scale /home/tonyampomah/Nextcloud/Photos/Luka-photoshoot/BabyLuka25Jan25-1.jpg &
+feh --bg-fill /home/tonyampomah/Nextcloud/Photos/Luka-photoshoot/BabyLuka25Jan25-1.jpg &
 ############## Keyboard Tweaks ##################
 # Load my custom keyboard binding
 # xmodmap ~/.config/.Xmodmap &
