@@ -24,7 +24,7 @@ import XMonad.Layout.Gaps
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Fullscreen (fullscreenFull)
-import XMonad.Layout.Cross(simpleCross)
+-- import XMonad.Layout.Cross(simpleCross)
 import XMonad.Layout.Spiral(spiral)
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.MultiToggle
@@ -184,10 +184,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_t),       namedScratchpadAction myScratchPads "terminal")
   , ((modMask, xK_f),       sendMessage $ XMonad.Layout.MultiToggle.Toggle NBFULL)
   , ((modMask, xK_q),       kill)
-  , ((modMask, xK_Return),  spawn $ "alacritty")
-  , ((modMask, xK_space),   spawn $ "~/.bin/rofi-launcher")
-  , ((modMask, xK_p),       spawn $ "~/.bin/rofi-launcher-pass")
-  , ((modMask, xK_b),       spawn $ "~/.bin/rofi-launcher-bookmark")
+  , ((modMask, xK_Return),  spawn $ "kitty")
+  , ((modMask, xK_space),   spawn $ "~/.config/rofi/bin/launcher")
+  , ((modMask, xK_p),       spawn $ "~/.config/rofi/bin/pass")
+  , ((modMask, xK_b),       spawn $ "~/.config/rofi/bin/bookmark")
   , ((modMask, xK_g),       sendMessage $ ToggleGaps)
 
 
@@ -283,9 +283,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_Up), windows W.focusUp )
 
 
-  , ((modMask, xK_s ), windows copyToAll) -- @@ Make focused window always visible
+  -- , ((modMask, xK_s ), windows copyToAll) -- @@ Make focused window always visible
   , ((modMask .|. shiftMask, xK_s ),  killAllOtherCopies) -- @@ Toggle window state back
-
 
   -- Swap the focused window with the next window.
   , ((modMask .|. shiftMask, xK_k), windows W.swapUp)
