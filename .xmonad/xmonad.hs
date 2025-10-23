@@ -199,7 +199,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. shiftMask, xK_w),          namedScratchpadAction myScratchPads "webcam")
   , ((modMask .|. shiftMask, xK_Return ),    spawn $ "nautilus")
   -- , ((modMask .|. shiftMask, xK_p ),         spawn $ "maim -s | xclip -selection clipboard -t image/png")
-  , ((modMask .|. shiftMask, xK_e ),         spawn $ "~/.bin/rofi-launcher-power-menu")
+  , ((modMask .|. shiftMask, xK_e ),         spawn $ "~/.config/rofi/bin/powermenu")
  
 
   -- FUNCTION KEYS
@@ -239,19 +239,19 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((controlMask .|. mod1Mask, xK_Delete ), spawn $ "xfce4-taskmanager")
 
   -- Mute volume
-  , ((0, xF86XK_AudioMute), spawn $ "pamixer --toggle-mute")
+  , ((0, xF86XK_AudioMute), spawn $ "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
 
   -- Decrease volume
-  , ((0, xF86XK_AudioLowerVolume), spawn $ "pamixer -d 5")
+  , ((0, xF86XK_AudioLowerVolume), spawn $ "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
 
   -- Increase volume
-  , ((0, xF86XK_AudioRaiseVolume), spawn $ "pamixer -i 5")
+  , ((0, xF86XK_AudioRaiseVolume), spawn $ "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+")
 
   -- Increase brightness
-  , ((0, xF86XK_MonBrightnessUp),  spawn $ "light -A 1")
+  , ((0, xF86XK_MonBrightnessUp),  spawn $ "brightnessctl s 10%+")
 
   -- Decrease brightness
-  , ((0, xF86XK_MonBrightnessDown), spawn $ "light -U 1")
+  , ((0, xF86XK_MonBrightnessDown), spawn $ "brightnessctl s 10%-")
 
   , ((0, xF86XK_AudioPlay), spawn $ "playerctl play-pause")
   , ((0, xF86XK_AudioNext), spawn $ "playerctl next")

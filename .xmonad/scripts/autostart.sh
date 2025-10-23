@@ -6,7 +6,7 @@ function run {
   fi
 }
 
-feh --bg-scale /home/tonyampomah/Nextcloud/Photos/wallpapers/0001.jpg &
+feh --bg-scale /home/tonyampomah/Nextcloud/Photos/Luka-photoshoot/BabyLuka25Jan25-1.jpg &
 ############## Keyboard Tweaks ##################
 # Load my custom keyboard binding
 # xmodmap ~/.config/.Xmodmap &
@@ -33,7 +33,7 @@ xcape -e 'Control_L=Escape' &
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run dunst
 run picom
-run variety
+# run variety
 run nm-applet
 ################ Start Apps At Boot Time ###################
 # run /usr/bin/emacs --daemon
