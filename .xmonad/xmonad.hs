@@ -198,17 +198,14 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. shiftMask, xK_m),          namedScratchpadAction myScratchPads "music")
   , ((modMask .|. shiftMask, xK_w),          namedScratchpadAction myScratchPads "webcam")
   , ((modMask .|. shiftMask, xK_Return ),    spawn $ "nautilus")
-  -- , ((modMask .|. shiftMask, xK_p ),         spawn $ "maim -s | xclip -selection clipboard -t image/png")
+  , ((modMask .|. shiftMask, xK_p ),         spawn $ "maim -s | xclip -selection clipboard -t image/png")
   , ((modMask .|. shiftMask, xK_e ),         spawn $ "~/.config/rofi/bin/powermenu")
  
 
   -- FUNCTION KEYS
-  -- , ((0, xK_F7), spawn $ "flameshot gui")
-  -- , ((0, xK_F11), sendMessage $ XMonad.Layout.MultiToggle.Toggle NBFULL)
-  -- , ((0, xF86XK_Search), spawn $ "~/.bin/rofi-launcher")
 
   -- MODKEY + FUNCTIONS KEYS
-  , ((modMask, xK_F7), spawn $ "flameshot screen --path ~/Downloads")
+  , ((modMask, xK_F7), spawn $ "scrot ~/Downloads/screenshot_%Y-%m-%d_%H-%M-%S.png")
 
   -- MODKEY + ALT + FUNCTIONS KEYS
   , ((modMask .|. mod1Mask, xK_F7), spawn $ "flameshot screen --clipboard --path ~/Downloads")
@@ -234,6 +231,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. mod1Mask, xK_o),       spawn $ "picom-toggle")
   , ((modMask .|. mod1Mask, xK_j),       spawn $ "variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&")
   , ((modMask .|. mod1Mask, xK_k),       spawn $ "variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&")
+
+  --SUPER + CONTROL KEYS
+  , ((modMask .|. controlMask, xK_d ), spawn $ "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
+  , ((modMask .|. controlMask, xK_l ), spawn $ "gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'")
 
   --CONTROL + ALT KEYS
   , ((controlMask .|. mod1Mask, xK_Delete ), spawn $ "xfce4-taskmanager")
@@ -284,7 +285,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
 
   -- , ((modMask, xK_s ), windows copyToAll) -- @@ Make focused window always visible
-  , ((modMask .|. shiftMask, xK_s ),  killAllOtherCopies) -- @@ Toggle window state back
+  -- , ((modMask .|. shiftMask, xK_s ),  killAllOtherCopies) -- @@ Toggle window state back
+  , ((modMask .|. shiftMask, xK_s ),  spawn $ "scrot -s ~/Desktop/screenshot_%Y-%m-%d_%H-%M-%S.png")
 
   -- Swap the focused window with the next window.
   , ((modMask .|. shiftMask, xK_k), windows W.swapUp)

@@ -1,31 +1,28 @@
-[colors]
-background = ${xrdb:background}
-foreground = ${xrdb:foreground}
-background-alt = #5c6370
-foreground-alt = #c5c8c6
-primary = #b5bd68
-secondary = #41728e
-alert = #cc6666
-success = #f0c674
-active = #268bd2
-inactive = #073642
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+; include-file = ~/.config/polybar/themes/latte.ini
+; include-file = ~/.config/polybar/themes/frappe.ini
+; include-file = ~/.config/polybar/themes/macchiato.ini
+include-file = ~/.config/polybar/themes/mocha.ini
+
 
 [bar/main]
 monitor = ${env:MONITOR:}
-; dpi = ${xrdb:xft.dpi}
+dpi = 125
 width = 100%
-height = ${xrdb:polybar.height}
-background = ${colors.background}
-foreground = ${colors.foreground}
+height = 40
+background = ${colors.base}
+foreground = ${colors.text}
+line-color = ${colors.base}
 line-size = 0
-line-color = ${colors.background}
 module-margin-left = 1
 module-margin-right = 1
 padding-left = 0
 padding-right = 0
 
-font-0 = "Cascadia Code:size=10"
-font-1 = "FontAwesome:size=10"
+font-0 = "Cascadia Code:size=12"
+font-1 = "FontAwesome:size=12"
 font-2 = "JoyPixels:pixelsize=11:antialias=true:autohint=true:scale=10.3"
 
 modules-left = cpu memory networkspeedup networkspeeddown wlan
@@ -36,22 +33,20 @@ tray-padding = 0
 tray-maxsize = ${xrdb:polybar.tray-maxsize}
 tray-scale = 1.0
 
-[settings]
-screenchange-reload = true
+[bar/top]
+background=${colors.base}
+border-color=${colors.crust}
+border-size=5pt
+font-0=Iosevka:size=13;2
+foreground=${colors.surface0}
 
 
-[global/wm]
-margin-top = 0
-margin-bottom = 0
-
-
-; ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.secondary}
+format-prefix-foreground = ${colors.peach}
+format-underline = ${colors.peach}
 format-prefix = " 💻 "
 
 label-font = 1
@@ -78,18 +73,18 @@ thermal-zone = 2
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${colors.secondary}
+format-underline = ${colors.peach}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature%
 label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.red}
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground}
+ramp-foreground = ${colors.peach}
 
 ; ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -109,8 +104,8 @@ label = %gb_used%
 
 format = "<label>"
 format-prefix = "🧠 "
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.primary}
+format-prefix-foreground = ${colors.peach}
+format-underline = ${colors.peach}
 
 ; ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -136,11 +131,11 @@ type = internal/backlight
 card = intel_backlight
 
 format = <ramp> <label>
-format-background = ${colors.background}
-format-foreground = ${colors.foreground}
+format-background = ${colors.base}
+format-foreground = ${colors.text}
 format-padding = 0
 format-prefix = "🔅"
-format-underline = ${colors.primary}
+format-underline = ${colors.green}
 
 label = %percentage%%
 
@@ -167,24 +162,6 @@ bar-fill-foreground = ${colors.alert}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
-
-; ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 1
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
 
 
 ; ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -354,7 +331,7 @@ label-discharging = %percentage%%
 ;   %percentage% (default) - is set to 100 if full-at is reached
 ;   %percentage_raw%
 label-full = 
-format-full-underline = ${colors.primary}
+format-full-underline = ${colors.green}
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
@@ -374,7 +351,7 @@ animation-charging-3 = 
 animation-charging-4 = 
 ; Framerate in milliseconds
 animation-charging-framerate = 750
-format-charging-underline = ${colors.success}
+format-charging-underline = ${colors.green}
 
 ; Only applies if <animation-discharging> is used
 animation-discharging-0 = 
@@ -384,7 +361,7 @@ animation-discharging-3 = 
 animation-discharging-4 = 
 ; Framerate in milliseconds
 animation-discharging-framerate = 500
-format-discharging-underline = ${colors.alert}
+format-discharging-underline = ${colors.red}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -396,7 +373,7 @@ date-alt = "%a %b %d, %Y"
 time ="%l:%M%p"
 time-alt ="%l:%M%p"
 format-prefix = ""
-format-background = ${colors.background}
+format-background = ${colors.base}
 format-foreground = ${colors.foreground}
 label = "%date% %time% "
 format-underline = ${colors.alert}
@@ -412,7 +389,7 @@ format-connected = <label-connected>
 format-connected-prefix = ""
 format-connected-prefix-foreground = ${colors.foreground}
 format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
+format-connected-background = ${colors.base}
 format-connected-underline = ${colors.primary}
 
 ; ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -425,7 +402,7 @@ format-connected = <label-connected>
 format-connected-prefix = ""
 format-connected-prefix-foreground = ${colors.foreground}
 format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
+format-connected-background = ${colors.base}
 format-connected-underline = ${colors.alert}
 
 ; ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -437,7 +414,7 @@ interval = 1
 
 ;format = <label>
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-background = ${colors.base}
 
 format-padding = 0
 format-underline = ${colors.success}
@@ -454,7 +431,7 @@ interval = 100
 label = Uptime : %output%
 
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-background = ${colors.base}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 
@@ -470,22 +447,22 @@ label-connected = %essid%
 format-connected = <label-connected>
 ;format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
+format-connected-background = ${colors.base}
 format-connected-prefix = "  "
 format-connected-prefix-foreground = #7e52c6
-format-connected-prefix-background = ${colors.background}
+format-connected-prefix-background = ${colors.base}
 format-connected-underline = #7e52c6
 
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
+label-disconnected-background = ${colors.base}
 
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${colors.alert}
-format-disconnected-background = ${colors.background}
+format-disconnected-background = ${colors.base}
 format-disconnected-prefix = "  "
 format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
+format-disconnected-prefix-background = ${colors.base}
 format-disconnected-underline =${colors.alert}
 
 ramp-signal-0 = ▁
@@ -519,24 +496,24 @@ format = <label-state>
 label-monitor = %name%
 
 label-active = %name%
-label-active-foreground = ${colors.foreground}
-label-active-background = ${colors.active}
-label-active-underline= ${colors.active}
+label-active-foreground = ${colors.base}
+label-active-background = ${colors.blue}
+label-active-underline= ${colors.peach}
 label-active-padding = 1
 
 label-occupied = %name%
-label-occupied-background = ${colors.inactive}
-label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.surface0}
+label-occupied-foreground = ${colors.text}
 label-occupied-padding = 1
 
 label-urgent = %name%
-label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.alert}
-label-urgent-underline = ${colors.alert}
+label-urgent-foreground = ${colors.base}
+label-urgent-background = ${colors.red}
+label-urgent-underline = ${colors.red}
 label-urgent-padding = 1
 
 label-empty = %name%
-label-empty-foreground = ${colors.foreground}
+label-empty-foreground = ${colors.text}
 label-empty-padding = 1
 
 [module/mpd]
@@ -596,14 +573,15 @@ sink = alsa_output.pci-0000_12_00.3.analog-stereo
 use-ui-max = true
 interval = 5
 format-volume = <ramp-volume> <label-volume>
-label-muted = 🔇 MUTED 
-label-muted-foreground = #666
+label-muted = 🔇
+label-muted-foreground = ${color.red}
 
-; Only applies if <ramp-volume> is used
 ramp-volume-0 = 🔈
 ramp-volume-1 = 🔉
 ramp-volume-2 = 🔊
 
-; Right and Middle click
 click-right = pavucontrol
-; click-middle = 
+
+
+[settings]
+screenchange-reload = true

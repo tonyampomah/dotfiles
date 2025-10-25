@@ -5,6 +5,7 @@ configuration {
     disable-history:                false;
     click-to-exit: 		            true;
     location:                       0;
+    dpi: 200;
 }
 
 @import "font.rasi"
