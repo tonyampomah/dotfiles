@@ -1,0 +1,38 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  "lost_windows",
+  "monitors",
+  "toggle_dpms",
+  "magnify",
+  "expose",
+  "shift_monitors",
+  "workspaces_follow_focus",
+]
+
+# [monitors.placement]
+# "Acer".top_center_of = "Sony"
+
+# [workspaces_follow_focus]
+# max_workspaces = 9
+
+[expose]
+include_special = false
+
+[scratchpads.music]
+animation = "fromTop"
+command = "kitty --class kitty-ncmpcpp ncmpcpp"
+class = "kitty-ncmpcpp"
+size = "75% 60%"
+
+[scratchpads.webcam]
+animation = "fromTop"
+command = "kitty --class kitty-webcam guvcview"
+class = "kitty-webcam"
+size = "75% 60%"
+
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+size = "75% 60%"
