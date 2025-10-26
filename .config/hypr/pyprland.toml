@@ -8,6 +8,7 @@ plugins = [
   "expose",
   "shift_monitors",
   "workspaces_follow_focus",
+  "wallpapers",
 ]
 
 # [monitors.placement]
@@ -25,14 +26,21 @@ command = "kitty --class kitty-ncmpcpp ncmpcpp"
 class = "kitty-ncmpcpp"
 size = "75% 60%"
 
-[scratchpads.webcam]
-animation = "fromTop"
-command = "kitty --class kitty-webcam guvcview"
-class = "kitty-webcam"
-size = "75% 60%"
+# [scratchpads.webcam]
+# animation = "fromTop"
+# command = "kitty --class kitty-webcam ffplay -f v4l2 -framerate 30 -video_size 640x480 /dev/video0"
+# class = "kitty-webcam"
+# size = "75% 60%"
 
 [scratchpads.term]
 animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "75% 60%"
+
+[wallpapers]
+unique = true # set a different wallpaper for each screen
+path = "~/Nextcloud/Photos/Luka-photoshoot/"
+interval = 60 # change every hour
+extensions = ["jpg", "jpeg"]
+recurse = true
