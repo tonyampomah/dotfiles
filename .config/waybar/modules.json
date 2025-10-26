@@ -25,6 +25,24 @@
     }
   },
 
+  "sway/workspaces": {
+    "all-outputs": false,
+    "format": "{icon} {value}",
+    "format-icons": {
+      "default": "󰑊",
+      "focused": "󰑉",
+      "urgent": "󰑇",
+      "persistent": "󰑋"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": []
+    },
+    "disable-click": false,
+    "disable-scroll": false
+  },
+
   // Taskbar
   "wlr/taskbar": {
     "format": "{icon}",

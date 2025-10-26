@@ -14,10 +14,10 @@ set $up k
 set $right l
 
 # Preferred terminal emulator
-set $term alacritty
+set $term kitty
 
 # Preferred application launcher
-set $menu ~/.config/rofi/launcher.sh
+set $menu ~/.config/rofi/bin/launcher
 
 gaps inner 10
 gaps outer 10
@@ -25,11 +25,13 @@ gaps outer 10
 ######################################################################################
 ### Output configuration
 ######################################################################################
-# output * bg ~/Nextcloud/Documents/Joint/3Resources/Wallpapers/0002.jpg fill
-output HDMI-A-1 bg ~/Nextcloud/Documents/Joint/3Resources/Wallpapers/0002.jpg fill
+output * bg ~/Nextcloud/Photos/Luka-photoshoot/BabyLuka25Jan25-1-2.jpg fill
+# output HDMI-A-1 bg ~/Nextcloud/Documents/Joint/3Resources/Wallpapers/0002.jpg fill
 
 # focus output DP-1
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+output DP-1 scale 1.25
+output eDP-1 scale 1.20
 output DP-1 resolution 3840x1600@75Hz position 0,0
 output eDP-1 resolution 3840x2160
 
@@ -51,8 +53,6 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 default_border none
 default_border pixel 3
-
-
 ######################################################################################
 ### Idle configuration
 ######################################################################################
@@ -68,23 +68,29 @@ default_border pixel 3
 ######################################################################################
 ### Input configuration
 ######################################################################################
-input "4152:5652:SteelSeries_SteelSeries_Apex_Pro_TKL" {
+input "13364:53296:Keychron__Keychron_Link__Keyboard" {
     xkb_layout gb
-    repeat_rate 100
-    repeat_delay 350
-    # xkb_options ctrl:nocaps
+    repeat_rate 80
+    repeat_delay 300
+    xkb_variant mac
+    xkb_options ctrl:nocaps
+}
+
+input "1:1:AT_Translated_Set_2_keyboard" {
+    xkb_layout gb
+    repeat_rate 80
+    repeat_delay 300
     xkb_options altwin:swap_lalt_lwin,ctrl:nocaps
 }
 
-
-input "1739:31251:SYNA2393:00_06CB:7A13_Mouse" {
+input "1739:52710:DLL096D:01_06CB:CDE6_Touchpad" {
     natural_scroll enabled
-    pointer_accel 1
+    tap enabled
+    # pointer_accel 1
 }
 
+
 input * xkb_capslock disable
-
-
 ######################################################################################
 ### Key bindings
 ######################################################################################
@@ -94,17 +100,9 @@ bindsym $mod+Return exec $term
 # Kill focused window
 bindsym $mod+q kill
 
-# Launch password manager
-bindsym $mod+p exec rofi-pass
-
-# Launch Emacs Client
-bindsym $mod+e exec emacsclient -c -a ''
-
-# Launcher
+bindsym $mod+p exec ~/.config/rofi/bin/pass
+bindsym $mod+b exec ~/.config/rofi/bin/bookmark
 bindsym $mod+space exec $menu
-
-# Make sticky window
-bindsym $mod+s sticky toggle
 
 # Toggle workspace
 bindsym $mod+Tab workspace back_and_forth
@@ -115,8 +113,6 @@ bindsym $mod+Shift+r reload
 # Terminal Scratchpad
 bindsym $mod+t exec sh -c 'swaymsg [app_id="terminal"] scratchpad show || exec $term --title terminal --class terminal'
 
-# Search bookmarks
-bindsym $mod+b exec ~/.config/rofi/launcher-bookmark.sh
 
 ######################### Super + Shift + Keys
 # Open file manager
@@ -132,11 +128,11 @@ floating_modifier $mod normal
 ######################################################################################
 ### Volume & Brightness Control
 ######################################################################################
-bindsym XF86AudioRaiseVolume exec pamixer -i 2
-bindsym XF86AudioLowerVolume exec pamixer -d 2
-bindsym XF86AudioMute exec amixer -q set Master toggle
-bindsym XF86MonBrightnessUp exec light -A 2
-bindsym XF86MonBrightnessDown exec light -U 2
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -146,7 +142,6 @@ bindsym XF86AudioPrev exec playerctl previous
 ######################################################################################
 ### # MOD + ALT KEYS for Launching Apps
 ######################################################################################
-bindsym $mod+Alt+a exec emacsclient -c -a '' --eval '(itechytony/day-view)'
 bindsym $mod+Alt+e exec emacs
 bindsym $mod+Alt+m exec xfce4-settings-manager
 bindsym $mod+Alt+s exec slack
@@ -171,8 +166,7 @@ bindsym Control+Alt+delete exec xfce4-taskmanager
 
 # MOD + SHIFT KEYS
 # bindsym $mod+Shift+q exec swaylock
-bindsym $mod+Shift+q exec sh -c 'rofi-power-menu'
-bindsym $mod+Shift+v exec sh -c ''
+bindsym $mod+Shift+e exec sh -c 'wlogout'
 bindsym $mod+Shift+m exec sh -c 'swaymsg [app_id="musicScratchPad"] scratchpad show || exec $term --class musicScratchPad --title musicScratchPad --command ncmpcpp'
 bindsym $mod+Shift+w exec sh -c 'swaymsg [app_id="webcamScratchPad"] scratchpad show || exec mplayer tv://device=/dev/video02 -title webcamScratchPad'
 bindsym $mod+Shift+s exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'%s_grim.png') 
@@ -357,16 +351,9 @@ assign [app_id="com.nextcloud.desktopclient.nextcloud"] 0
 ######################################################################################
 ### Startup Apps
 ######################################################################################
-exec waybar -s ~/.config/waybar/sytle.css
+exec waybar
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec /usr/bin/emacs --daemon
-exec xcape -e 'Control_L=Escape'
 exec nextcloud
-# exec xrdb -load ~/.Xresources
-exec gammastep-indicator
-# exec variety
+exec swaync
 exec nm-applet
-# exec xbindkeys -f ~/.xbindkeysrc
-# exec slack
-# exec telegram-desktop
-# exec whatsdesk
+exec emacs
