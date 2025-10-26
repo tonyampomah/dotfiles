@@ -9,6 +9,6 @@ if [ "$1" = "close" ]; then
   hyprctl keyword monitor $INTERNAL_DISPLAY,disable
 elif [ "$1" = "open" ]; then
   # Lid is opened: re-enable internal display
-  hyprctl keyword monitor $INTERNAL_DISPLAY,preferred,auto,1
+  hyprctl keyword monitor $INTERNAL_DISPLAY,preferred,auto,1.25
   hyprctl dispatch dpms on $INTERNAL_DISPLAY
 fi
