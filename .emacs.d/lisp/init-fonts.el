@@ -10,8 +10,8 @@
   "The font used for `variable-pitch' face.")
 
 
-(set-face-attribute 'default nil :font kd/fixed-pitch-font :height 160)
-(set-face-attribute 'fixed-pitch nil :font kd/fixed-pitch-font :height 160)
+(set-face-attribute 'default nil :font kd/fixed-pitch-font :height 140)
+(set-face-attribute 'fixed-pitch nil :font kd/fixed-pitch-font :height 140)
 (set-face-attribute 'variable-pitch nil :font kd/variable-pitch-font)
 
 ;; (when (eq system-type 'darwin)  ;; Check if running on macOS

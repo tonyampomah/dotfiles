@@ -330,7 +330,28 @@
 		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
 
-(use-package org-gtd)
+;; (setq org-gtd-next-actions-skip-function
+;;       '(org-agenda-skip-entry-if 'todo '("HABIT") 'tag '("habit")))
+;; (setq org-gtd-done-skip-tags '("habit"))
+;; (use-package org-gtd)
+
+(use-package org-gtd
+  :after org
+  :straight (org-gtd :type git :host github :repo "trevoke/org-gtd.el" :commit "3.0.0")
+  :demand t
+  :custom
+  (org-gtd-directory "~/gtd")
+  (org-edna-use-inheritance t)
+  (org-gtd-organize-hooks '(org-gtd-set-area-of-focus org-set-tags-command))
+  :config
+  (org-edna-mode)
+  :bind
+  (("C-c d c" . org-gtd-capture)
+   ("C-c d e" . org-gtd-engage)
+   ("C-c d p" . org-gtd-process-inbox)
+   :map org-gtd-clarify-map
+   ("C-c c" . org-gtd-organize)))
+
 
 ;; Files
 (setq org-directory "~/gtd")

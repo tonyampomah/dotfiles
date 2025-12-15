@@ -60,5 +60,17 @@
 
 (global-set-key (kbd "M-<return>") 'projectile-run-eshell)
 
+;; Add directories to PATH
+(if (file-directory-p "~/.bin")
+    (setenv "PATH" (concat "~/.bin:" (getenv "PATH"))))
+(if (file-directory-p "~/.local/bin")
+    (setenv "PATH" (concat "~/.local/bin:" (getenv "PATH"))))
+
+;; Update exec-path too
+(add-to-list 'exec-path "~/.bin")
+(add-to-list 'exec-path "~/.local/bin")
+
+
+
 (provide 'init-eshell)
 ;;; init-eshell.el ends here

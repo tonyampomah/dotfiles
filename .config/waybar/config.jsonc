@@ -25,27 +25,25 @@
 
     // Modules Left
     "modules-left": [
+        "hyprland/workspaces",
+	"sway/workspaces"
+    ],
+
+    // Modules Center
+    "modules-center": [
         "group/links",
         "group/quicklinks",
         "hyprland/window",
         "custom/empty"
     ],
 
-    // Modules Center
-    "modules-center": [
-        "hyprland/workspaces",
-	"sway/workspaces"
-    ],
-
     // Modules Right    
     "modules-right": [
         "custom/updates",
         "pulseaudio",
-        "bluetooth",
         "network",
         "battery", 
         "power-profiles-daemon",
-        "group/hardware",
         "tray",
         "custom/notification",
         "custom/exit",
