@@ -65,7 +65,7 @@
      (sql . t)
      (ruby . t)
      (php . t)
-     (mermaid . t)
+     ;; (mermaid . t)
      (scheme . t)
      (sqlite . t)
      ))
