@@ -3,11 +3,6 @@
 ;;; Code:
 (setq-default fill-column 80)
 
-;; (defun kd/pretty-org-agenda ()
-;;   (variable-pitch-mode 1)
-;;   )
-
-;; (add-hook 'org-agenda-mode-hook 'kd/pretty-org-agenda)
 ;; Turn on indentation and auto-fill mode for Org files
 (defun kd/org-mode-setup ()
   (org-indent-mode)
@@ -18,9 +13,7 @@
   (setq evil-auto-indent nil))
 
 (use-package org
-  ;; :defer t
   :straight (:type built-in)
-  ;; :straight org-plus-contrib
   :hook (org-mode . kd/org-mode-setup)
   :config
   (setq org-ellipsis " ⤵"
@@ -48,8 +41,6 @@
   (setq org-refile-targets '((nil :maxlevel . 3)
 			     (org-agenda-files :maxlevel . 3)))
 
-  ;; (setq org-outline-path-complete-in-steps nil)
-  ;; (setq org-refile-use-outline-path t)
   (setq org-habit-graph-column 60)
 
   (evil-define-key '(normal insert visual) org-mode-map (kbd "C-j") 'org-next-visible-heading)
@@ -65,7 +56,6 @@
      (sql . t)
      (ruby . t)
      (php . t)
-     ;; (mermaid . t)
      (scheme . t)
      (sqlite . t)
      ))
@@ -330,10 +320,8 @@
 		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
 
-;; (setq org-gtd-next-actions-skip-function
-;;       '(org-agenda-skip-entry-if 'todo '("HABIT") 'tag '("habit")))
-;; (setq org-gtd-done-skip-tags '("habit"))
-;; (use-package org-gtd)
+
+
 
 (use-package org-gtd
   :after org
@@ -359,6 +347,8 @@
 (setq org-agenda-files '(
 			 "~/gtd"
 			 ))
+
+
 
 (setq org-edna-use-inheritance t)
 (org-edna-mode t)
@@ -412,8 +402,13 @@
       '(("projects.org" :regexp . "\\(?:\\(?:Note\\|Task\\)s\\)")))
 
 ;; TODO
+;; (setq org-todo-keywords
+;;       '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)")))
+
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)")))
+      '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+        (sequence "HABIT(h)" "|" "DONE(d)")))
+
 (defun log-todo-next-creation-date (&rest ignore)
   "Log NEXT creation time in the property drawer under the key 'ACTIVATED'"
   (when (and (string= (org-get-todo-state) "NEXT")
@@ -452,6 +447,9 @@
 ;; 	      (file-expand-wildcards "~/gtd/*.org")))
 
 
+
+
+
 ;; Bindings
 (kd/leader-key-def
       ;;; <leader> n --- notes
@@ -486,8 +484,6 @@
   "vw" 'org-agenda-week-view
   "vm" 'org-agenda-month-view
   "vy" 'org-agenda-year-view)
-
-
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here
