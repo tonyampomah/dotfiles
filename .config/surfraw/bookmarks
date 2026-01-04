@@ -51,3 +51,9 @@ flogas https://myaccount.flogas.co.uk/overview
 whatsmydns https://www.whatsmydns.net/
 dns-propagation-checker https://www.whatsmydns.net/
 jenkins.arksolutions.it https://jenkins.arksolutions.it/
+finatec.localhost http://finatec.localhost/
+cms.finatec.localhost http://cms.finatec.localhost/
+staging.finatec.co.uk https://staging.finatec.co.uk/
+staging.cms.finatec.co.uk https://staging.cms.finatec.co.uk/admin/auth/login
+storybook.finatec.localhost http://storybook.finatec.localhost
+storybook.finatec.co.uk https://storybook.finatec.co.uk

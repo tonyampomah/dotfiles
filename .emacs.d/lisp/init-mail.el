@@ -22,7 +22,6 @@
 (setq mu4e-bookmarks
   '((:name "Unread messages" :query "flag:unread AND maildir:/Inbox" :key ?u)
     (:name "Today's messages" :query "date:today..now" :key ?t)
-    (:name "The Boss" :query "from:tayo" :key ?w)
     (:name "Last 7 days" :query "date:7d..now" :hide-unread t :key ?w)
     (:name "Messages with images" :query "mime:image/*" :key ?p)))
 
@@ -48,7 +47,7 @@
 					    ("/tony@arksolutions.it/Drafts"   . ?d)
 					    ))
                 (mu4e-drafts-folder  . "/tony@arksolutions.it/Drafts")
-                (mu4e-sent-folder  . "/tony@arksolutions.it/Sent Mail")
+                (mu4e-sent-folder  . "/tony@arksolutions.it/Sent")
                 (mu4e-refile-folder  . "/tony@arksolutions.it/Archive")
                 (mu4e-trash-folder  . "/tony@arksolutions.it/Trash")))
 
