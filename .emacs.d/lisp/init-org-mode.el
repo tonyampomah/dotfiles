@@ -64,7 +64,6 @@
 
 (use-package org-contrib :after org)
 
-
 (use-package org-pomodoro
   :defer t
   :after org
@@ -91,30 +90,17 @@
   :after org
   :init (add-to-list 'org-export-backends 'twbs))
 
-(use-package ob-php
-  :after org
-  :defer t)
+;; (use-package ob-php
+;;   :after org
+;;   :defer t)
 
 (use-package ox-pandoc
   :after org
   :defer t
   :init (add-to-list 'org-export-backends 'pandoc))
 
-(use-package ox-slack
-  :after org
-  :defer t
-  :init (add-to-list 'org-export-backends 'slack))
-
-(use-package ox-slimhtml
-  :after org
-  :defer t
-  :init (add-to-list 'org-export-backends 'slimhtml))
-
 (use-package ob-async
   :after org
-  :defer t)
-
-(use-package ob-php
   :defer t)
 
 (use-package ob-restclient
@@ -170,7 +156,6 @@
 
 ;; Automatically put quick capture into insert mode
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
-
 
 ;; Refile targets configuration 
 (setq org-refile-targets
@@ -319,43 +304,43 @@
 		 ("\\paragraph{%s}" . "\\paragraph*{%s}")
 		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
-
-
-
-
 (use-package org-gtd
+  :ensure t
   :after org
-  :straight (org-gtd :type git :host github :repo "trevoke/org-gtd.el" :commit "3.0.0")
   :demand t
+  :init
+  ;; Suppress upgrade warnings (must be set before package loads)
+  (setq org-gtd-update-ack "4.0.0")
+
   :custom
-  (org-gtd-directory "~/gtd")
-  (org-edna-use-inheritance t)
-  (org-gtd-organize-hooks '(org-gtd-set-area-of-focus org-set-tags-command))
+  (org-todo-keywords '((sequence "TODO" "NEXT" "WAIT" "|" "DONE" "CNCL")))
+
+  (org-gtd-keyword-mapping '((todo . "TODO")
+                             (next . "NEXT")
+                             (wait . "WAIT")
+                             (canceled . "CNCL")))
+
   :config
-  (org-edna-mode)
+  (org-edna-mode 1)
+  (setq org-agenda-files (list org-gtd-directory))
+
   :bind
   (("C-c d c" . org-gtd-capture)
    ("C-c d e" . org-gtd-engage)
    ("C-c d p" . org-gtd-process-inbox)
-   :map org-gtd-clarify-map
-   ("C-c c" . org-gtd-organize)))
+   ("C-c d n" . org-gtd-show-all-next)
+   ("C-c d s" . org-gtd-reflect-stuck-projects)
 
+   ;; Keybinding for organizing items (only works in clarify buffers)
+   :map org-gtd-clarify-mode-map
+   ("C-c c" . org-gtd-organize)
 
-;; Files
-(setq org-directory "~/gtd")
+   ;; Quick actions on tasks in agenda views (optional but recommended)
+   :map org-agenda-mode-map
+   ("C-c ." . org-gtd-agenda-transient)))
 
-(setq org-agenda-files '(
-			 "~/gtd"
-			 ))
-
-
-
-(setq org-edna-use-inheritance t)
-(org-edna-mode t)
 
 (setq org-gtd-organize-hooks nil)
-;; (setq org-agenda-files (list "inbox.org" "agenda.org"
-;;                              "notes.org" "projects.org"))
 
 ;; Capture
 (setq org-capture-templates
@@ -385,10 +370,6 @@
 ;; Use full window for org-capture
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
 
-;; Key bindings
-(define-key global-map            (kbd "C-c a") 'org-agenda)
-(define-key global-map            (kbd "C-c c") 'org-capture)
-(define-key global-map            (kbd "C-c i") 'org-capture-inbox)
 
 ;; Only if you use mu4e
 ;; (require 'mu4e)
@@ -400,10 +381,6 @@
 (setq org-outline-path-complete-in-steps nil)
 (setq org-refile-targets
       '(("projects.org" :regexp . "\\(?:\\(?:Note\\|Task\\)s\\)")))
-
-;; TODO
-;; (setq org-todo-keywords
-;;       '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)")))
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
@@ -442,15 +419,12 @@
                 ((org-agenda-overriding-header "\nCompleted today\n")))
 	  ))))
 
-;; (setq org-agenda-files 
-;;       (mapcar 'file-truename 
-;; 	      (file-expand-wildcards "~/gtd/*.org")))
-
-
-
-
 
 ;; Bindings
+(define-key global-map            (kbd "C-c a") 'org-agenda)
+(define-key global-map            (kbd "C-c c") 'org-capture)
+(define-key global-map            (kbd "C-c i") 'org-capture-inbox)
+
 (kd/leader-key-def
       ;;; <leader> n --- notes
   "nf" '(lambda() (interactive) (org-roam-node-find))
