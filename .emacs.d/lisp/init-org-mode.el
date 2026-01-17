@@ -75,10 +75,10 @@
 (setq org-caldav-url "https://nextcloud.theampomahs.com/remote.php/caldav/calendars/kwamedat")
 (setq org-caldav-calendars
       '(
-	(:calendar-id "personal" :inbox "~/org/calendar/pcal.org")
-	(:calendar-id "spiritual" :inbox "~/org/calendar/scal.org")
-	(:calendar-id "events" :inbox "~/org/calendar/ecal.org")
-	(:calendar-id "tony-tayo" :inbox "~/org/calendar/jcal.org")
+	(:calendar-id "personal" :inbox "~/gtd/calendar/pcal.org")
+	(:calendar-id "spiritual" :inbox "~/gtd/calendar/scal.org")
+	(:calendar-id "events" :inbox "~/gtd/calendar/ecal.org")
+	(:calendar-id "tony-tayo" :inbox "~/gtd/calendar/jcal.org")
 	))
 
 (use-package org-caldav
@@ -166,43 +166,43 @@
 
 (setq org-capture-templates
       '(
-	("i" "Inbox" entry (file "~/org/inbox.org")
+	("i" "Inbox" entry (file "~/gtd/inbox.org")
 	 "* TODO %?\n %i\n")
 	("j" "jw")
-	("jb" "Bible Reading" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/bible-reading.org"))
-	("jm" "Microphone" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/microphone.org"))
-	("jr" "Return Visit" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/return-visit.org"))
-	("jc" "Cong. Bible Study Reader" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/cong-bible-study-reader.org"))
-	("jt" "Talk" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/talk.org"))
-	("jw" "Watchtower" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/watchtower-reader.org"))
-	("jk" "Kingdom Cleaning" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/cleaning.org"))
-	("ji" "Initial Call" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/initial-call.org"))
+	("jb" "Bible Reading" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/bible-reading.org"))
+	("jm" "Microphone" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/microphone.org"))
+	("jr" "Return Visit" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/return-visit.org"))
+	("jc" "Cong. Bible Study Reader" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/cong-bible-study-reader.org"))
+	("jt" "Talk" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/talk.org"))
+	("jw" "Watchtower" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/watchtower-reader.org"))
+	("jk" "Kingdom Cleaning" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/cleaning.org"))
+	("ji" "Initial Call" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/initial-call.org"))
 	("ja" "Audio Visual")
-	("jam" "Audio Visual Main" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/audio-visual.org"))
-	("jaa" "Audio Visual Assistant" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/audio-visual-assistant.org"))
-	("jab" "Broadcast" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/broadcast.org"))
+	("jam" "Audio Visual Main" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/audio-visual.org"))
+	("jaa" "Audio Visual Assistant" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/audio-visual-assistant.org"))
+	("jab" "Broadcast" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/broadcast.org"))
 	("jp" "Prayer/Platform")
-	("jpo" "Opening Prayer" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/opening-prayer.org"))
-	("jpc" "Closing Prayer" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/closing-prayer.org"))
-	("jpp" "Platform" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/platform.org"))
-	("p" "Project" entry (file+headline "~/org/todo.org" "1Projects")
-	 (file "~/org/templates/project.org"))
+	("jpo" "Opening Prayer" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/opening-prayer.org"))
+	("jpc" "Closing Prayer" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/closing-prayer.org"))
+	("jpp" "Platform" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/platform.org"))
+	("p" "Project" entry (file+headline "~/gtd/todo.org" "1Projects")
+	 (file "~/gtd/templates/project.org"))
 	("w" "work")
-	("wi" "Inbox" entry (file "~/org-work/work-inbox.org")
+	("wi" "Inbox" entry (file "~/gtd/work-inbox.org")
 	 "* TODO %?\n %i\n")
 	("wo" "On boarding" entry (file+headline "~/org-work/work-todo.org" "1Projects")
 	 (file "~/org-work/templates/onboarding.org"))
@@ -214,7 +214,7 @@
 	 (file "~/org-work/templates/story.org"))
 	("wb" "Bug Ticket" entry (file+headline "~/org-work/work-inbox.org" "Tickets")
 	 (file "~/org-work/templates/bug.org"))
-	("m" "Mail" entry (file+headline "~/org/inbox.org" "")
+	("m" "Mail" entry (file+headline "~/gtd/inbox.org" "")
 	 "* TODO [#A] Process Email %:fromname on %:subject\nSCHEDULED:%t\nDEADLINE: %(org-insert-time-stamp (org-read-date nil t \"+2d\"))\n:PROPERTIES:\n:CREATED: %U\n:END:\n %a" :immediate-finish t :prepend t)
 	))
 
@@ -315,10 +315,10 @@
   :custom
   (org-todo-keywords '((sequence "TODO" "NEXT" "WAIT" "|" "DONE" "CNCL")))
 
-  (org-gtd-keyword-mapping '((todo . "TODO")
-                             (next . "NEXT")
-                             (wait . "WAIT")
-                             (canceled . "CNCL")))
+  ;; (org-gtd-keyword-mapping '((todo . "TODO")
+  ;;                            (next . "NEXT")
+  ;;                            (wait . "WAIT")
+  ;;                            (canceled . "CNCL")))
 
   :config
   (org-edna-mode 1)
@@ -341,21 +341,6 @@
 
 
 (setq org-gtd-organize-hooks nil)
-
-;; Capture
-(setq org-capture-templates
-      `(("i" "Inbox" entry  (file "inbox.org")
-        ,(concat "* TODO %?\n"
-                 "/Entered on/ %U"))
-        ("m" "Meeting" entry  (file+headline "agenda.org" "Future")
-        ,(concat "* %? :meeting:\n"
-                 "<%<%Y-%m-%d %a %H:00>>"))
-        ("n" "Note" entry  (file "notes.org")
-        ,(concat "* Note (%a)\n"
-                 "/Entered on/ %U\n" "\n" "%?"))
-        ("@" "Inbox [mu4e]" entry (file "inbox.org")
-        ,(concat "* TODO Reply to \"%a\" %?\n"
-                 "/Entered on/ %U"))))
 
 (defun org-capture-inbox ()
      (interactive)
@@ -382,9 +367,6 @@
 (setq org-refile-targets
       '(("projects.org" :regexp . "\\(?:\\(?:Note\\|Task\\)s\\)")))
 
-(setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-        (sequence "HABIT(h)" "|" "DONE(d)")))
 
 (defun log-todo-next-creation-date (&rest ignore)
   "Log NEXT creation time in the property drawer under the key 'ACTIVATED'"
