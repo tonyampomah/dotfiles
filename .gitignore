@@ -7,3 +7,4 @@
 /.xmonad/build-x86_64-linux/
 /nohup.out
 /.config/ncmpcpp/error.log
+/.config/hypr/hosts/current.conf
