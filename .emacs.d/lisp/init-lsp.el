@@ -135,13 +135,6 @@
 ;;              clojure-mode))
 ;;     (add-to-list 'lsp-tailwindcss-major-modes tw-major-mode)))
 
-
-;; (lsp-register-client
-;;  (make-lsp-client
-;;   :new-connection (lsp-stdio-connection #'lsp-robot-framework-server-command)
-;;   :major-modes '(robot-mode)
-;;   :server-id 'robotframework-ls))
-
 (use-package lsp-treemacs
   :ensure t
   :commands lsp-treemacs-errors-list)

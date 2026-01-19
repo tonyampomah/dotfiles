@@ -4,22 +4,34 @@
 (use-package robot-mode
   :ensure t)
 
-(defun lsp-robot-framework-server-command ()
-  "Return the command to start the Robot Framework Language Server."
-  (list "robotframework_ls"))
+;; (defun lsp-robot-framework-server-command ()
+;;   "Return the command to start the Robot Framework Language Server."
+;;   (list "robotframework_ls"))
 
-(lsp-register-client
- (make-lsp-client
-  :new-connection (lsp-stdio-connection #'lsp-robot-framework-server-command)
-  :major-modes '(robot-mode)
-  :server-id 'robotframework-ls))
+;; (lsp-register-client
+;;  (make-lsp-client
+;;   :new-connection (lsp-stdio-connection #'lsp-robot-framework-server-command)
+;;   :major-modes '(robot-mode)
+;;   :server-id 'robotframework-ls))
+;; (lsp-register-client
+;;  (make-lsp-client
+;;   :new-connection (lsp-stdio-connection '("robotframework_ls"))
+;;   :major-modes '(robot-mode)
+;;   :server-id 'robotframework-ls))
 
+(require 'lsp-mode)
 
-;; (defun find-robot-project-root ()
-;;   "Find the root directory of the Robot Framework project."
-;;   (or (locate-dominating-file default-directory "pyproject.toml")  ;; Change marker if needed
-;;       (locate-dominating-file default-directory "robot_tests")     ;; Alternative marker
-;;       (vc-root-dir)))  ;; Use version control root as fallback
+(setq lsp-log-io t)
+
+(with-eval-after-load 'lsp-mode
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection '("robotframework_ls"))
+    :major-modes '(robot-mode)
+    :server-id 'robotframework-ls)))
+
+(add-hook 'robot-mode-hook #'lsp-deferred)
+
 
 
 (defun find-robot-project-root ()
