@@ -309,16 +309,11 @@
   :after org
   :demand t
   :init
-  ;; Suppress upgrade warnings (must be set before package loads)
   (setq org-gtd-update-ack "4.0.0")
 
   :custom
-  (org-todo-keywords '((sequence "TODO" "NEXT" "WAIT" "|" "DONE" "CNCL")))
 
-  ;; (org-gtd-keyword-mapping '((todo . "TODO")
-  ;;                            (next . "NEXT")
-  ;;                            (wait . "WAIT")
-  ;;                            (canceled . "CNCL")))
+  (org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CNCL(c)")))
 
   :config
   (org-edna-mode 1)
