@@ -51,14 +51,12 @@
 ;; General Configuration
 (require 'init-fonts)
 (require 'init-user-interface)
-(require 'init-themes) ;; stop theme compilation
+(require 'init-themes)
 (require 'init-modeline)
 (require 'init-completion)
-(require 'init-treemacs)
-(require 'init-workspace) ;; fix persp mode
+(require 'init-workspace)
 (require 'init-configuration-files)
 (require 'init-search-n-lookup)
-(require 'init-notifications)
 
 ;; File Browsing
 (require 'init-dired)
@@ -72,14 +70,11 @@
 
 ;; Tools
 (require 'init-docker)
-(require 'init-kubernetes)
 (require 'init-vagrant)
 (require 'init-editorconfig)
-(require 'init-elastic-search)
 (require 'init-debugger)
 (require 'init-lsp)
 (require 'init-formatting)
-;; (require 'init-structural-editing)
 
 ;; Productivity
 (require 'init-syntax-checking)
@@ -108,8 +103,6 @@
 (require 'init-yaml)
 (require 'init-finance)
 (require 'init-org-mode)
-(require 'init-diagrams)
-(require 'init-nix)
 
 ;; Applications
 (kd/leader-key-def

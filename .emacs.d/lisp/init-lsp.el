@@ -124,16 +124,23 @@
 ;;   :demand t
 ;;   :after lsp-mode)
 
-(use-package lsp-tailwindcss
-  :straight '(lsp-tailwindcss :type git :host github :repo "merrickluo/lsp-tailwindcss")
-  :init (setq lsp-tailwindcss-add-on-mode t)
-  :config
-  (dolist (tw-major-mode
-           '(css-mode
-             css-ts-mode
-             web-mode
-             clojure-mode))
-    (add-to-list 'lsp-tailwindcss-major-modes tw-major-mode)))
+;; (use-package lsp-tailwindcss
+;;   :straight '(lsp-tailwindcss :type git :host github :repo "merrickluo/lsp-tailwindcss")
+;;   :init (setq lsp-tailwindcss-add-on-mode t)
+;;   :config
+;;   (dolist (tw-major-mode
+;;            '(css-mode
+;;              css-ts-mode
+;;              web-mode
+;;              clojure-mode))
+;;     (add-to-list 'lsp-tailwindcss-major-modes tw-major-mode)))
+
+
+;; (lsp-register-client
+;;  (make-lsp-client
+;;   :new-connection (lsp-stdio-connection #'lsp-robot-framework-server-command)
+;;   :major-modes '(robot-mode)
+;;   :server-id 'robotframework-ls))
 
 (use-package lsp-treemacs
   :ensure t

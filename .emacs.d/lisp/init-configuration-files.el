@@ -13,10 +13,6 @@
   (interactive)
   (counsel-find-file "~/.ssh"))
 
-(defun kd/visit-resolv-conf ()
-  (interactive)
-  (find-file "/sudo:root@localhost:/etc/resolv.conf"))
-
 (defun kd/find-in-notes ()
   (interactive)
   (counsel-find-file "~/org"))
@@ -52,7 +48,6 @@
 
 (kd/leader-key-def
   "fe"  'kd/find-in-emacs-directory
-  "fc"  'editorconfig-find-current-editorconfig
   "fC"  'itecytony/copy-this-file
   "fvp" 'kd/visit-emacs-config
   "fdd" '(lambda() (interactive) (find-file "~/Downloads"))
@@ -65,23 +60,12 @@
   "fw2"  '(lambda() (interactive) (find-file "~/RadiusRepo/2Areas"))
   "fw3"  '(lambda() (interactive) (find-file "~/RadiusRepo/3Resources"))
   "fw4"  '(lambda() (interactive) (find-file "~/RadiusRepo/4Archives"))
-  "fd1" '(lambda() (interactive) (find-file "~/Documents/Personal/1Projects"))
-  "fd2" '(lambda() (interactive) (find-file "~/Documents/Personal/2Areas"))
-  "fd3" '(lambda() (interactive) (find-file "~/Documents/Personal/3Resources"))
-  "fd4" '(lambda() (interactive) (find-file "~/Documents/Personal/4Archives"))
-  "fdw1" '(lambda() (interactive) (find-file "~/Documents/1Projects"))
-  "fdw2" '(lambda() (interactive) (find-file "~/Documents/2Areas"))
-  "fdw3" '(lambda() (interactive) (find-file "~/Documents/3Resources"))
-  "fdw4" '(lambda() (interactive) (find-file "~/Documents/4Archives"))
 
-  "fD"  'kd/delete-this-file
+  "fD"  'delete-file
   "ff"  'counsel-find-file
   "fh"  'kd/find-home-directory
-  "fx"  '(lambda() (interactive) (find-file "~/Repo/Personal/2Areas/dotfiles/.xmonad/xmonad.hs"))
   "fvh"  'kd/visit-host-file
-  "fvr"  'kd/visit-resolv-conf
   "fvs"  'kd/visit-ssh-config
-  "fve"  'kd/visit-emacs-config
   "fu"  'kd/sudo-find-file
   "fU"  'kd/sudo-this-file
   "fl"  'locate
