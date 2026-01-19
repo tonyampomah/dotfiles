@@ -15,11 +15,29 @@
   :server-id 'robotframework-ls))
 
 
+;; (defun find-robot-project-root ()
+;;   "Find the root directory of the Robot Framework project."
+;;   (or (locate-dominating-file default-directory "pyproject.toml")  ;; Change marker if needed
+;;       (locate-dominating-file default-directory "robot_tests")     ;; Alternative marker
+;;       (vc-root-dir)))  ;; Use version control root as fallback
+
+
 (defun find-robot-project-root ()
-  "Find the root directory of the Robot Framework project."
-  (or (locate-dominating-file default-directory "pyproject.toml")  ;; Change marker if needed
-      (locate-dominating-file default-directory "robot_tests")     ;; Alternative marker
-      (vc-root-dir)))  ;; Use version control root as fallback
+  "Locate the Robot Framework project root directory."
+  (or
+   ;; Marker file
+   (locate-dominating-file default-directory "pyproject.toml")
+
+   ;; Common robot project folder names
+   (locate-dominating-file default-directory "robot")
+   (locate-dominating-file default-directory "tests")
+
+   ;; Only use VC root if it looks like a robot project
+   (let ((root (vc-root-dir)))
+     (when (and root
+                (file-exists-p (expand-file-name "robot" root)))
+       root))))
+
 
 (defun run-robot-test-in-project ()
   "Run the Robot Framework test case at point within the project root using a relative path."
@@ -32,7 +50,7 @@
     (unless project-root
       (error "Project root not found!"))
     (let ((default-directory project-root))  ;; Set working directory
-      (compile (format "robot --test \"%s\" \"%s\"" test-name relative-file)))))
+      (compile (format "robot -L debug --test \"%s\" \"%s\"" test-name relative-file)))))
 
 (global-set-key (kbd "C-c r") 'run-robot-test-in-project)  ;; Shortcut to run a test
 
@@ -46,7 +64,7 @@
     (unless project-root
       (error "Project root not found!"))
     (let ((default-directory project-root))  ;; Set working directory
-      (compile (format "robot \"%s\"" relative-file)))))
+      (compile (format "robot -L debug \"%s\"" relative-file)))))
 
 (defun run-robot-project ()
   "Run the Robot Framework test case within an entire tests directory."
@@ -57,7 +75,7 @@
     (unless project-root
       (error "Project root not found!"))
     (let ((default-directory project-root))  ;; Set working directory
-      (compile (format "robot tests")))))
+      (compile (format "robot -L debug tests")))))
 
 (defun robot-format-on-save ()
   "Format Robot Framework file using robotidy before saving."
