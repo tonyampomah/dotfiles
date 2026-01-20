@@ -2,12 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 (use-package exec-path-from-shell
-  :defer t
   :demand t
   :init
-  (setq exec-path-from-shell-check-startup-files nil))
-(when (memq window-system '(mac ns))
+  ;; Avoid warnings if startup files changed
+  (setq exec-path-from-shell-check-startup-files nil)
+  ;; Import environment variables from the shell
   (exec-path-from-shell-initialize))
+
 
 (provide 'init-exec-path-from-shell)
 ;;; init-exec-path-from-shell.el ends here
