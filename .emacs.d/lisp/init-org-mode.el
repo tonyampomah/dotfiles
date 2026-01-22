@@ -436,5 +436,18 @@
   "vm" 'org-agenda-month-view
   "vy" 'org-agenda-year-view)
 
+
+(general-define-key
+ :states '(normal insert)
+ :keymaps 'org-mode-map
+ "s-<up>"   #'org-metaup
+ "s-<down>" #'org-metadown
+ "s-<left>"  #'org-metaleft
+ "s-<right>" #'org-metaright
+ "s-k"   #'org-metaup
+ "s-j" #'org-metadown
+ "s-h"  #'org-metaleft
+ "s-l" #'org-metaright)
+
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here
