@@ -29,6 +29,12 @@
   (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
   (setq vterm-kill-buffer-on-exit t))
 
+(use-package multi-vterm
+  :ensure t)
+
+(use-package multi-eshell
+  :ensure t)
+
 (add-hook 'vterm-mode-hook (lambda () (setq global-hl-line-mode nil)))
 
 (use-package vterm-toggle
