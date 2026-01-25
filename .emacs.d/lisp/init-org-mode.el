@@ -12,6 +12,21 @@
   (company-mode 0)
   (setq evil-auto-indent nil))
 
+(defun kd/day-view ()
+  (interactive)
+  (progn (org-agenda nil "a")
+	 (org-agenda-day-view)))
+
+(defun kd/week-view ()
+  (interactive)
+  (progn (org-agenda nil "a")
+	 (org-agenda-week-view)))
+
+(defun kd/month-view ()
+  (interactive)
+  (progn (org-agenda nil "a")
+	 (org-agenda-month-view)))
+
 (use-package org
   :straight (:type built-in)
   :hook (org-mode . kd/org-mode-setup)
@@ -411,9 +426,10 @@
   "nt" '(lambda() (interactive) (org-roam-dailies-capture-today))
   "np" 'org-gtd-process-inbox
   "ne" 'org-gtd-engage
-  "na" 'org-gtd-engage
-  "nd" 'org-gtd-engage
-  "nw" 'kd/week-view)
+  "na" 'org-agenda
+  "nd" 'kd/day-view
+  "nw" 'kd/week-view
+  "nm" 'kd/month-view)
 
 (kd/my-local-leader-def 'normal org-mode-map
   "c" 'org-ctrl-c-ctrl-c
@@ -436,7 +452,6 @@
   "vm" 'org-agenda-month-view
   "vy" 'org-agenda-year-view)
 
-
 (general-define-key
  :states '(normal insert)
  :keymaps 'org-mode-map
@@ -448,6 +463,7 @@
  "s-j" #'org-metadown
  "s-h"  #'org-metaleft
  "s-l" #'org-metaright)
+
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here
