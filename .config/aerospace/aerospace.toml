@@ -104,6 +104,7 @@ on-mode-changed = []
     # alt-enter = 'exec-and-forget kitty'
 
     alt-enter = 'exec-and-forget open -n /Applications/kitty.app'
+    alt-shift-enter = 'exec-and-forget open -a Finder'
 
     alt-f = 'fullscreen'
 
