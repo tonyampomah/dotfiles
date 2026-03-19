@@ -209,6 +209,22 @@ if.app-id = 'com.insomnia.app'
 run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
+if.app-id = 'com.tinyapp.TablePlus'
+run = "move-node-to-workspace 6"
+
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = "move-node-to-workspace 7"
+
+[[on-window-detected]]
+if.app-id = 'org.chromium.Chromium'
+run = "move-node-to-workspace 8"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
 run = "move-node-to-workspace 0"
 
