@@ -185,6 +185,10 @@ if.app-id = 'org.mozilla.firefox'
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
+if.app-id = 'org.chromium.Chromium'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
 if.app-id = 'org.gnu.Emacs'
 run = "move-node-to-workspace 2"
 
@@ -215,10 +219,6 @@ run = "move-node-to-workspace 6"
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
 run = "move-node-to-workspace 7"
-
-[[on-window-detected]]
-if.app-id = 'org.chromium.Chromium'
-run = "move-node-to-workspace 8"
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
