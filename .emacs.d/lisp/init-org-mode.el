@@ -3,7 +3,7 @@
 ;;; Code:
 (setq-default fill-column 80)
 
-(setq org-gtd-prefix-width 40)
+(setq org-gtd-prefix-width 50)
 (setq org-agenda-window-setup 'only-window)
 
 ;; Turn on indentation and auto-fill mode for Org files
@@ -199,6 +199,8 @@
 	 (file "~/gtd/templates/cong-bible-study-reader.org"))
 	("jt" "Talk" entry (file "~/gtd/inbox.org")
 	 (file "~/gtd/templates/talk.org"))
+	("jd" "Discussion" entry (file "~/gtd/inbox.org")
+	 (file "~/gtd/templates/discussion.org"))
 	("jw" "Watchtower Reader" entry (file "~/gtd/inbox.org")
 	 (file "~/gtd/templates/watchtower-reader.org"))
 	("jk" "Kingdom Cleaning" entry (file "~/gtd/inbox.org")
