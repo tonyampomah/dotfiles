@@ -188,6 +188,8 @@
 	 (file "~/gtd/templates/bible-reading.org"))
 	("jm" "Microphone" entry (file "~/gtd/inbox.org")
 	 (file "~/gtd/templates/microphone.org"))
+	("jf" "Field Service Conductor" entry (file "~/gtd/inbox.org")
+	 (file "~/gtd/templates/field-service-conductor.org"))
 	("jr" "Return Visit" entry (file "~/gtd/inbox.org")
 	 (file "~/gtd/templates/return-visit.org"))
 	("jc" "Cong. Bible Study Reader" entry (file "~/gtd/inbox.org")
