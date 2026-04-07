@@ -3,6 +3,9 @@
 ;;; Code:
 (setq-default fill-column 80)
 
+(setq org-gtd-prefix-width 40)
+(setq org-agenda-window-setup 'only-window)
+
 ;; Turn on indentation and auto-fill mode for Org files
 (defun kd/org-mode-setup ()
   (org-indent-mode)
