@@ -27,7 +27,7 @@
 (use-package prettier-js
   :ensure t)
 
-(add-hook 'web-mode-hook #'(lambda ()
+(add-hook 'tsx-ts-mode #'(lambda ()
 			     (enable-minor-mode
 			      '("\\.tsx?\\'" . prettier-js-mode))
 			     (enable-minor-mode

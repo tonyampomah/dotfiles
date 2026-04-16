@@ -7,6 +7,10 @@
 ;; Start Eglot automatically for programming modes
 (add-hook 'prog-mode-hook 'eglot-ensure)
 
+
+(setq eglot-ignored-server-capabilities
+      '(:codeLensProvider))
+
 ;; Performance tuning
 (setq read-process-output-max (* 1024 1024)) ;; 1MB
 (setq gc-cons-threshold 100000000)
@@ -14,7 +18,7 @@
 ;; Reduce noisy updates
 (setq eglot-sync-connect nil)
 (setq eglot-autoshutdown t)
-(setq eglot-events-buffer-size 0) ;; disable event buffer
+(setq eglot-events-buffer-config 0)
 
 ;; Optional: less UI interruption
 (setq eglot-extend-to-xref t)
@@ -43,12 +47,23 @@
              '(html-mode . ("tailwindcss-language-server" "--stdio")))
 
 
+
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '(robot-mode . ("robotframework-lsp"))))
+
+(add-hook 'robot-mode-hook
+          (lambda ()
+            (setq-local eglot-ignored-server-capabilities
+                        '(:codeLensProvider))))
+
 (setq eglot-send-changes-idle-time 0.5) ;; delay updates
-(setq major-mode-remap-alist
-      '((js-mode . js-ts-mode)
-        (typescript-mode . typescript-ts-mode)
-        (python-mode . python-ts-mode)
-        (css-mode . css-ts-mode)))
+
+(dolist (pair '((js-mode . js-ts-mode)
+                (typescript-mode . typescript-ts-mode)
+                (python-mode . python-ts-mode)
+                (css-mode . css-ts-mode)))
+  (add-to-list 'major-mode-remap-alist pair))
 
 (provide 'init-eglot)
 ;;; init-eglot.el ends here
