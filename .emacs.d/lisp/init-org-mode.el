@@ -423,6 +423,19 @@
                 ((org-agenda-overriding-header "\nCompleted today\n")))
 	  ))))
 
+(setq org-agenda-custom-commands
+        `(("r" "Weekly Review"
+           ((agenda "" ((org-agenda-overriding-header "Tasks Completed:")
+                        (org-agenda-skip-function '(org-agenda-skip-subtree-if 'nottodo 'done))
+                        (org-agenda-skip-scheduled-if-done nil)
+                        (org-agenda-skip-timestamp-if-done nil)
+                        (org-agenda-span 7)
+                        (org-agenda-use-time-grid nil)
+                        (setq org-agenda-show-all-dates nil)))))))
+
+(defun kd/org-weekly-review ()
+  (interactive)
+  (org-agenda nil "r"))
 
 ;; Bindings
 (define-key global-map            (kbd "C-c a") 'org-agenda)
@@ -440,6 +453,7 @@
   "ne" 'org-gtd-engage
   "na" 'org-agenda
   "nd" 'org-gtd-engage
+  "nr" 'kd/org-weekly-review
   "nw" 'kd/week-view
   "nm" 'kd/month-view)
 
