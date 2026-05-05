@@ -189,6 +189,10 @@ if.app-id = 'org.chromium.Chromium'
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
 if.app-id = 'org.gnu.Emacs'
 run = "move-node-to-workspace 2"
 
@@ -205,29 +209,29 @@ if.app-id = 'com.tinyspeck.slackmacgap'
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
-if.app-id = 'com.postmanlabs.mac'
-run = "move-node-to-workspace 5"
-
-[[on-window-detected]]
-if.app-id = 'com.insomnia.app'
-run = "move-node-to-workspace 5"
+if.app-id = 'com.apple.MobileSMS'
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.tinyapp.TablePlus'
+run = "move-node-to-workspace 5"
+
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
 run = "move-node-to-workspace 6"
 
 [[on-window-detected]]
-if.app-id = 'com.figma.Desktop'
+if.app-id = 'com.insomnia.app'
+run = "move-node-to-workspace 6"
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = "move-node-to-workspace 7"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
 run = "move-node-to-workspace 7"
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
-run = "move-node-to-workspace 9"
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
-run = "move-node-to-workspace 0"
-
-[[on-window-detected]]
-if.app-id = 'com.apple.mail'
 run = "move-node-to-workspace 0"
