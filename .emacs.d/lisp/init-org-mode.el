@@ -338,6 +338,11 @@
 		 ("\\paragraph{%s}" . "\\paragraph*{%s}")
 		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
+(setq org-gtd-tasks-file "~/gtd/tasks.org")
+
+(setq org-gtd-files '("~/gtd/inbox.org"
+                       "~/gtd/tasks.org"))
+
 (use-package org-gtd
   :ensure t
   :after org
@@ -355,9 +360,8 @@
 
   (setq org-agenda-files
 	'("~/gtd/inbox.org"
-	  "~/gtd/org-gtd-tasks.org"
-	  "~/gtd/calendar")
-	)
+	  "~/gtd/tasks.org"
+	  "~/gtd/calendar"))
 
   :bind
   (("C-c d c" . org-gtd-capture)
