@@ -93,12 +93,19 @@
 (setq org-caldav-url "https://nextcloud.theampomahs.com/remote.php/caldav/calendars/kwamedat")
 (setq org-caldav-calendars
       '(
-	(:calendar-id "personal" :inbox "~/gtd/calendar/pcal.org")
-	(:calendar-id "spiritual" :inbox "~/gtd/calendar/scal.org")
-	(:calendar-id "events" :inbox "~/gtd/calendar/ecal.org")
-	(:calendar-id "tony-tayo" :inbox "~/gtd/calendar/jcal.org")
-	))
-
+        (:calendar-id "personal"
+         :files ("~/gtd/calendar/personal.org")
+         :inbox "~/gtd/calendar/inbox.org")
+        (:calendar-id "spiritual"
+         :files ("~/gtd/calendar/spiritual.org")
+         :inbox "~/gtd/calendar/inbox.org")
+        (:calendar-id "events"
+         :files ("~/gtd/calendar/events.org")
+         :inbox "~/gtd/calendar/inbox.org")
+        (:calendar-id "tony-tayo"
+         :files ("~/gtd/calendar/joint.org")
+         :inbox "~/gtd/calendar/inbox.org")
+      ))
 (use-package org-caldav
   :after org
   :defer t)
@@ -344,7 +351,13 @@
 
   :config
   (org-edna-mode 1)
-  (setq org-agenda-files (list org-gtd-directory))
+  ;; (setq org-agenda-files (list org-gtd-directory))
+
+  (setq org-agenda-files
+	'("~/gtd/inbox.org"
+	  "~/gtd/org-gtd-tasks.org"
+	  "~/gtd/calendar")
+	)
 
   :bind
   (("C-c d c" . org-gtd-capture)
