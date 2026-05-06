@@ -465,7 +465,7 @@
   "np" 'org-gtd-process-inbox
   "ne" 'org-gtd-engage
   "na" 'org-agenda
-  "nd" 'org-gtd-engage
+  "nd" 'kd/day-view
   "nr" 'kd/org-weekly-review
   "nw" 'kd/week-view
   "nm" 'kd/month-view)
