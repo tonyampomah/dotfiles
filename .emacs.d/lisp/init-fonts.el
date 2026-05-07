@@ -19,8 +19,6 @@
   (set-face-attribute 'fixed-pitch nil :font kd/fixed-pitch-font :height 120)
   (set-face-attribute 'variable-pitch nil :font kd/variable-pitch-font))
 
-
-
 ;; Set the font face based on platform
 (use-package mixed-pitch
   :defer t
