@@ -1,6 +1,14 @@
 ;;; init-configuration-files.el --- configuration-files -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
+;; Treat shell rc files as conf files
+(add-to-list 'auto-mode-alist '("\\.zshrc\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.bashrc\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.bash_profile\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.zprofile\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.profile\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.aliases\\'" . conf-mode))
+
 (defun kd/find-in-emacs-directory ()
   (interactive)
   (counsel-find-file "~/.emacs.d"))
