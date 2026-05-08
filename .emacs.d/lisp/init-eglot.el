@@ -11,10 +11,6 @@
 (setq eglot-ignored-server-capabilities
       '(:codeLensProvider))
 
-;; Performance tuning
-(setq read-process-output-max (* 1024 1024)) ;; 1MB
-(setq gc-cons-threshold 100000000)
-
 ;; Reduce noisy updates
 (setq eglot-sync-connect nil)
 (setq eglot-autoshutdown t)
@@ -45,7 +41,6 @@
              '(css-mode . ("vscode-css-language-server" "--stdio")))
 (add-to-list 'eglot-server-programs
              '(html-mode . ("tailwindcss-language-server" "--stdio")))
-
 
 
 (with-eval-after-load 'eglot
