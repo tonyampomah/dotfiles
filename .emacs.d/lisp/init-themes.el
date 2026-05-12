@@ -59,7 +59,7 @@
    . (lambda ()
        ;; optional: switch to a light doom theme
        ;; (load-theme 'doom-one-light t)
-       (load-theme 'doom-tomorrow-night t)
+       (load-theme 'doom-tomorrow-day t)
        (message "🌞 doom-tomorrow-night (light mode fallback) enabled")))
   :init (auto-dark-mode))
 

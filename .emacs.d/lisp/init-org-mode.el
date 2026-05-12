@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 (setq-default fill-column 80)
-
 (setq org-gtd-prefix-width 50)
 (setq org-agenda-window-setup 'only-window)
 
@@ -338,10 +337,8 @@
 		 ("\\paragraph{%s}" . "\\paragraph*{%s}")
 		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
-(setq org-gtd-tasks-file "~/gtd/tasks.org")
-
-(setq org-gtd-files '("~/gtd/inbox.org"
-                       "~/gtd/tasks.org"))
+;; (with-eval-after-load 'org-gtd-files
+;;   (setq org-gtd-default-file-name "tasks"))
 
 (use-package org-gtd
   :ensure t
@@ -357,6 +354,11 @@
   :config
   (org-edna-mode 1)
   ;; (setq org-agenda-files (list org-gtd-directory))
+
+(setq org-gtd-default-file-name "tasks")
+;; (setq org-gtd-tasks-file "~/gtd/tasks.org")
+(setq org-gtd-files '("~/gtd/inbox.org"
+                       "~/gtd/tasks.org"))
 
   (setq org-agenda-files
 	'("~/gtd/inbox.org"

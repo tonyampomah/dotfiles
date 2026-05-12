@@ -9,15 +9,9 @@
 (defvar kd/variable-pitch-font "Noto Sans"
   "The font used for `variable-pitch' face.")
 
-
 (set-face-attribute 'default nil :font kd/fixed-pitch-font :height 160)
 (set-face-attribute 'fixed-pitch nil :font kd/fixed-pitch-font :height 160)
 (set-face-attribute 'variable-pitch nil :font kd/variable-pitch-font)
-
-(when (not (eq system-type 'darwin))
-  (set-face-attribute 'default nil :font kd/fixed-pitch-font :height 120)
-  (set-face-attribute 'fixed-pitch nil :font kd/fixed-pitch-font :height 120)
-  (set-face-attribute 'variable-pitch nil :font kd/variable-pitch-font))
 
 ;; Set the font face based on platform
 (use-package mixed-pitch
