@@ -78,6 +78,8 @@
   (evil-collection-outline-bind-tab-p nil)
   :config
   (setq evil-collection-want-unimpaired-p nil)
+  (setq evil-collection-mode-list
+	(remove 'eshell evil-collection-mode-list))
   (evil-collection-init))
 
 (use-package evil-surround
