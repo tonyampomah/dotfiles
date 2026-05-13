@@ -73,7 +73,6 @@
 (require 'init-vagrant)
 (require 'init-editorconfig)
 (require 'init-debugger)
-;; (require 'init-lsp)
 (require 'init-eglot)
 (require 'init-formatting)
 
