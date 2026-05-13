@@ -38,7 +38,7 @@
 	org-agenda-archives-mode t
 	org-src-fontify-natively t
 	org-agenda-start-with-log-mode t
-	;; org-log-done 'time
+	org-log-done 'time
 	org-log-into-drawer t
 	org-src-tab-acts-natively t
 	org-edit-src-content-indentation 2
