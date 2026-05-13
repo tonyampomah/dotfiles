@@ -1,7 +1,6 @@
 ;;; init-eshell.el --- eshell -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-
 (defalias 'clear 'clear-scrollback)
 
 (defun kd/configure-eshell ()
@@ -33,8 +32,20 @@
 (setq eshell-review-quick-commands nil)
 (setq eshell-smart-space-goes-to-end t)
 
+(setq eshell-directory-name
+      (expand-file-name "eshell/" user-emacs-directory))
+
+
+(setq eshell-directory-name
+      (expand-file-name "eshell/" user-emacs-directory))
+
+(setq eshell-aliases-file
+      (expand-file-name "alias" eshell-directory-name))
+
 (use-package eshell
-  :hook (eshell-first-time-mode . kd/configure-eshell)
+  :hook
+  ((eshell-first-time-mode . kd/configure-eshell)
+   (eshell-first-time-mode . eshell-read-aliases-list))
   :config
 
   (with-eval-after-load 'esh-opt
@@ -69,8 +80,6 @@
 ;; Update exec-path too
 (add-to-list 'exec-path "~/.bin")
 (add-to-list 'exec-path "~/.local/bin")
-
-
 
 (provide 'init-eshell)
 ;;; init-eshell.el ends here
