@@ -109,7 +109,7 @@
   "a"  '(:ignore t :which-key "apps"))
 (require 'init-calendar)
 (require 'init-alert)
-(require 'init-chat)
+;; (require 'init-chat)
 (require 'init-eshell)
 (require 'init-terminal)
 (require 'init-password-manager)
