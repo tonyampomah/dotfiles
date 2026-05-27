@@ -197,35 +197,15 @@ if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
-if.app-id = 'com.postmanlabs.mac'
-run = "move-node-to-workspace 2"
-
-[[on-window-detected]]
-if.app-id = 'com.insomnia.app'
-run = "move-node-to-workspace 2"
-
-[[on-window-detected]]
 if.app-id = 'com.tinyapp.TablePlus'
-run = "move-node-to-workspace 2"
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-run = "move-node-to-workspace 3"
-
-[[on-window-detected]]
-if.app-id = 'com.apple.MobileSMS'
-run = "move-node-to-workspace 3"
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
+if.app-id = 'com.postmanlabs.mac'
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
-if.app-id = 'com.apple.mail'
+if.app-id = 'com.insomnia.app'
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
@@ -233,17 +213,37 @@ if.app-id = 'com.figma.Desktop'
 run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.Powerpoint'
+if.app-id = 'com.microsoft.teams2'
 run = "move-node-to-workspace 6"
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = "move-node-to-workspace 7"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = "move-node-to-workspace 7"
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = "move-node-to-workspace 8"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = "move-node-to-workspace 8"
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Powerpoint'
+run = "move-node-to-workspace 9"
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Word'
-run = "move-node-to-workspace 6"
+run = "move-node-to-workspace 9"
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Excel'
-run = "move-node-to-workspace 6"
+run = "move-node-to-workspace 9"
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Music'
-run = "move-node-to-workspace 0"
+if.app-id = run
+'com.apple.Music' = "move-node-to-workspace 0"
