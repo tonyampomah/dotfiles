@@ -26,6 +26,7 @@
     // Modules Left
     "modules-left": [
         "hyprland/workspaces",
+        "niri/workspaces",
 	"sway/workspaces"
     ],
 
