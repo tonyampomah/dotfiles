@@ -115,7 +115,7 @@ input {
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -163,7 +163,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 1
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -272,6 +272,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
+// spawn-at-startup "swaybg -i ~/Nextcloud/Photos/Luka-photoshoot/BabyLuka25Jan25-1.jpg -m fill"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 // spawn-at-startup "hyprpaper"
@@ -280,13 +281,13 @@ spawn-at-startup "mpd"
 spawn-at-startup "emacs"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+spawn-sh-at-startup "swaybg -i ~/Nextcloud/Photos/Luka-photoshoot/BabyLuka25Jan25-1.jpg -m fill"
 
 
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -335,7 +336,8 @@ window-rule {
 
 window-rule {
     match app-id="emacs"
-    open-on-workspace "2"
+    open-on-workspace "3"
+    open-focused true
     open-maximized true
 }
 
