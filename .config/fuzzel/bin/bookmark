@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+command -v sr >/dev/null 2>&1 && command -v fuzzel >/dev/null 2>&1 || exit 1
+
+# get local config
+file="${XDG_CONFIG_HOME:-$HOME/.config}/surfraw/conf"
+[ -f "$file" ] && [ -r "$file" ] && . "$file"
+
+default="${SURFRAW_customsearch_provider:-duckduckgo}"
+
+# get list of search engines from surfraw
+if [[ $* != *"--no-list"* ]]; then
+    list="$(sr -elvi | awk 'NR != 1 { print $1 }')"
+fi
+
+# get list of bookmarks from surfraw
+if [[ $* != *"--no-bookmarks"* ]]; then
+    file="${XDG_CONFIG_DIRS:-/etc/xdg}/surfraw/bookmarks"
+    [ -f "$file" ] && [ -r "$file" ] &&
+        list=${list:+"${list}"$'\n'}"$(awk '{ print $1 }' "$file")"
+
+    file="${XDG_CONFIG_HOME:-$HOME/.config}/surfraw/bookmarks"
+    [ -f "$file" ] && [ -r "$file" ] &&
+        list=${list:+"${list}"$'\n'}"$(awk '{ print $1 }' "$file")"
+fi
+
+unset file
+
+main() {
+    elvi=$(
+        printf '%s\n' "$list" |
+        fuzzel --dmenu --prompt="Search > "
+    )
+
+    [ -z "$elvi" ] && exit 0
+
+    engine=$(awk '{ print $1 }' <<< "$elvi")
+    query=$(awk '{$1=""; sub(/^ /, ""); print}' <<< "$elvi")
+
+    if ! printf '%s\n' "$list" | grep -Fwxq "$engine"; then
+        engine="$default"
+        query="$elvi"
+    fi
+
+    sr "$engine" $query
+}
+
+if [ "$1" = "--help" ]; then
+    cat <<EOF
+fuzzel-surfraw - Surfraw launcher using fuzzel
+
+--help         this help
+--no-list      do not show built-in search engines
+--no-bookmarks do not show bookmarked search engines
+EOF
+else
+    main
+fi
