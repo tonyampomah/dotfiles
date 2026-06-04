@@ -56,6 +56,7 @@
 (require 'init-completion)
 (require 'init-workspace)
 (require 'init-configuration-files)
+(require 'init-tree-sitter)
 (require 'init-search-n-lookup)
 
 ;; File Browsing
