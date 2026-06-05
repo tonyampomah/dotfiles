@@ -103,6 +103,7 @@
 (require 'init-yaml)
 (require 'init-finance)
 (require 'init-org-mode)
+(require 'init-kdl)
 
 ;; Applications
 (kd/leader-key-def
