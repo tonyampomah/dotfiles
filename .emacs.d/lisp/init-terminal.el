@@ -107,7 +107,7 @@
 		     (projectile-project-root)
 		   (projectile-project-root))))
     (call-process-shell-command
-     (concat "kitty "workdir) nil 0)))
+     (concat "alacritty --working-directory "workdir) nil 0)))
 
 
 (straight-use-package 'ob-tmux)
