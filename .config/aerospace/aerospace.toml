@@ -245,5 +245,5 @@ if.app-id = 'com.microsoft.Excel'
 run = "move-node-to-workspace 9"
 
 [[on-window-detected]]
-if.app-id = run
-'com.apple.Music' = "move-node-to-workspace 0"
+if.app-id = 'com.apple.Music'
+run = "move-node-to-workspace 0"
