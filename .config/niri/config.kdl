@@ -285,7 +285,7 @@ layout {
 // spawn-at-startup "swaybg -i ~/Nextcloud/Photos/Luka-photoshoot/BabyLuka25Jan25-1.jpg -m fill"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
-// spawn-at-startup "hyprpaper"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 // spawn-at-startup "hyprsunset"
 spawn-at-startup "mpd"
 spawn-at-startup "emacs"
@@ -346,7 +346,19 @@ window-rule {
 }
 
 window-rule {
+    match app-id="firefox"
+    open-on-workspace "1"
+    open-maximized true
+}
+
+window-rule {
     match app-id="emacs"
+    open-on-workspace "2"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="code-oss"
     open-on-workspace "2"
     open-maximized true
 }
@@ -356,6 +368,43 @@ window-rule {
     open-on-workspace "8"
     open-maximized true
 }
+
+window-rule {
+    match app-id="libreoffice-calc"
+    open-on-workspace "9"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-draw"
+    open-on-workspace "9"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-math"
+    open-on-workspace "9"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-writer"
+    open-on-workspace "9"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-impress"
+    open-on-workspace "9"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="org.gnome.Rhythmbox3"
+    open-on-workspace "0"
+    open-maximized true
+}
+
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
