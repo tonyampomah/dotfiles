@@ -18,3 +18,4 @@ application/json=editor.desktop
 application/pdf=org.pwmt.zathura.desktop;
 x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/unknown=brave-browser.desktop
+x-scheme-handler/insomnia=insomnia.desktop

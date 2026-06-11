@@ -135,6 +135,7 @@ layout {
     //   together with the previously focused column.
     center-focused-column "never"
 
+
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -148,11 +149,13 @@ layout {
         // fixed 1920
     }
 
+
     // You can also customize the heights that "switch-preset-window-height" (Mod+Ctrl+Shift+R) toggles between.
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
     default-column-width { proportion 0.5; }
+
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -342,11 +345,23 @@ window-rule {
 window-rule {
     match app-id="org.mozilla.firefox"
     open-on-workspace "1"
-    open-maximized true
+    // open-maximized true
 }
 
 window-rule {
     match app-id="firefox"
+    open-on-workspace "1"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="Google-chrome"
+    open-on-workspace "1"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="brave-browser"
     open-on-workspace "1"
     open-maximized true
 }
@@ -364,38 +379,68 @@ window-rule {
 }
 
 window-rule {
+    match app-id="wasistlos"
+    open-on-workspace "3"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="Slack"
+    open-on-workspace "4"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="DBeaver"
+    open-on-workspace "5"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="insomnia"
+    open-on-workspace "6"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-calc"
+    open-on-workspace "7"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-draw"
+    open-on-workspace "7"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-math"
+    open-on-workspace "7"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-writer"
+    open-on-workspace "7"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="libreoffice-impress"
+    open-on-workspace "7"
+    open-maximized true
+}
+
+window-rule {
     match app-id="net.thunderbird.Thunderbird"
     open-on-workspace "8"
     open-maximized true
 }
 
 window-rule {
-    match app-id="libreoffice-calc"
-    open-on-workspace "9"
-    open-maximized true
-}
-
-window-rule {
-    match app-id="libreoffice-draw"
-    open-on-workspace "9"
-    open-maximized true
-}
-
-window-rule {
-    match app-id="libreoffice-math"
-    open-on-workspace "9"
-    open-maximized true
-}
-
-window-rule {
-    match app-id="libreoffice-writer"
-    open-on-workspace "9"
-    open-maximized true
-}
-
-window-rule {
-    match app-id="libreoffice-impress"
-    open-on-workspace "9"
+    match app-id="net.thunderbird.Thunderbird"
+    open-on-workspace "8"
     open-maximized true
 }
 
