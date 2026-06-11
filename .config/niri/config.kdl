@@ -27,7 +27,7 @@ input {
             layout "gb"
 	    variant "mac"
             model "apple"
-            options "altwin:swap_lalt_lwin,ctrl:nocaps"
+            options "ctrl:nocaps"
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
             // localectl set-x11-keymap.
