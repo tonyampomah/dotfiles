@@ -1,7 +1,7 @@
 ;;; init-fonts.el --- Fonts -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-(setq-default line-spacing 0.5)
+(setq-default line-spacing 0.3)
 
 (defvar kd/fixed-pitch-font "Cascadia Code"
   "The font used for `default' and `fixed-pitch' faces.")

@@ -3,7 +3,7 @@
 ;;; Code:
 (defun my-nov-font-setup ()
   (face-remap-add-relative 'variable-pitch :family kd/variable-pitch-font
-			   :height 1.4))
+			   :height 1.0))
 ;; Reading EPUB
 (use-package nov
   :defer t)
