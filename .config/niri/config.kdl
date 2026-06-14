@@ -386,6 +386,12 @@ window-rule {
 
 window-rule {
     match app-id="Slack"
+    open-on-workspace "3"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="net.thunderbird.Thunderbird"
     open-on-workspace "4"
     open-maximized true
 }
@@ -429,18 +435,6 @@ window-rule {
 window-rule {
     match app-id="libreoffice-impress"
     open-on-workspace "7"
-    open-maximized true
-}
-
-window-rule {
-    match app-id="net.thunderbird.Thunderbird"
-    open-on-workspace "8"
-    open-maximized true
-}
-
-window-rule {
-    match app-id="net.thunderbird.Thunderbird"
-    open-on-workspace "8"
     open-maximized true
 }
 
