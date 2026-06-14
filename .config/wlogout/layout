@@ -6,7 +6,7 @@
 }
 {
     "label": "logout",
-    "action": "niri msg action quit --skip-confirmation",
+    "action": "loginctl terminate-user $USER",
     "text": "Exit",
     "keybind": "e"
 }
