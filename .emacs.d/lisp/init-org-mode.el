@@ -199,6 +199,8 @@
 	 (file "~/gtd/templates/microphone.org"))
 	("jz" "Zoom host" entry (file "~/gtd/inbox.org")
 	 (file "~/gtd/templates/zoom-host.org"))
+	("js" "Spiritual Gems" entry (file "~/gtd/inbox.org")
+	 (file "~/gtd/templates/spiritual-gems.org"))
 	("jf" "Field Service Conductor" entry (file "~/gtd/inbox.org")
 	 (file "~/gtd/templates/field-service-conductor.org"))
 	("jr" "Return Visit" entry (file "~/gtd/inbox.org")
