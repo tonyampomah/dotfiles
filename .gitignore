@@ -4,6 +4,7 @@
 /mpd/mpdstate
 /.local/share/*
 /.config/*
+!/.config/doom
 !/.config/aerospace
 !/.config/alacritty
 !/.config/brave-flags.conf
