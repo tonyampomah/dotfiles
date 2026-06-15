@@ -1,29 +1,11 @@
 * tonyampomah/dotfiles
 Stores all my =dotfiles= configuration
 
-- .Xresources
 - .aliases
 - .bin
 - .ca-bundle.crt
-- .config/alacritty
-- .config/gtk-3.0
-- .config/gtk-4.0
-- .config/hypr
-- .config/kitty
-- .config/mimeapps.list
-- .config/ncmpcpp
-- .config/picom.conf
-- .config/polybar
-- .config/qutebrowser
-- .config/rofi
-- .config/surfraw
-- .config/sway
-- .config/systemd
-- .config/waybar
-- .config/waypaper
-- .config/wlogout
+- .config
 - .emacs.d
-- .functions
 - .gitconfig
 - .gitignore
 - .gitignore_global
@@ -32,9 +14,7 @@ Stores all my =dotfiles= configuration
 - .local
 - .mbsyncrc
 - .mpd
-- .php-cs-fixer
-- .stow-local-ignore
-- .tmux.conf
-- .xmonad
-- .zshrc
 - nixos
+- .php-cs-fixer
+- .tmux.conf
+- .zshrc
