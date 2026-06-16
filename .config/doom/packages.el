@@ -60,6 +60,7 @@
 (package! org-gtd)
 (package! org-edna)
 (package! ox-twbs)
+(package! robot-mode)
 ;; (package! vagrant)
 ;; (package! vagrant-tramp)
 ;; (package! counsel-tramp)
