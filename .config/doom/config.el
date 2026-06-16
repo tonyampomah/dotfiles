@@ -42,6 +42,7 @@
       :g "s-s" #'save-buffer
       :g "s-\\" #'ispell-word
 
+
       ;; Easier window movement
       :n "C-h" #'evil-window-left
       :n "C-j" #'evil-window-down
@@ -114,7 +115,8 @@
       )
 
 (map! :leader
-      "x" #'execute-extended-command)
+      "x" #'execute-extended-command
+      "r" #'consult-imenu)
 
 ;;; Org Mode ------------------------------------------------------------
 (after! org
@@ -360,9 +362,6 @@
 (use-package! robot-mode
   :mode "\\.robot\\'")
 
-(after! eglot
-  (add-to-list 'eglot-server-programs
-               '(robot-mode . ("robotframework_ls"))))
 
 (add-hook! 'robot-mode-hook
   (setq-local eglot-ignored-server-capabilities
@@ -450,6 +449,51 @@
          :desc "Run project"      "p" #'tonyampomah/run-robot-project)
         :desc "Format buffer" "f" #'tonyampomah/robot-format-buffer
         :desc "Open report"   "o" #'tonyampomah/open-robot-report))
+
+(after! php-mode
+  (map! :map php-mode-map
+        :localleader
+        :n
+        "t t" #'phpunit-current-test
+        "t p" #'phpunit-current-project
+        "t c" #'phpunit-current-class
+        "f"   #'php-search-documentation
+        "r"   #'consult-imenu))
+
+
+(after! eglot
+  ;; PHP
+  (add-to-list 'eglot-server-programs
+               '(robot-mode . ("robotframework_ls")))
+
+  ;; PHP
+  (add-to-list 'eglot-server-programs
+               '(php-mode . ("intelephense" "--stdio")))
+
+  ;; JS / TS / React
+  (add-to-list 'eglot-server-programs
+               '((js-mode js-ts-mode
+                  typescript-mode typescript-ts-mode
+                  tsx-ts-mode)
+                 . ("typescript-language-server" "--stdio")))
+
+  ;; Python
+  (add-to-list 'eglot-server-programs
+               '(python-mode . ("pyright-langserver" "--stdio")))
+
+  ;; Ansible/YAML
+  (add-to-list 'eglot-server-programs
+               '(yaml-mode . ("ansible-language-server" "--stdio")))
+
+  ;; CSS
+  (add-to-list 'eglot-server-programs
+               '(css-mode . ("vscode-css-language-server" "--stdio")))
+
+  ;; HTML / Tailwind
+  (add-to-list 'eglot-server-programs
+               '(html-mode . ("tailwindcss-language-server" "--stdio"))))
+
+
 ;; Ignore directories
 ;; (add-to-list 'projectile-globally-ignored-directories "node_modules")
 ;; (add-to-list 'projectile-globally-ignored-directories ".git"))
