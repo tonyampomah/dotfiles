@@ -118,6 +118,17 @@
       "x" #'execute-extended-command)
 
 (after! org
+  (map! :map org-mode-map
+        :ni "M-h" #'org-metaleft
+        :ni "M-j" #'org-metadown
+        :ni "M-k" #'org-metaup
+        :ni "M-l" #'org-metaright
+        :ni "M-<left>" #'org-metaleft
+        :ni "M-<down>" #'org-metadown
+        :ni "M-<up>" #'org-metaup
+        :ni "M-<right>" #'org-metaright
+        )
+
   (setq org-directory "~/gtd/")
   (setq org-agenda-files
         '("~/gtd/inbox.org"
