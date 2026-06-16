@@ -115,6 +115,7 @@
 (map! :leader
       "x" #'execute-extended-command)
 
+;;; Org Mode ------------------------------------------------------------
 (after! org
   (map! :map org-mode-map
         :ni "M-h" #'org-metaleft
@@ -298,6 +299,7 @@
 ;;   (org-roam-db-autosync-mode))
 
 
+;;; Projectile  ------------------------------------------------------------
 (after! projectile
   ;; (setq projectile-switch-project-action #'projectile-dired)
   ;; Where projectile stores cache/index data
@@ -352,6 +354,8 @@
           "~/gtd/calendar"))
   )
 
+
+;;; Robot Framework ------------------------------------------------------------
 (use-package! robot-mode
   :mode "\\.robot\\'")
 
@@ -364,11 +368,7 @@
               '(:codeLensProvider))
   (eglot-ensure))
 
-
-
-;;; Robot Framework ------------------------------------------------------------
-
-(defun tony/find-robot-project-root ()
+(defun tonyampomah/find-robot-project-root ()
   "Locate the Robot Framework project root."
   (or
    (locate-dominating-file default-directory "pyproject.toml")
@@ -378,12 +378,12 @@
      (when (file-exists-p (expand-file-name "robot" root))
        root))))
 
-(defun tony/run-robot-test ()
+(defun tonyampomah/run-robot-test ()
   "Run Robot Framework test at point."
   (interactive)
   (let* ((test-name (string-trim (thing-at-point 'line t)))
          (file-name (buffer-file-name))
-         (project-root (tony/find-robot-project-root)))
+         (project-root (tonyampomah/find-robot-project-root)))
     (unless project-root
       (user-error "Robot project root not found"))
 
@@ -393,11 +393,11 @@
                test-name
                (file-relative-name file-name project-root))))))
 
-(defun tony/run-robot-file ()
+(defun tonyampomah/run-robot-file ()
   "Run current Robot Framework file."
   (interactive)
   (let* ((file-name (buffer-file-name))
-         (project-root (tony/find-robot-project-root)))
+         (project-root (tonyampomah/find-robot-project-root)))
     (unless project-root
       (user-error "Robot project root not found"))
 
@@ -406,17 +406,17 @@
        (format "robot -L debug %S"
                (file-relative-name file-name project-root))))))
 
-(defun tony/run-robot-project ()
+(defun tonyampomah/run-robot-project ()
   "Run all Robot Framework tests."
   (interactive)
-  (let ((project-root (tony/find-robot-project-root)))
+  (let ((project-root (tonyampomah/find-robot-project-root)))
     (unless project-root
       (user-error "Robot project root not found"))
 
     (let ((default-directory project-root))
       (compile "robot -L debug tests"))))
 
-(defun tony/open-robot-report ()
+(defun tonyampomah/open-robot-report ()
   "Open Robot Framework report and log."
   (interactive)
   (let* ((report-dir (locate-dominating-file default-directory "report.html"))
@@ -431,7 +431,7 @@
     (when (and report-file (file-exists-p report-file))
       (browse-url report-file))))
 
-(defun tony/robot-format-buffer ()
+(defun tonyampomah/robot-format-buffer ()
   "Format current Robot Framework file using robotidy."
   (interactive)
   (when buffer-file-name
@@ -444,12 +444,11 @@
   (map! :map robot-mode-map
         :localleader
         (:prefix ("t" . "test")
-         :desc "Run test at point" "t" #'tony/run-robot-test
-         :desc "Run current file" "c" #'tony/run-robot-file
-         :desc "Run project"      "p" #'tony/run-robot-project)
-        :desc "Format buffer" "f" #'tony/robot-format-buffer
-        :desc "Open report"   "o" #'tony/open-robot-report))
-
+         :desc "Run test at point" "t" #'tonyampomah/run-robot-test
+         :desc "Run current file" "c" #'tonyampomah/run-robot-file
+         :desc "Run project"      "p" #'tonyampomah/run-robot-project)
+        :desc "Format buffer" "f" #'tonyampomah/robot-format-buffer
+        :desc "Open report"   "o" #'tonyampomah/open-robot-report))
 ;; Ignore directories
 ;; (add-to-list 'projectile-globally-ignored-directories "node_modules")
 ;; (add-to-list 'projectile-globally-ignored-directories ".git"))
