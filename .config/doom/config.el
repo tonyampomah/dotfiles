@@ -274,14 +274,20 @@
 
     ))
 
-
 (after! org-roam
-  (setq org-roam-directory
-        (file-truename "~/org-roam/"))
-  )
+  (setq org-roam-directory (file-truename "~/org-roam/")
+        org-roam-db-location
+        (expand-file-name ".org-roam.db" doom-cache-dir)
+
+        ;; don't auto-sync everything at startup
+        org-roam-db-update-on-save t)
+
+  ;; enable autosync after startup instead of rebuilding immediately
+  (org-roam-db-autosync-mode))
 
 
 (after! projectile
+  ;; (setq projectile-switch-project-action #'projectile-dired)
   ;; Where projectile stores cache/index data
   (setq projectile-cache-file
         (expand-file-name "projectile.cache" doom-cache-dir)
