@@ -1,5 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 (setq initial-buffer-choice "*scratch*")
+(setq doom-localleader-key ",")
 
 (setq user-full-name "Tony Ampomah"
       user-mail-address "tony@arksolutions.it")
@@ -15,15 +16,6 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
-(setq org-gtd-default-file-name "tasks")
-
-(setq org-gtd-files
-      '("~/gtd/inbox.org"
-        "~/gtd/tasks.org"))
-
-
-(setq org-gtd-update-ack "4.0.0")
 
 ;;; Keybinds
 (map! :n [tab] (cmds! (and (featurep! :editor fold)
@@ -128,6 +120,23 @@
         :ni "M-<up>" #'org-metaup
         :ni "M-<right>" #'org-metaright
         )
+
+  (map! :map org-mode-map
+        :localleader
+        :n
+        "c" '("Ctrl-C Ctrl-C" . org-ctrl-c-ctrl-c)
+        "o" '("Open at point" . org-open-at-point)
+        "g" '("GTD organize" . org-gtd-organize)
+        "t" '("Todo" . org-todo)
+        "o" '("Organise" . org-gtd-organize)
+        "s" '("Schedule" . org-schedule)
+        "d" '("Deadline" . org-deadline)
+        "a" '("Agenda" . org-agenda)
+        "e" '("Export" . org-export-dispatch)
+        "n" '("Narrow" . org-narrow-to-element)
+        "w" '("Widen" . widen)
+        "q" '("Tags" . org-set-tags-command)
+        "r" '("Refile" . org-refile))
 
   (setq org-directory "~/gtd/")
   (setq org-agenda-files
@@ -269,32 +278,18 @@
            :inbox "~/gtd/calendar/inbox.org")
           ))
 
-  (use-package! org-gtd
-    :after org
-    :config
-    (require 'org-edna)
-    (org-edna-mode 1)
+  )
 
-    (setq org-gtd-update-ack "4.0.0")
+;; (after! org-roam
+;;   (setq org-roam-directory (file-truename "~/org-roam/")
+;;         org-roam-db-location
+;;         (expand-file-name ".org-roam.db" doom-cache-dir)
 
-    ;; org-gtd files
-    (setq org-gtd-default-file-name "tasks")
-    (setq org-gtd-files
-          '("~/gtd/inbox.org"
-            "~/gtd/tasks.org"))
+;;         ;; don't auto-sync everything at startup
+;;         org-roam-db-update-on-save t)
 
-    ))
-
-(after! org-roam
-  (setq org-roam-directory (file-truename "~/org-roam/")
-        org-roam-db-location
-        (expand-file-name ".org-roam.db" doom-cache-dir)
-
-        ;; don't auto-sync everything at startup
-        org-roam-db-update-on-save t)
-
-  ;; enable autosync after startup instead of rebuilding immediately
-  (org-roam-db-autosync-mode))
+;;   ;; enable autosync after startup instead of rebuilding immediately
+;;   (org-roam-db-autosync-mode))
 
 
 (after! projectile
@@ -329,13 +324,27 @@
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
-;; (after! org-gtd
-;;   (org-edna-mode 1)
-;;   (setq org-gtd-default-file-name "tasks")
-;;   (setq org-gtd-files '("~/gtd/inbox.org"
-;;                         "~/gtd/tasks.org"))
-;;   )
-
+(use-package! org-gtd
+  :after org
+  :init
+  (setq org-gtd-update-ack "4.0.0")
+  (setq org-gtd-directory "~/gtd/")
+  :custom
+  (org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CNCL(c)")))
+  :config
+  (org-edna-mode)
+  ;; (setq org-gtd-update-ack "4.0.0")
+  (setq org-gtd-prefix-width 50)
+  (setq org-gtd-organize-hooks nil)
+  (setq org-gtd-default-file-name "tasks")
+  (setq org-gtd-files
+        '("~/gtd/inbox.org"
+          "~/gtd/tasks.org"))
+  (setq org-agenda-files
+        '("~/gtd/inbox.org"
+          "~/gtd/tasks.org"
+          "~/gtd/calendar"))
+  )
 ;; Ignore directories
 ;; (add-to-list 'projectile-globally-ignored-directories "node_modules")
 ;; (add-to-list 'projectile-globally-ignored-directories ".git"))
