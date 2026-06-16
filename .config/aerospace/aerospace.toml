@@ -106,7 +106,7 @@ on-mode-changed = []
     cmd-enter = 'exec-and-forget open -n /Applications/kitty.app'
     cmd-shift-enter = 'exec-and-forget open -a Finder'
 
-    cmd-f = 'fullscreen'
+    cmd-shift-f = 'fullscreen'
 
     cmd-q = 'close --quit-if-last-window'
     # tell application "Terminal"
