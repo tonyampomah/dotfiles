@@ -40,6 +40,7 @@
       :g "s-P" #'projectile-switch-project
       :g "s-k" #'kill-buffer
       :g "s-s" #'save-buffer
+      :g "s-\\" #'ispell-word
 
       ;; Easier window movement
       :n "C-h" #'evil-window-left
