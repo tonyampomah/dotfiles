@@ -6,7 +6,9 @@
       user-mail-address "tony@arksolutions.it")
 
 (add-to-list 'auto-mode-alist '("\\.zshrc\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.conf\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\hosts\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\inventory\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.bashrc\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.bash_profile\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.zprofile\\'" . conf-mode))
@@ -60,6 +62,7 @@
        :n "#" #'dired-flag-auto-save-files
        :n "." #'evil-repeat
        :n "~" #'dired-flag-backup-files
+       :n "S" #'dired-do-symlink
        ;; Comparison commands
        :n "=" #'dired-diff
        :n "|" #'dired-compare-directories
@@ -116,6 +119,8 @@
 
 (map! :leader
       "x" #'execute-extended-command
+      "p e" #'projectile-run-eshell
+      "p t" #'projectile-run-vterm
       "r" #'consult-imenu)
 
 ;;; Org Mode ------------------------------------------------------------
