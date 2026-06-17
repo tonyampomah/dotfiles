@@ -494,6 +494,59 @@
                '(html-mode . ("tailwindcss-language-server" "--stdio"))))
 
 
+
+(use-package! ledger-mode
+  :mode ("\\.\\(ledger\\|ldg\\|dat\\)\\'" . ledger-mode)
+  :hook (ledger-mode . smartparens-mode)
+  :custom
+  (ledger-clear-whole-transactions t)
+  (ledger-highlight-xact-under-point nil)
+  (ledger-use-iso-dates nil)
+  (ledger-add-transaction-prompt-for-text nil)
+  (ledger-mode-should-check-version nil)
+  (ledger-post-amount-alignment-column 65)
+  (ledger-reports
+   '(("bal" "%(binary) -f %(ledger-file) bal")
+     ("bal this quarter"
+      "%(binary) -f %(ledger-file) --period \"this quarter\" bal")
+     ("bal last quarter"
+      "%(binary) -f %(ledger-file) --period \"last quarter\" bal")
+     ("reg" "%(binary) -f %(ledger-file) reg")
+     ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
+     ("account" "%(binary) -f %(ledger-file) reg %(account)"))))
+
+(use-package! flycheck-ledger
+  :after ledger-mode)
+
+(after! ledger-mode
+  ;; ledger-mode bindings
+  (map! :map ledger-mode-map
+        :localleader
+        "a"  #'ledger-add-transaction
+        "hd" #'ledger-delete-current-transaction
+        "b"  #'ledger-post-edit-amount
+        "c"  #'ledger-toggle-current
+        "C"  #'ledger-mode-clean-buffer
+        "l"  #'ledger-display-ledger-stats
+        "p"  #'ledger-display-balance-at-point
+        "q"  #'ledger-post-align-xact
+        "r"  #'ledger-reconcile
+        "R"  #'ledger-report
+        "t"  #'ledger-insert-effective-date
+        "y"  #'ledger-set-year
+
+        "[[" #'ledger-navigate-prev-xact-or-directive
+        "]]" #'ledger-navigate-next-xact-or-directive))
+
+(after! ledger-report
+  ;; ledger-report-mode bindings
+  (map! :map ledger-report-mode-map
+        :localleader
+        "q"   #'ledger-report-quit
+        "RET" #'ledger-report-edit-report
+        "gd"  #'ledger-report-visit-source
+        "gr"  #'ledger-report-redo))
+
 ;; Ignore directories
 ;; (add-to-list 'projectile-globally-ignored-directories "node_modules")
 ;; (add-to-list 'projectile-globally-ignored-directories ".git"))
