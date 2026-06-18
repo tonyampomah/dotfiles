@@ -109,7 +109,7 @@
 
       "n f" #'org-roam-node-find
       "n e" #'org-gtd-engage
-      "n i" #'(lambda() (interactive) (find-file "~/gtd/inbox.org"))
+      "n i" #'(lambda() (interactive) (find-file "~/org/gtd/inbox.org"))
       "n p" #'org-gtd-process-inbox
       "n d" #'tonyampomah/day-view
       "n r" #'tonyampomah/org-weekly-review
@@ -153,11 +153,11 @@
         "q" '("Tags" . org-set-tags-command)
         "r" '("Refile" . org-refile))
 
-  (setq org-directory "~/gtd/")
+  (setq org-directory "~/org/gtd/")
   (setq org-agenda-files
-        '("~/gtd/inbox.org"
-          "~/gtd/tasks.org"
-          "~/gtd/calendar"))
+        '("~/org/gtd/inbox.org"
+          "~/org/gtd/tasks.org"
+          "~/org/gtd/calendar"))
   (setq org-ellipsis " ⤵"
         org-hide-emphasis-markers t
         org-agenda-archives-mode t
@@ -207,66 +207,66 @@
 
   (setq org-capture-templates
         '(
-	  ("i" "Inbox" entry (file "~/gtd/inbox.org")
+	  ("i" "Inbox" entry (file "~/org/gtd/inbox.org")
 	   "* TODO %?\n %i\n")
 	  ("j" "jw")
-	  ("jb" "Bible Reading" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/bible-reading.org"))
-	  ("jm" "Microphone" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/microphone.org"))
-	  ("jz" "Zoom host" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/zoom-host.org"))
-	  ("js" "Spiritual Gems" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/spiritual-gems.org"))
-	  ("jf" "Field Service Conductor" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/field-service-conductor.org"))
-	  ("jr" "Return Visit" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/return-visit.org"))
-	  ("jc" "Cong. Bible Study Reader" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/cong-bible-study-reader.org"))
-	  ("jt" "Talk" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/talk.org"))
-	  ("jd" "Discussion" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/discussion.org"))
-	  ("jw" "Watchtower Reader" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/watchtower-reader.org"))
-	  ("jk" "Kingdom Cleaning" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/cleaning.org"))
-	  ("ji" "Initial Call" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/initial-call.org"))
+	  ("jb" "Bible Reading" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/bible-reading.org"))
+	  ("jm" "Microphone" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/microphone.org"))
+	  ("jz" "Zoom host" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/zoom-host.org"))
+	  ("js" "Spiritual Gems" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/spiritual-gems.org"))
+	  ("jf" "Field Service Conductor" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/field-service-conductor.org"))
+	  ("jr" "Return Visit" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/return-visit.org"))
+	  ("jc" "Cong. Bible Study Reader" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/cong-bible-study-reader.org"))
+	  ("jt" "Talk" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/talk.org"))
+	  ("jd" "Discussion" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/discussion.org"))
+	  ("jw" "Watchtower Reader" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/watchtower-reader.org"))
+	  ("jk" "Kingdom Cleaning" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/cleaning.org"))
+	  ("ji" "Initial Call" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/initial-call.org"))
 	  ("ja" "Audio Visual")
-	  ("jam" "Audio Visual Main" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/audio-visual.org"))
-	  ("jaa" "Audio Visual Assistant" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/audio-visual-assistant.org"))
-	  ("jab" "Broadcast" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/broadcast.org"))
+	  ("jam" "Audio Visual Main" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/audio-visual.org"))
+	  ("jaa" "Audio Visual Assistant" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/audio-visual-assistant.org"))
+	  ("jab" "Broadcast" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/broadcast.org"))
 	  ("jp" "Prayer/Platform")
-	  ("jpo" "Opening Prayer" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/opening-prayer.org"))
-	  ("jpc" "Closing Prayer" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/closing-prayer.org"))
-	  ("jpp" "Platform" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/platform.org"))
+	  ("jpo" "Opening Prayer" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/opening-prayer.org"))
+	  ("jpc" "Closing Prayer" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/closing-prayer.org"))
+	  ("jpp" "Platform" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/platform.org"))
 	  ("p" "personal")
-	  ("pp" "Personal Project" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/project.org"))
-	  ("pc" "House Cleaning" entry (file "~/gtd/inbox.org")
-	   (file "~/gtd/templates/house-cleaning.org"))
+	  ("pp" "Personal Project" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/project.org"))
+	  ("pc" "House Cleaning" entry (file "~/org/gtd/inbox.org")
+	   (file "~/org/gtd/templates/house-cleaning.org"))
 	  ("w" "work")
-	  ("wi" "Inbox" entry (file "~/gtd/work-inbox.org")
+	  ("wi" "Inbox" entry (file "~/org/gtd/work-inbox.org")
 	   "* TODO %?\n %i\n")
-	  ("wo" "On boarding" entry (file+headline "~/gtd/work-inbox.org" "Projects")
+	  ("wo" "On boarding" entry (file+headline "~/org/gtd/work-inbox.org" "Projects")
 	   (file "~/org-work/templates/onboarding.org"))
-	  ("wp" "Work Project" entry (file+headline "~/gtd/work-inbox.org" "Projects")
+	  ("wp" "Work Project" entry (file+headline "~/org/gtd/work-inbox.org" "Projects")
 	   (file "~/org-work/templates/project.org"))
-	  ("we" "Epic Ticket" entry (file+headline "~/gtd/work-inbox.org" "Tickets")
+	  ("we" "Epic Ticket" entry (file+headline "~/org/gtd/work-inbox.org" "Tickets")
 	   (file "~/org-work/templates/epic.org"))
-	  ("ws" "Story Ticket" entry (file+headline "~/gtd/work-inbox.org" "Tickets")
+	  ("ws" "Story Ticket" entry (file+headline "~/org/gtd/work-inbox.org" "Tickets")
 	   (file "~/org-work/templates/story.org"))
-	  ("wb" "Bug Ticket" entry (file+headline "~/gtd/work-inbox.org" "Tickets")
+	  ("wb" "Bug Ticket" entry (file+headline "~/org/gtd/work-inbox.org" "Tickets")
 	   (file "~/org-work/templates/bug.org"))
-	  ("m" "Mail" entry (file+headline "~/gtd/inbox.org" "")
+	  ("m" "Mail" entry (file+headline "~/org/gtd/inbox.org" "")
 	   "* TODO [#A] Process Email %:fromname on %:subject\nSCHEDULED:%t\nDEADLINE: %(org-insert-time-stamp (org-read-date nil t \"+2d\"))\n:PROPERTIES:\n:CREATED: %U\n:END:\n %a" :immediate-finish t :prepend t)
 	  ))
 
@@ -280,17 +280,17 @@
   (setq org-caldav-calendars
         '(
           (:calendar-id "personal"
-           :files ("~/gtd/calendar/personal.org")
-           :inbox "~/gtd/calendar/inbox.org")
+           :files ("~/org/gtd/calendar/personal.org")
+           :inbox "~/org/gtd/calendar/inbox.org")
           (:calendar-id "spiritual"
-           :files ("~/gtd/calendar/spiritual.org")
-           :inbox "~/gtd/calendar/inbox.org")
+           :files ("~/org/gtd/calendar/spiritual.org")
+           :inbox "~/org/gtd/calendar/inbox.org")
           (:calendar-id "events"
-           :files ("~/gtd/calendar/events.org")
-           :inbox "~/gtd/calendar/inbox.org")
+           :files ("~/org/gtd/calendar/events.org")
+           :inbox "~/org/gtd/calendar/inbox.org")
           (:calendar-id "tony-tayo"
-           :files ("~/gtd/calendar/joint.org")
-           :inbox "~/gtd/calendar/inbox.org")
+           :files ("~/org/gtd/calendar/joint.org")
+           :inbox "~/org/gtd/calendar/inbox.org")
           ))
 
   )
@@ -344,7 +344,7 @@
   :after org
   :init
   (setq org-gtd-update-ack "4.0.0")
-  (setq org-gtd-directory "~/gtd/")
+  (setq org-gtd-directory "~/org/gtd/")
   :custom
   (org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "HOLD(h)" "|" "DONE(d)" "CNCL(c)")))
   :config
@@ -354,12 +354,12 @@
   (setq org-gtd-organize-hooks nil)
   (setq org-gtd-default-file-name "tasks")
   (setq org-gtd-files
-        '("~/gtd/inbox.org"
-          "~/gtd/tasks.org"))
+        '("~/org/gtd/inbox.org"
+          "~/org/gtd/tasks.org"))
   (setq org-agenda-files
-        '("~/gtd/inbox.org"
-          "~/gtd/tasks.org"
-          "~/gtd/calendar"))
+        '("~/org/gtd/inbox.org"
+          "~/org/gtd/tasks.org"
+          "~/org/gtd/calendar"))
   )
 
 
