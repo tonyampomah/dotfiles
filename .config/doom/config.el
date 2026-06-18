@@ -577,3 +577,5 @@
         writeroom-width 80
         writeroom-mode-line t
         writeroom-fullscreen-effect 'fullboth))
+
+(add-to-list 'auto-mode-alist '("\\.kdl\\'" . kdl-mode))

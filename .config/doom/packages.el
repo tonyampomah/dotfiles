@@ -11,3 +11,4 @@
 (package! nginx-mode)
 (package! nov)
 (package! writeroom-mode)
+(package! kdl-mode)
