@@ -9,3 +9,5 @@
 (package! robot-mode)
 (package! counsel-tramp)
 (package! nginx-mode)
+(package! nov)
+(package! writeroom-mode)

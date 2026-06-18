@@ -123,6 +123,10 @@
       "p t" #'projectile-run-vterm
       "r" #'consult-imenu)
 
+;; Ignore directories
+;; (add-to-list 'projectile-globally-ignored-directories "node_modules")
+;; (add-to-list 'projectile-globally-ignored-directories ".git"))
+
 ;;; Org Mode ------------------------------------------------------------
 (after! org
   (map! :map org-mode-map
@@ -553,6 +557,23 @@
         "RET" #'ledger-report-edit-report
         "gd"  #'ledger-report-visit-source
         "gr"  #'ledger-report-redo))
-;; Ignore directories
-;; (add-to-list 'projectile-globally-ignored-directories "node_modules")
-;; (add-to-list 'projectile-globally-ignored-directories ".git"))
+
+;; Open .epub files with nov-mode
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
+(after! nov
+  (map! :map nov-mode-map
+        :n "<" #'nov-history-back
+        :n ">" #'nov-history-forward)
+
+  ;; (add-hook 'nov-mode-hook 'my-nov-font-setup)
+  ;; (add-hook 'nov-mode-hook 'visual-line-mode)
+  (add-hook 'nov-mode-hook 'writeroom-mode)
+  )
+
+
+(after! writeroom-mode
+  (setq writeroom-maximize-window nil
+        writeroom-width 80
+        writeroom-mode-line t
+        writeroom-fullscreen-effect 'fullboth))
