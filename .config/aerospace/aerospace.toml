@@ -171,6 +171,7 @@ on-mode-changed = []
     cmd-tab = 'workspace-back-and-forth'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
     cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    cmd-sectionSign = 'move-workspace-to-monitor --wrap-around next'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
