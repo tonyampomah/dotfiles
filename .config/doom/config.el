@@ -566,7 +566,14 @@
         :n "<" #'nov-history-back
         :n ">" #'nov-history-forward)
 
-  ;; (add-hook 'nov-mode-hook 'my-nov-font-setup)
+
+  (defun my-nov-font-setup ()
+    (face-remap-add-relative
+     'variable-pitch
+     :family "Noto Sans"
+     :height 1.6))
+
+  (add-hook 'nov-mode-hook 'my-nov-font-setup)
   ;; (add-hook 'nov-mode-hook 'visual-line-mode)
   (add-hook 'nov-mode-hook 'writeroom-mode)
   )
