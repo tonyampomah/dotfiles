@@ -102,7 +102,7 @@ output "eDP-1" {
     mode "1920x1080@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1.25
+    scale 1.50
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -757,63 +757,63 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Super+D hotkey-overlay-title="Dark mode" {
+    Mod+Ctrl+D hotkey-overlay-title="Dark mode" {
 	spawn "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark";
     }
 
-    Mod+Super+L hotkey-overlay-title="Light mode" {
+    Mod+Ctrl+L hotkey-overlay-title="Light mode" {
 	spawn "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-light";
     }
 
-    Mod+Super+E hotkey-overlay-title="Emacs" {
+    Mod+Ctrl+E hotkey-overlay-title="Emacs" {
 	spawn "emacs";
     }
 
-    Mod+Super+Q hotkey-overlay-title="Qutebrowser" {
+    Mod+Ctrl+Q hotkey-overlay-title="Qutebrowser" {
 	spawn "qutebrowser";
     }
 
-    Mod+Super+M hotkey-overlay-title="Settings" {
+    Mod+Ctrl+M hotkey-overlay-title="Settings" {
 	spawn "xfce4-settings-manager";
     }
 
-    Mod+Super+S hotkey-overlay-title="Slack" {
+    Mod+Ctrl+S hotkey-overlay-title="Slack" {
 	spawn "slack";
     }
 
-    Mod+Super+T hotkey-overlay-title="Teams" {
+    Mod+Ctrl+T hotkey-overlay-title="Teams" {
 	spawn "teams";
     }
 
-    Mod+Super+V hotkey-overlay-title="Audio Control" {
+    Mod+Ctrl+V hotkey-overlay-title="Audio Control" {
 	spawn "pavucontrol";
     }
 
-    Mod+Super+F hotkey-overlay-title="Firefox" {
+    Mod+Ctrl+F hotkey-overlay-title="Firefox" {
 	spawn "firefox";
     }
 
-    Mod+Super+G hotkey-overlay-title="Chromium" {
+    Mod+Ctrl+G hotkey-overlay-title="Chromium" {
 	spawn "chromium-browser" "-no-default-browser-check";
     }
 
-    Mod+Super+B hotkey-overlay-title="Brave" {
+    Mod+Ctrl+B hotkey-overlay-title="Brave" {
 	spawn "brave" "-no-default-browser-check";
     }
 
-    Mod+Super+W hotkey-overlay-title="WasIstLos" {
+    Mod+Ctrl+W hotkey-overlay-title="WasIstLos" {
 	spawn "wasistlos";
     }
 
-    Mod+Super+Z hotkey-overlay-title="Zoom" {
+    Mod+Ctrl+Z hotkey-overlay-title="Zoom" {
 	spawn "zoom";
     }
 
-    Mod+Super+I hotkey-overlay-title="Insomnia" {
+    Mod+Ctrl+I hotkey-overlay-title="Insomnia" {
 	spawn "insomnia";
     }
 
-    Mod+Super+C hotkey-overlay-title="Calibre" {
+    Mod+Ctrl+C hotkey-overlay-title="Calibre" {
 	spawn "calibre";
     }
 }
