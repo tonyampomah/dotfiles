@@ -21,7 +21,7 @@ workspace "9"
 workspace "10"
 
 input {
-    mod-key "Alt"
+    mod-key "Super"
     keyboard {
         xkb {
             layout "gb"
