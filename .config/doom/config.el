@@ -600,3 +600,6 @@
         writeroom-fullscreen-effect 'fullboth))
 
 (add-to-list 'auto-mode-alist '("\\.kdl\\'" . kdl-mode))
+
+(after! restclient
+  (require 'restclient-jq))

@@ -12,3 +12,4 @@
 (package! nov)
 (package! writeroom-mode)
 (package! kdl-mode)
+(package! restclient-jq)
