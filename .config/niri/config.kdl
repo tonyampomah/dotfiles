@@ -758,62 +758,58 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
     Mod+Ctrl+D hotkey-overlay-title="Dark mode" {
-	spawn "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark";
+        spawn "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark";
     }
 
-    Mod+Ctrl+L hotkey-overlay-title="Light mode" {
-	spawn "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-light";
-    }
+    // Mod+Ctrl+L hotkey-overlay-title="Light mode" {
+    //     spawn "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-light";
+    // }
 
     Mod+Ctrl+E hotkey-overlay-title="Emacs" {
-	spawn "emacs";
-    }
-
-    Mod+Ctrl+Q hotkey-overlay-title="Qutebrowser" {
-	spawn "qutebrowser";
+        spawn "emacs";
     }
 
     Mod+Ctrl+M hotkey-overlay-title="Settings" {
-	spawn "xfce4-settings-manager";
+        spawn "xfce4-settings-manager";
     }
 
     Mod+Ctrl+S hotkey-overlay-title="Slack" {
-	spawn "slack";
+        spawn "slack";
     }
 
     Mod+Ctrl+T hotkey-overlay-title="Teams" {
-	spawn "teams";
+        spawn "teams";
     }
 
     Mod+Ctrl+V hotkey-overlay-title="Audio Control" {
-	spawn "pavucontrol";
+        spawn "pavucontrol";
     }
 
-    Mod+Ctrl+F hotkey-overlay-title="Firefox" {
-	spawn "firefox";
-    }
+    // Mod+Ctrl+F hotkey-overlay-title="Firefox" {
+    //     spawn "firefox";
+    // }
 
     Mod+Ctrl+G hotkey-overlay-title="Chromium" {
-	spawn "chromium-browser" "-no-default-browser-check";
+        spawn "chromium-browser" "-no-default-browser-check";
     }
 
     Mod+Ctrl+B hotkey-overlay-title="Brave" {
-	spawn "brave" "-no-default-browser-check";
+        spawn "brave" "-no-default-browser-check";
     }
 
     Mod+Ctrl+W hotkey-overlay-title="WasIstLos" {
-	spawn "wasistlos";
+        spawn "wasistlos";
     }
 
     Mod+Ctrl+Z hotkey-overlay-title="Zoom" {
-	spawn "zoom";
+        spawn "zoom";
     }
 
-    Mod+Ctrl+I hotkey-overlay-title="Insomnia" {
-	spawn "insomnia";
-    }
+    // Mod+Ctrl+I hotkey-overlay-title="Insomnia" {
+    //     spawn "insomnia";
+    // }
 
-    Mod+Ctrl+C hotkey-overlay-title="Calibre" {
-	spawn "calibre";
-    }
+    // Mod+Ctrl+C hotkey-overlay-title="Calibre" {
+    //     spawn "calibre";
+    // }
 }
