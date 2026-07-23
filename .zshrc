@@ -30,8 +30,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
 
 # NODE
-PATH="$HOME/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.node_modules
+export PATH="$HOME/.node_modules/bin:$PATH"
 
 # ANDROID STUDIO
 export _JAVA_AWT_WM_NONREPARENTING=1

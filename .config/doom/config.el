@@ -605,3 +605,7 @@
 
 (after! restclient
   (require 'restclient-jq))
+
+(after! exec-path-from-shell
+  (setq exec-path-from-shell-shell-name "/bin/zsh")
+  (exec-path-from-shell-initialize))

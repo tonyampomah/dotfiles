@@ -13,3 +13,4 @@
 (package! writeroom-mode)
 (package! kdl-mode)
 (package! restclient-jq)
+(package! exec-path-from-shell)
