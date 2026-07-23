@@ -478,6 +478,7 @@
         :desc "Open report"   "o" #'tonyampomah/open-robot-report))
 
 (after! php-mode
+  (add-hook 'php-mode-hook #'eglot-ensure)
   (map! :map php-mode-map
         :localleader
         :n
@@ -486,7 +487,6 @@
         "t c" #'phpunit-current-class
         "f"   #'php-search-documentation
         "r"   #'consult-imenu))
-
 
 (after! eglot
   ;; PHP
