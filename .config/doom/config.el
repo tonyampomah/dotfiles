@@ -609,3 +609,8 @@
 (after! exec-path-from-shell
   (setq exec-path-from-shell-shell-name "/bin/zsh")
   (exec-path-from-shell-initialize))
+
+
+(add-hook 'typescript-ts-mode-hook #'eglot-ensure)
+(add-hook 'tsx-ts-mode-hook #'eglot-ensure)
+(add-hook 'typescript-mode-hook #'eglot-ensure)
