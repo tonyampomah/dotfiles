@@ -43,6 +43,8 @@
       :g "s-k" #'kill-buffer
       :g "s-s" #'save-buffer
       :g "s-\\" #'ispell-word
+      :g "s-v" #'yank
+      :g "s-/" #'comment-line
 
 
       ;; Easier window movement
