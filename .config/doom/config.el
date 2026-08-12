@@ -19,7 +19,7 @@
       doom-variable-pitch-font (font-spec :family "Noto Sans" :size 13))
 
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-tomorrow-night)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
