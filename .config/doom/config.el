@@ -131,6 +131,8 @@
 
 ;;; Org Mode ------------------------------------------------------------
 (after! org
+  (add-hook 'org-mode-hook (lambda ()
+                             (display-line-numbers-mode -1)))
   (map! :map org-mode-map
         :ni "M-h" #'org-metaleft
         :ni "M-j" #'org-metadown
@@ -573,6 +575,8 @@
         "RET" #'ledger-report-edit-report
         "gd"  #'ledger-report-visit-source
         "gr"  #'ledger-report-redo))
+
+(add-hook 'ledger-mode-hook (lambda () (display-line-numbers-mode -1)))
 
 ;; Open .epub files with nov-mode
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
