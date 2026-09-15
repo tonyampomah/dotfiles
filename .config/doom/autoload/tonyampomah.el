@@ -7,9 +7,11 @@
 
 ;;;###autoload
 (defun tonyampomah/week-view ()
+  "Show 3 days before today and 5 days after today."
   (interactive)
-  (progn (org-agenda nil "a")
-	 (org-agenda-week-view)))
+  (let ((org-agenda-span 9)
+        (org-agenda-start-day "-3d"))
+    (org-agenda-list)))
 
 ;;;###autoload
 (defun tonyampomah/month-view ()
