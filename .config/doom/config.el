@@ -19,7 +19,35 @@
       doom-variable-pitch-font (font-spec :family "Noto Sans" :size 13))
 
 
-(setq doom-theme 'doom-tomorrow-night)
+;; (setq doom-theme 'doom-tomorrow-day)
+;;; Theme ---------------------------------------------------------------
+
+;; Let auto-dark control the theme instead of Doom.
+(setq doom-theme nil)
+
+(use-package! auto-dark
+  :defer t
+  :init
+  ;; Dark theme first, light theme second.
+  (setq! auto-dark-themes
+         '((doom-tomorrow-night)
+           (doom-tomorrow-day)))
+
+  ;; Allow the themes to be loaded automatically.
+  (setq! custom-safe-themes t)
+
+  ;; Start auto-dark after Emacs has initialized.
+  (defun tony/auto-dark-init ()
+    (auto-dark-mode)
+    (remove-hook 'after-init-hook #'tony/auto-dark-init))
+
+  (add-hook 'after-init-hook #'tony/auto-dark-init -95))
+
+(setq! auto-dark-themes
+       '((doom-tomorrow-night)
+         (doom-tomorrow-day)))
+
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.

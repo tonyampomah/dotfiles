@@ -14,3 +14,4 @@
 (package! kdl-mode)
 (package! restclient-jq)
 (package! exec-path-from-shell)
+(package! auto-dark)
