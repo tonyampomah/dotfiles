@@ -31,7 +31,7 @@
   ;; Dark theme first, light theme second.
   (setq! auto-dark-themes
          '((doom-tomorrow-night)
-           (doom-tomorrow-day)))
+           (doom-one-light)))
 
   ;; Allow the themes to be loaded automatically.
   (setq! custom-safe-themes t)
