@@ -646,3 +646,12 @@
 (add-hook 'typescript-ts-mode-hook #'eglot-ensure)
 (add-hook 'tsx-ts-mode-hook #'eglot-ensure)
 (add-hook 'typescript-mode-hook #'eglot-ensure)
+
+(after! apheleia
+  ;; RoboCop formats files in-place.
+  (setf (alist-get 'robocop-format apheleia-formatters)
+        '("robocop" "format" inplace))
+
+  ;; Use RoboCop for Robot Framework.
+  (setf (alist-get 'robot-mode apheleia-mode-alist)
+        'robocop-format))
