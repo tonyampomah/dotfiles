@@ -189,6 +189,9 @@
         "q" '("Tags" . org-set-tags-command)
         "r" '("Refile" . org-refile))
 
+  (set-face-attribute 'org-agenda-done nil
+                      :strike-through t)
+
   (setq org-directory "~/org/gtd/")
   (setq org-agenda-files
         '("~/org/gtd/inbox.org"
@@ -205,7 +208,8 @@
         org-edit-src-content-indentation 2
         org-hide-block-startup nil
         org-src-preserve-indentation nil
-        org-agenda-skip-scheduled-if-done t
+        org-agenda-skip-scheduled-if-done nil
+        org-agenda-skip-deadline-if-done nil
         org-startup-folded t
         org-cycle-separator-lines 2)
 
