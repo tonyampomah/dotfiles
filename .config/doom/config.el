@@ -1,6 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 (setq initial-buffer-choice "*scratch*")
 (setq doom-localleader-key ",")
+(setq calendar-week-start-day 1)
 
 (setq user-full-name "Tony Ampomah"
       user-mail-address "tony@arksolutions.it")
