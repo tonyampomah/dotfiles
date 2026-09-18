@@ -19,8 +19,6 @@
 (setq doom-font (font-spec :family "Cascadia Code" :size 15 :weight 'semi-light)
       doom-variable-pitch-font (font-spec :family "Noto Sans" :size 13))
 
-
-;; (setq doom-theme 'doom-tomorrow-day)
 ;;; Theme ---------------------------------------------------------------
 
 ;; Let auto-dark control the theme instead of Doom.
@@ -135,6 +133,7 @@
 
       "o p" #'pass
       "o d" #'docker
+      "o c" #'calendar
 
       "b e" #'eval-buffer
 
