@@ -355,7 +355,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="Google-chrome"
+    match app-id="google-chrome"
     open-on-workspace "1"
     open-maximized true
 }
