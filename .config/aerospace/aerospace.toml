@@ -234,6 +234,10 @@ if.app-id = 'com.postmanlabs.mac'
 run = "move-node-to-workspace 6"
 
 [[on-window-detected]]
+if.app-id = 'org.jw.jwlibrary'
+run = "move-node-to-workspace 7"
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.Powerpoint'
 run = "move-node-to-workspace 7"
 
