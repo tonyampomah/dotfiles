@@ -93,6 +93,9 @@ completions=(
   git
   composer
   ssh
+  docker
+  awscli
+  makefile
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
