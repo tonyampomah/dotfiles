@@ -335,16 +335,16 @@
         '(
           (:calendar-id "personal"
            :files ("~/org/gtd/calendar/personal.org")
-           :inbox "~/org/gtd/calendar/inbox.org")
+           :inbox "~/org/gtd/calendar/inbox-personal.org")
           (:calendar-id "spiritual"
            :files ("~/org/gtd/calendar/spiritual.org")
-           :inbox "~/org/gtd/calendar/inbox.org")
+           :inbox "~/org/gtd/calendar/inbox-spiritual.org")
           (:calendar-id "events"
            :files ("~/org/gtd/calendar/events.org")
-           :inbox "~/org/gtd/calendar/inbox.org")
+           :inbox "~/org/gtd/calendar/inbox-events.org")
           (:calendar-id "tony-tayo"
            :files ("~/org/gtd/calendar/joint.org")
-           :inbox "~/org/gtd/calendar/inbox.org")
+           :inbox "~/org/gtd/calendar/inbox-joint.org")
           ))
 
   (require 'ox-twbs)
